@@ -1,0 +1,51 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>Neville Noah | Blog</title>
+        <link>https://nevillenoah.github.io/</link>
+        <description>关于 LoveIt 主题</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Thu, 30 Jul 2020 09:47:58 &#43;0800</lastBuildDate>
+            <atom:link href="https://nevillenoah.github.io/index.xml" rel="self" type="application/rss+xml" />
+        <item>
+    <title>Kotlin高级：协程</title>
+    <link>https://nevillenoah.github.io/kotlin%E9%AB%98%E7%BA%A7%E5%8D%8F%E7%A8%8B/</link>
+    <pubDate>Thu, 30 Jul 2020 09:47:58 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://nevillenoah.github.io/kotlin%E9%AB%98%E7%BA%A7%E5%8D%8F%E7%A8%8B/</guid>
+    <description><![CDATA[引言 Coroutine，一个线程框架，是建立在线程之上的API，用于让代码在各个线程之间反复横跳。 你只需要理解三个概念，就能理解协程： 调度器]]></description>
+</item><item>
+    <title>Android地阶：模块化开发（二）——Module</title>
+    <link>https://nevillenoah.github.io/android%E5%9C%B0%E9%98%B6%E6%A8%A1%E5%9D%97%E5%8C%96%E5%BC%80%E5%8F%91%E4%BA%8Cmodule/</link>
+    <pubDate>Mon, 27 Jul 2020 12:30:58 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://nevillenoah.github.io/android%E5%9C%B0%E9%98%B6%E6%A8%A1%E5%9D%97%E5%8C%96%E5%BC%80%E5%8F%91%E4%BA%8Cmodule/</guid>
+    <description><![CDATA[Module创建 使用Android Studio中的File&gt;New&gt;New Module创建Module Module类型 常用Mod]]></description>
+</item><item>
+    <title>Android地阶：模块化开发（一）——api与implementation</title>
+    <link>https://nevillenoah.github.io/android%E5%9C%B0%E9%98%B6%E6%A8%A1%E5%9D%97%E5%8C%96%E5%BC%80%E5%8F%91%E4%B8%80api%E4%B8%8Eimplementation/</link>
+    <pubDate>Sun, 26 Jul 2020 12:31:58 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://nevillenoah.github.io/android%E5%9C%B0%E9%98%B6%E6%A8%A1%E5%9D%97%E5%8C%96%E5%BC%80%E5%8F%91%E4%B8%80api%E4%B8%8Eimplementation/</guid>
+    <description><![CDATA[前言：模块化开发系列旨在为读者建立起模块化的基本轮廓。 引入依赖库常用的有两种方式： api implementation 两者的区别，存在于传递依赖方面。 implementation 该依赖方式所依赖的库]]></description>
+</item><item>
+    <title>Android玄阶：七个葫芦娃（二）——Context</title>
+    <link>https://nevillenoah.github.io/android%E7%8E%84%E9%98%B6%E4%B8%83%E4%B8%AA%E8%91%AB%E8%8A%A6%E5%A8%83%E4%BA%8Ccontext/</link>
+    <pubDate>Tue, 21 Jul 2020 21:13:58 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://nevillenoah.github.io/android%E7%8E%84%E9%98%B6%E4%B8%83%E4%B8%AA%E8%91%AB%E8%8A%A6%E5%A8%83%E4%BA%8Ccontext/</guid>
+    <description><![CDATA[Context直译为“上下文”。Android四大组件中最核心的便是Activity，Activity最核心的便是Context，Activ]]></description>
+</item><item>
+    <title>Android玄阶：七个葫芦娃（一）——套娃</title>
+    <link>https://nevillenoah.github.io/android%E7%8E%84%E9%98%B6%E4%B8%83%E4%B8%AA%E8%91%AB%E8%8A%A6%E5%A8%83%E4%B8%80%E5%A5%97%E5%A8%83/</link>
+    <pubDate>Mon, 20 Jul 2020 12:43:58 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://nevillenoah.github.io/android%E7%8E%84%E9%98%B6%E4%B8%83%E4%B8%AA%E8%91%AB%E8%8A%A6%E5%A8%83%E4%B8%80%E5%A5%97%E5%A8%83/</guid>
+    <description><![CDATA[在我们写Activity的时候，很多方法需要传入参数Context，官方文档告诉我们传入this。 为什么可以传入this？this不是Act]]></description>
+</item><item>
+    <title>Kotlin高级：lambda与扩展内联函数</title>
+    <link>https://nevillenoah.github.io/kotlin%E9%AB%98%E7%BA%A7lambda%E4%B8%8E%E6%89%A9%E5%B1%95%E5%86%85%E8%81%94%E5%87%BD%E6%95%B0/</link>
+    <pubDate>Wed, 15 Jul 2020 09:47:58 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://nevillenoah.github.io/kotlin%E9%AB%98%E7%BA%A7lambda%E4%B8%8E%E6%89%A9%E5%B1%95%E5%86%85%E8%81%94%E5%87%BD%E6%95%B0/</guid>
+    <description><![CDATA[内联扩展函数是啥玩意儿？答：Kotlin为你打包好的工具包。 如果说Java是一条龙服务，那Koltin就是在一条龙之外还提供了“内联函数”这]]></description>
+</item></channel>
+</rss>
