@@ -128,6 +128,7 @@ other()
 ```
 
 ![4f5f40905f2369b0cea917c7d8cdaaba](Kotlin高级：协程.resources/1FFD597E-18F5-41F8-8262-68DFA30B3DB3.png)
+
 后者的代码执行过程如图所示，通过`CoroutineScope.launch(Disaptcher.Default)`将协程
 ```kotlin
 {
