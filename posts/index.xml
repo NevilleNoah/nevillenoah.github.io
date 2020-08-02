@@ -45,5 +45,12 @@
     <author>作者</author>
     <guid>https://nevillenoah.github.io/kotlin%E9%AB%98%E7%BA%A7lambda%E4%B8%8E%E6%89%A9%E5%B1%95%E5%86%85%E8%81%94%E5%87%BD%E6%95%B0/</guid>
     <description><![CDATA[内联扩展函数是啥玩意儿？答：Kotlin为你打包好的工具包。 如果说Java是一条龙服务，那Koltin就是在一条龙之外还提供了“内联函数”这]]></description>
+</item><item>
+    <title>Jetpack：生命周期组件</title>
+    <link>https://nevillenoah.github.io/jetpack%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E7%BB%84%E4%BB%B6/</link>
+    <pubDate>Mon, 01 Jan 0001 00:00:00 &#43;0000</pubDate>
+    <author>作者</author>
+    <guid>https://nevillenoah.github.io/jetpack%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E7%BB%84%E4%BB%B6/</guid>
+    <description><![CDATA[场景问题 我们在Android开发中会遇到这样一种场景： 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43]]></description>
 </item></channel>
 </rss>
