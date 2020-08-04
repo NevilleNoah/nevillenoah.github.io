@@ -60,7 +60,7 @@ buildscript {
 }
 ```
 
-## versions.gralde管理仓库
+## 多模块下的仓库管理
 我们之前提到过使用versions来管理版本，也可以用它来管理仓库。
 在project下新建`version.gradle`
 在`versions.gradle`中（注意调用方法时，使用符号`&`）
