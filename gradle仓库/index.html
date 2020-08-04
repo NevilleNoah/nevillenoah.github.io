@@ -5,36 +5,37 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="robots" content="noodp" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
-        <title>Android地阶：模块化开发（一）——api与implementation - Neville Noah | Blog</title><meta name="Description" content="关于 LoveIt 主题"><meta property="og:title" content="Android地阶：模块化开发（一）——api与implementation" />
-<meta property="og:description" content="前言：模块化开发系列旨在为读者建立起模块化的基本轮廓。 引入依赖库常用的有两种方式： api implementation 两者的区别，存在于传递依赖方面。 implementation 该依赖方式所依赖的库" />
+        <title>Gradle：仓库 - Neville Noah | Blog</title><meta name="Description" content="关于 LoveIt 主题"><meta property="og:title" content="Gradle：仓库" />
+<meta property="og:description" content="引言 你有没有很奇怪，我们的远程引入的依赖库为什么只需要写入源即可？难道还有不需要网络协议就能获取到的资源？怎么可能。那么协议写到了哪里？写到" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://nevillenoah.github.io/android%E5%9C%B0%E9%98%B6%E6%A8%A1%E5%9D%97%E5%8C%96%E5%BC%80%E5%8F%91%E4%B8%80api%E4%B8%8Eimplementation/" />
-<meta property="og:image" content="https://nevillenoah.github.io/android%E5%9C%B0%E9%98%B6%E6%A8%A1%E5%9D%97%E5%8C%96%E5%BC%80%E5%8F%91%E4%B8%80api%E4%B8%8Eimplementation/featured-image.jpg"/>
-<meta property="article:published_time" content="2020-07-26T12:31:58+08:00" />
-<meta property="article:modified_time" content="2020-07-26T12:31:58+08:00" />
+<meta property="og:url" content="https://nevillenoah.github.io/gradle%E4%BB%93%E5%BA%93/" />
+<meta property="og:image" content="https://nevillenoah.github.io/logo.png"/>
+<meta property="article:published_time" content="2020-08-04T16:33:58+08:00" />
+<meta property="article:modified_time" content="2020-08-04T16:33:58+08:00" />
 <meta name="twitter:card" content="summary_large_image"/>
-<meta name="twitter:image" content="https://nevillenoah.github.io/android%E5%9C%B0%E9%98%B6%E6%A8%A1%E5%9D%97%E5%8C%96%E5%BC%80%E5%8F%91%E4%B8%80api%E4%B8%8Eimplementation/featured-image.jpg"/>
-<meta name="twitter:title" content="Android地阶：模块化开发（一）——api与implementation"/>
-<meta name="twitter:description" content="前言：模块化开发系列旨在为读者建立起模块化的基本轮廓。 引入依赖库常用的有两种方式： api implementation 两者的区别，存在于传递依赖方面。 implementation 该依赖方式所依赖的库"/>
+<meta name="twitter:image" content="https://nevillenoah.github.io/logo.png"/>
+
+<meta name="twitter:title" content="Gradle：仓库"/>
+<meta name="twitter:description" content="引言 你有没有很奇怪，我们的远程引入的依赖库为什么只需要写入源即可？难道还有不需要网络协议就能获取到的资源？怎么可能。那么协议写到了哪里？写到"/>
 <meta name="application-name" content="LoveIt">
 <meta name="apple-mobile-web-app-title" content="LoveIt"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://nevillenoah.github.io/android%E5%9C%B0%E9%98%B6%E6%A8%A1%E5%9D%97%E5%8C%96%E5%BC%80%E5%8F%91%E4%B8%80api%E4%B8%8Eimplementation/" /><link rel="prev" href="https://nevillenoah.github.io/android%E7%8E%84%E9%98%B6%E4%B8%83%E4%B8%AA%E8%91%AB%E8%8A%A6%E5%A8%83%E4%BA%8Ccontext/" /><link rel="next" href="https://nevillenoah.github.io/android%E5%9C%B0%E9%98%B6%E6%A8%A1%E5%9D%97%E5%8C%96%E5%BC%80%E5%8F%91%E4%BA%8Cmodule/" /><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13.0/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css"><script type="application/ld+json">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://nevillenoah.github.io/gradle%E4%BB%93%E5%BA%93/" /><link rel="prev" href="https://nevillenoah.github.io/gradle%E4%BE%9D%E8%B5%96%E5%BA%93/" /><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13.0/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css"><script type="application/ld+json">
     {
         "@context": "http://schema.org",
         "@type": "BlogPosting",
-        "headline": "Android地阶：模块化开发（一）——api与implementation",
+        "headline": "Gradle：仓库",
         "inLanguage": "zh-CN",
         "mainEntityOfPage": {
             "@type": "WebPage",
-            "@id": "https:\/\/nevillenoah.github.io\/android%E5%9C%B0%E9%98%B6%E6%A8%A1%E5%9D%97%E5%8C%96%E5%BC%80%E5%8F%91%E4%B8%80api%E4%B8%8Eimplementation\/"
+            "@id": "https:\/\/nevillenoah.github.io\/gradle%E4%BB%93%E5%BA%93\/"
         },"image": [{
                             "@type": "ImageObject",
-                            "url": "https:\/\/nevillenoah.github.io\/android%E5%9C%B0%E9%98%B6%E6%A8%A1%E5%9D%97%E5%8C%96%E5%BC%80%E5%8F%91%E4%B8%80api%E4%B8%8Eimplementation\/featured-image.jpg",
-                            "width":  955 ,
-                            "height":  537 
-                        }],"genre": "posts","keywords": "Android","wordcount":  120 ,
-        "url": "https:\/\/nevillenoah.github.io\/android%E5%9C%B0%E9%98%B6%E6%A8%A1%E5%9D%97%E5%8C%96%E5%BC%80%E5%8F%91%E4%B8%80api%E4%B8%8Eimplementation\/","datePublished": "2020-07-26T12:31:58+08:00","dateModified": "2020-07-26T12:31:58+08:00","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
+                            "url": "https:\/\/nevillenoah.github.io\/images\/Apple-Devices-Preview.png",
+                            "width":  3200 ,
+                            "height":  2048 
+                        }],"genre": "posts","keywords": "Gradle","wordcount":  609 ,
+        "url": "https:\/\/nevillenoah.github.io\/gradle%E4%BB%93%E5%BA%93\/","datePublished": "2020-08-04T16:33:58+08:00","dateModified": "2020-08-04T16:33:58+08:00","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
             "@type": "Organization",
             "name": "xxxx","logo": {
                     "@type": "ImageObject",
@@ -56,7 +57,7 @@
         </div>
         <div class="menu">
             <div class="menu-inner"><a class="menu-item" href="/posts/"> 文章 </a><a class="menu-item" href="/tags/"> 标签 </a><a class="menu-item" href="/categories/"> 分类 </a><a class="menu-item" href="/categories/documentation/"> 文档 </a><a class="menu-item" href="/about/"> 关于 </a><a class="menu-item" href="https://github.com/dillonzq/LoveIt" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw'></i>  </a><span class="menu-item delimiter"></span><a href="javascript:void(0);" class="menu-item language" title="选择语言">简体中文<i class="fas fa-chevron-right fa-fw"></i>
-                        <select class="language-select" id="language-select-desktop" onchange="location = this.value;"><option value="/android%E5%9C%B0%E9%98%B6%E6%A8%A1%E5%9D%97%E5%8C%96%E5%BC%80%E5%8F%91%E4%B8%80api%E4%B8%8Eimplementation/" selected>简体中文</option></select>
+                        <select class="language-select" id="language-select-desktop" onchange="location = this.value;"><option value="/gradle%E4%BB%93%E5%BA%93/" selected>简体中文</option></select>
                     </a><span class="menu-item search" id="search-desktop">
                         <input type="text" placeholder="搜索文章标题或内容..." id="search-input-desktop">
                         <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
@@ -103,7 +104,7 @@
                 </div><a class="menu-item" href="/posts/" title="">文章</a><a class="menu-item" href="/tags/" title="">标签</a><a class="menu-item" href="/categories/" title="">分类</a><a class="menu-item" href="/categories/documentation/" title="">文档</a><a class="menu-item" href="/about/" title="">关于</a><a class="menu-item" href="https://github.com/dillonzq/LoveIt" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw'></i></a><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
                 <i class="fas fa-adjust fa-fw"></i>
             </a><a href="javascript:void(0);" class="menu-item" title="选择语言">简体中文<i class="fas fa-chevron-right fa-fw"></i>
-                    <select class="language-select" onchange="location = this.value;"><option value="/android%E5%9C%B0%E9%98%B6%E6%A8%A1%E5%9D%97%E5%8C%96%E5%BC%80%E5%8F%91%E4%B8%80api%E4%B8%8Eimplementation/" selected>简体中文</option></select>
+                    <select class="language-select" onchange="location = this.value;"><option value="/gradle%E4%BB%93%E5%BA%93/" selected>简体中文</option></select>
                 </a></div>
     </div>
 </header>
@@ -117,100 +118,215 @@
                 <div class="container"><div class="toc" id="toc-auto">
             <h2 class="toc-title">目录</h2>
             <div class="toc-content" id="toc-content-auto"></div>
-        </div><article class="page single"><h1 class="single-title animated flipInX">Android地阶：模块化开发（一）——api与implementation</h1><div class="post-meta">
-            <div class="post-meta-line"><span class="post-author"><a href="https://github.com/nevillenoah" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Neville Noah</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/android/"><i class="far fa-folder fa-fw"></i>Android</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-07-26">2020-07-26</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 120 字&nbsp;
-                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 1 分钟&nbsp;<span id="/android%E5%9C%B0%E9%98%B6%E6%A8%A1%E5%9D%97%E5%8C%96%E5%BC%80%E5%8F%91%E4%B8%80api%E4%B8%8Eimplementation/" class="leancloud_visitors" data-flag-title="Android地阶：模块化开发（一）——api与implementation">
+        </div><article class="page single"><h1 class="single-title animated flipInX">Gradle：仓库</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="https://github.com/nevillenoah" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Neville Noah</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/gradle/"><i class="far fa-folder fa-fw"></i>Gradle</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-08-04">2020-08-04</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 609 字&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 2 分钟&nbsp;<span id="/gradle%E4%BB%93%E5%BA%93/" class="leancloud_visitors" data-flag-title="Gradle：仓库">
                         <i class="far fa-eye fa-fw"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
                     </span>&nbsp;</div>
-        </div><div class="featured-image"><img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="/android%E5%9C%B0%E9%98%B6%E6%A8%A1%E5%9D%97%E5%8C%96%E5%BC%80%E5%8F%91%E4%B8%80api%E4%B8%8Eimplementation/featured-image.jpg"
-        data-srcset="/android%E5%9C%B0%E9%98%B6%E6%A8%A1%E5%9D%97%E5%8C%96%E5%BC%80%E5%8F%91%E4%B8%80api%E4%B8%8Eimplementation/featured-image.jpg, /android%E5%9C%B0%E9%98%B6%E6%A8%A1%E5%9D%97%E5%8C%96%E5%BC%80%E5%8F%91%E4%B8%80api%E4%B8%8Eimplementation/featured-image.jpg 1.5x, /android%E5%9C%B0%E9%98%B6%E6%A8%A1%E5%9D%97%E5%8C%96%E5%BC%80%E5%8F%91%E4%B8%80api%E4%B8%8Eimplementation/featured-image.jpg 2x"
-        data-sizes="auto"
-        alt="/android%E5%9C%B0%E9%98%B6%E6%A8%A1%E5%9D%97%E5%8C%96%E5%BC%80%E5%8F%91%E4%B8%80api%E4%B8%8Eimplementation/featured-image.jpg"
-        title="/android%E5%9C%B0%E9%98%B6%E6%A8%A1%E5%9D%97%E5%8C%96%E5%BC%80%E5%8F%91%E4%B8%80api%E4%B8%8Eimplementation/featured-image.jpg" /></div><div class="details toc" id="toc-static"  kept="">
+        </div><div class="details toc" id="toc-static"  kept="">
                 <div class="details-summary toc-title">
                     <span>目录</span>
                     <span><i class="details-icon fas fa-angle-right"></i></span>
                 </div>
                 <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
   <ul>
-    <li><a href="#implementation">implementation</a></li>
-    <li><a href="#api">api</a></li>
+    <li><a href="#google与jcenter">google()与jcenter()</a></li>
+    <li><a href="#自定义仓库">自定义仓库</a></li>
+    <li><a href="#versionsgralde管理仓库">versions.gralde管理仓库</a></li>
   </ul>
 </nav></div>
-            </div><div class="content" id="content"><blockquote>
-<p>前言：模块化开发系列旨在为读者建立起模块化的基本轮廓。</p>
-</blockquote>
-<p>引入依赖库常用的有两种方式：</p>
-<ul>
-<li>api</li>
-<li>implementation</li>
-</ul>
-<p>两者的区别，存在于传递依赖方面。
-<img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="Android%e5%9c%b0%e9%98%b6%ef%bc%9a%e6%a8%a1%e5%9d%97%e5%8c%96%e5%bc%80%e5%8f%91%ef%bc%88%e4%b8%80%ef%bc%89%e2%80%94%e2%80%94api%e4%b8%8eimplementation.resources/91388CA4-A250-4F57-BFE5-5C3421EE5C0E.png"
-        data-srcset="/android%E5%9C%B0%E9%98%B6%E6%A8%A1%E5%9D%97%E5%8C%96%E5%BC%80%E5%8F%91%E4%B8%80api%E4%B8%8Eimplementation/Android%E5%9C%B0%E9%98%B6%EF%BC%9A%E6%A8%A1%E5%9D%97%E5%8C%96%E5%BC%80%E5%8F%91%EF%BC%88%E4%B8%80%EF%BC%89%E2%80%94%E2%80%94api%E4%B8%8Eimplementation.resources/91388CA4-A250-4F57-BFE5-5C3421EE5C0E.png, Android%e5%9c%b0%e9%98%b6%ef%bc%9a%e6%a8%a1%e5%9d%97%e5%8c%96%e5%bc%80%e5%8f%91%ef%bc%88%e4%b8%80%ef%bc%89%e2%80%94%e2%80%94api%e4%b8%8eimplementation.resources/91388CA4-A250-4F57-BFE5-5C3421EE5C0E.png 1.5x, /android%E5%9C%B0%E9%98%B6%E6%A8%A1%E5%9D%97%E5%8C%96%E5%BC%80%E5%8F%91%E4%B8%80api%E4%B8%8Eimplementation/Android%E5%9C%B0%E9%98%B6%EF%BC%9A%E6%A8%A1%E5%9D%97%E5%8C%96%E5%BC%80%E5%8F%91%EF%BC%88%E4%B8%80%EF%BC%89%E2%80%94%E2%80%94api%E4%B8%8Eimplementation.resources/91388CA4-A250-4F57-BFE5-5C3421EE5C0E.png 2x"
-        data-sizes="auto"
-        alt="/android%E5%9C%B0%E9%98%B6%E6%A8%A1%E5%9D%97%E5%8C%96%E5%BC%80%E5%8F%91%E4%B8%80api%E4%B8%8Eimplementation/Android%E5%9C%B0%E9%98%B6%EF%BC%9A%E6%A8%A1%E5%9D%97%E5%8C%96%E5%BC%80%E5%8F%91%EF%BC%88%E4%B8%80%EF%BC%89%E2%80%94%E2%80%94api%E4%B8%8Eimplementation.resources/91388CA4-A250-4F57-BFE5-5C3421EE5C0E.png"
-        title="868580fb2e04f783256ba8fddb84cd60" /></p>
-<h2 id="implementation">implementation</h2>
-<p>该依赖方式所依赖的库不会传递。</p>
+            </div><div class="content" id="content"><h1 id="引言">引言</h1>
+<p>你有没有很奇怪，我们的远程引入的依赖库为什么只需要写入源即可？难道还有不需要网络协议就能获取到的资源？怎么可能。那么协议写到了哪里？写到仓库中。位置在project的<code>build.gradle</code>中</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-gradle" data-lang="gradle"><span class="n">A</span> <span class="n">implementation</span> <span class="n">B</span>
-<span class="n">B</span> <span class="n">implementation</span> <span class="n">C</span>
+<pre class="chroma"><code class="language-gradle" data-lang="gradle"><span class="n">buildscript</span> <span class="o">{</span>
+    <span class="n">repositories</span> <span class="o">{</span>
+        <span class="c1">// 编译工具用到的仓库
+</span><span class="c1"></span>    <span class="o">}</span>
+<span class="o">}</span>
+
+<span class="n">allprojects</span> <span class="o">{</span>
+    <span class="c1">// 所有项目都用到的仓库
+</span><span class="c1"></span><span class="o">}</span>
 </code></pre></td></tr></table>
 </div>
-</div><p>A无法使用C。</p>
-<h2 id="api">api</h2>
-<p>该依赖方式会传递所依赖的库。</p>
+</div><h2 id="google与jcenter">google()与jcenter()</h2>
+<p>当我们创建新项目时，就会看到这样的代码</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-gradle" data-lang="gradle"><span class="n">buildscript</span> <span class="o">{</span>
+    <span class="n">repositories</span> <span class="o">{</span>
+        <span class="n">google</span><span class="o">()</span>
+        <span class="n">jcenter</span><span class="o">()</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+
+<span class="n">allprojects</span> <span class="o">{</span>
+    <span class="n">repositories</span> <span class="o">{</span>
+        <span class="n">google</span><span class="o">()</span>
+        <span class="n">jcenter</span><span class="o">()</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>通过上述代码引入和google和jcenter的仓库，然后我们填写依赖的源的时候，会根据源自动在这些仓库中搜索合适的库进行引入。
+我们打开上述两个方法会发现</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-gradle" data-lang="gradle"><span class="n">A</span> <span class="n">implementation</span> <span class="n">B</span>
-<span class="n">B</span> <span class="n">api</span> <span class="n">C</span>
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">interface</span> <span class="nc">RepositoryHandler</span> <span class="kd">extends</span> <span class="n">ArtifactRepositoryContainer</span> <span class="o">{</span>
+    <span class="n">MavenArtifactRepository</span> <span class="nf">google</span><span class="o">();</span>
+    <span class="n">MavenArtifactRepository</span> <span class="nf">jcenter</span><span class="o">();</span>
+<span class="o">}</span>
 </code></pre></td></tr></table>
 </div>
-</div><p>A可以使用C。</p>
-</div><div class="post-footer" id="post-footer">
+</div><p>而<code>MavenArtifactRepository</code>中包含对<code>URI</code>的操作</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">URI getUrl();
+void setUrl(URI url);
+Set&lt;URI&gt; getArtifactUrls();
+...
+</code></pre></td></tr></table>
+</div>
+</div><p>正是通过这些方法从互联网上获取到远程仓库。</p>
+<h2 id="自定义仓库">自定义仓库</h2>
+<p>你还可以通过<code>maven</code>添加新的仓库</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-gradle" data-lang="gradle"><span class="n">buildscript</span> <span class="o">{</span>
+    <span class="n">repositories</span> <span class="o">{</span>
+        <span class="n">maven</span> <span class="o">{</span>
+            <span class="n">url</span> <span class="s2">&#34;http://repo.mycompany.com/maven2&#34;</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="versionsgralde管理仓库">versions.gralde管理仓库</h2>
+<p>我们之前提到过使用versions来管理版本，也可以用它来管理仓库。
+在project下新建<code>version.gradle</code>
+在<code>versions.gradle</code>中（注意调用方法时，使用符号<code>&amp;</code>）</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-gradle" data-lang="gradle"><span class="kt">def</span> <span class="nf">addRepos</span><span class="o">(</span><span class="n">RepositoryHandler</span> <span class="n">handler</span><span class="o">)</span> <span class="o">{</span>
+    <span class="n">handler</span><span class="o">.</span><span class="na">google</span><span class="o">()</span>
+    <span class="n">handler</span><span class="o">.</span><span class="na">jcenter</span><span class="o">()</span>
+    <span class="n">handler</span><span class="o">.</span><span class="na">maven</span> <span class="o">{</span> <span class="n">url</span> <span class="s2">&#34;https://oss.sonatype.org/content/repositories/snapshots&#34;</span> <span class="o">}</span>
+<span class="o">}</span>
+<span class="n">ext</span><span class="o">.</span><span class="na">addRepos</span> <span class="o">=</span> <span class="k">this</span><span class="o">.&amp;</span><span class="n">addRepos</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>在project的<code>build.gradle</code>中</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-gradle" data-lang="gradle"><span class="n">buildscript</span> <span class="o">{</span>
+    <span class="c1">// 引入versions.gradle
+</span><span class="c1"></span>    <span class="n">apply</span> <span class="nl">from:</span> <span class="s2">&#34;versions.gradle&#34;</span>
+    <span class="c1">// 添加仓库
+</span><span class="c1"></span>    <span class="n">addRepos</span><span class="o">(</span><span class="n">repositories</span><span class="o">)</span>
+<span class="o">}</span>
+
+<span class="n">allprojects</span> <span class="o">{</span>
+    <span class="c1">// 添加仓库
+</span><span class="c1"></span>    <span class="n">addRepos</span><span class="o">(</span><span class="n">repositories</span><span class="o">)</span>
+<span class="o">}</span>
+</code></pre></td></tr></table>
+</div>
+</div></div><div class="post-footer" id="post-footer">
     <div class="post-info">
         <div class="post-info-line">
             <div class="post-info-mod">
-                <span>更新于 2020-07-26</span>
+                <span>更新于 2020-08-04</span>
             </div>
             <div class="post-info-license"></div>
         </div>
         <div class="post-info-line">
             <div class="post-info-md"><span>
-                            <a class="link-to-markdown" href="/android%E5%9C%B0%E9%98%B6%E6%A8%A1%E5%9D%97%E5%8C%96%E5%BC%80%E5%8F%91%E4%B8%80api%E4%B8%8Eimplementation/index.md" target="_blank">阅读原始文档</a>
+                            <a class="link-to-markdown" href="/gradle%E4%BB%93%E5%BA%93/index.md" target="_blank">阅读原始文档</a>
                         </span></div>
             <div class="post-info-share">
-                <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="https://nevillenoah.github.io/android%E5%9C%B0%E9%98%B6%E6%A8%A1%E5%9D%97%E5%8C%96%E5%BC%80%E5%8F%91%E4%B8%80api%E4%B8%8Eimplementation/" data-title="Android地阶：模块化开发（一）——api与implementation" data-hashtags="Android"><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="https://nevillenoah.github.io/android%E5%9C%B0%E9%98%B6%E6%A8%A1%E5%9D%97%E5%8C%96%E5%BC%80%E5%8F%91%E4%B8%80api%E4%B8%8Eimplementation/" data-hashtag="Android"><i class="fab fa-facebook-square fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Hacker News" data-sharer="hackernews" data-url="https://nevillenoah.github.io/android%E5%9C%B0%E9%98%B6%E6%A8%A1%E5%9D%97%E5%8C%96%E5%BC%80%E5%8F%91%E4%B8%80api%E4%B8%8Eimplementation/" data-title="Android地阶：模块化开发（一）——api与implementation"><i class="fab fa-hacker-news fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Line" data-sharer="line" data-url="https://nevillenoah.github.io/android%E5%9C%B0%E9%98%B6%E6%A8%A1%E5%9D%97%E5%8C%96%E5%BC%80%E5%8F%91%E4%B8%80api%E4%B8%8Eimplementation/" data-title="Android地阶：模块化开发（一）——api与implementation"><i data-svg-src="https://cdn.jsdelivr.net/npm/simple-icons@2.14.0/icons/line.svg"></i></a><a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="https://nevillenoah.github.io/android%E5%9C%B0%E9%98%B6%E6%A8%A1%E5%9D%97%E5%8C%96%E5%BC%80%E5%8F%91%E4%B8%80api%E4%B8%8Eimplementation/" data-title="Android地阶：模块化开发（一）——api与implementation"><i class="fab fa-weibo fa-fw"></i></a></span>
+                <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="https://nevillenoah.github.io/gradle%E4%BB%93%E5%BA%93/" data-title="Gradle：仓库" data-hashtags="Gradle"><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="https://nevillenoah.github.io/gradle%E4%BB%93%E5%BA%93/" data-hashtag="Gradle"><i class="fab fa-facebook-square fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Hacker News" data-sharer="hackernews" data-url="https://nevillenoah.github.io/gradle%E4%BB%93%E5%BA%93/" data-title="Gradle：仓库"><i class="fab fa-hacker-news fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Line" data-sharer="line" data-url="https://nevillenoah.github.io/gradle%E4%BB%93%E5%BA%93/" data-title="Gradle：仓库"><i data-svg-src="https://cdn.jsdelivr.net/npm/simple-icons@2.14.0/icons/line.svg"></i></a><a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="https://nevillenoah.github.io/gradle%E4%BB%93%E5%BA%93/" data-title="Gradle：仓库"><i class="fab fa-weibo fa-fw"></i></a></span>
             </div>
         </div>
     </div>
 
     <div class="post-info-more">
-        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/android/">Android</a></section>
+        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/gradle/">Gradle</a></section>
         <section>
             <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
         </section>
     </div>
 
-    <div class="post-nav"><a href="/android%E7%8E%84%E9%98%B6%E4%B8%83%E4%B8%AA%E8%91%AB%E8%8A%A6%E5%A8%83%E4%BA%8Ccontext/" class="prev" rel="prev" title="Android玄阶：七个葫芦娃（二）——Context"><i class="fas fa-angle-left fa-fw"></i>Android玄阶：七个葫芦娃（二）——Context</a>
-            <a href="/android%E5%9C%B0%E9%98%B6%E6%A8%A1%E5%9D%97%E5%8C%96%E5%BC%80%E5%8F%91%E4%BA%8Cmodule/" class="next" rel="next" title="Android地阶：模块化开发（二）——Module">Android地阶：模块化开发（二）——Module<i class="fas fa-angle-right fa-fw"></i></a></div>
+    <div class="post-nav"><a href="/gradle%E4%BE%9D%E8%B5%96%E5%BA%93/" class="prev" rel="prev" title="Gradle：依赖库"><i class="fas fa-angle-left fa-fw"></i>Gradle：依赖库</a></div>
 </div>
 <div id="comments"><div id="valine" class="comment"></div><noscript>
                 Please enable JavaScript to view the comments powered by <a href="https://valine.js.org/">Valine</a>.
