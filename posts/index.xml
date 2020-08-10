@@ -3,7 +3,14 @@
         <title>所有文章 - Neville Noah | Blog</title>
         <link>https://nevillenoah.github.io/posts/</link>
         <description>所有文章 | Neville Noah | Blog</description>
-        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Wed, 05 Aug 2020 21:46:41 &#43;0800</lastBuildDate><atom:link href="https://nevillenoah.github.io/posts/" rel="self" type="application/rss+xml" /><item>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Mon, 10 Aug 2020 16:37:41 &#43;0800</lastBuildDate><atom:link href="https://nevillenoah.github.io/posts/" rel="self" type="application/rss+xml" /><item>
+    <title>Jetpack：Paging分页库与网络加载</title>
+    <link>https://nevillenoah.github.io/jetpackpaging%E5%88%86%E9%A1%B5%E5%BA%93%E4%B8%8E%E7%BD%91%E7%BB%9C%E5%8A%A0%E8%BD%BD/</link>
+    <pubDate>Mon, 10 Aug 2020 16:37:41 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://nevillenoah.github.io/jetpackpaging%E5%88%86%E9%A1%B5%E5%BA%93%E4%B8%8E%E7%BD%91%E7%BB%9C%E5%8A%A0%E8%BD%BD/</guid>
+    <description><![CDATA[引言 Paging3的模型改了，主要特点是新增了中转器以实现网络数据的持久化存储。 Paging3模型 Paing数据加载的途径一：如果你希望数据]]></description>
+</item><item>
     <title>Jetpack：Paging分页库</title>
     <link>https://nevillenoah.github.io/jetpackpaging%E5%88%86%E9%A1%B5%E5%BA%93/</link>
     <pubDate>Wed, 05 Aug 2020 21:46:41 &#43;0800</pubDate>
@@ -66,12 +73,5 @@
     <author>作者</author>
     <guid>https://nevillenoah.github.io/android%E7%8E%84%E9%98%B6%E4%B8%83%E4%B8%AA%E8%91%AB%E8%8A%A6%E5%A8%83%E4%BA%8Ccontext/</guid>
     <description><![CDATA[Context直译为“上下文”。Android四大组件中最核心的便是Activity，Activity最核心的便是Context，Activ]]></description>
-</item><item>
-    <title>Android玄阶：七个葫芦娃（一）——套娃</title>
-    <link>https://nevillenoah.github.io/android%E7%8E%84%E9%98%B6%E4%B8%83%E4%B8%AA%E8%91%AB%E8%8A%A6%E5%A8%83%E4%B8%80%E5%A5%97%E5%A8%83/</link>
-    <pubDate>Mon, 20 Jul 2020 12:43:58 &#43;0800</pubDate>
-    <author>作者</author>
-    <guid>https://nevillenoah.github.io/android%E7%8E%84%E9%98%B6%E4%B8%83%E4%B8%AA%E8%91%AB%E8%8A%A6%E5%A8%83%E4%B8%80%E5%A5%97%E5%A8%83/</guid>
-    <description><![CDATA[在我们写Activity的时候，很多方法需要传入参数Context，官方文档告诉我们传入this。 为什么可以传入this？this不是Act]]></description>
 </item></channel>
 </rss>

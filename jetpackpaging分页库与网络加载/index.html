@@ -1,0 +1,891 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+        <title>Jetpack：Paging分页库与网络加载 - Neville Noah | Blog</title><meta name="Description" content="关于 LoveIt 主题"><meta property="og:title" content="Jetpack：Paging分页库与网络加载" />
+<meta property="og:description" content="引言 Paging3的模型改了，主要特点是新增了中转器以实现网络数据的持久化存储。 Paging3模型 Paing数据加载的途径一：如果你希望数据" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://nevillenoah.github.io/jetpackpaging%E5%88%86%E9%A1%B5%E5%BA%93%E4%B8%8E%E7%BD%91%E7%BB%9C%E5%8A%A0%E8%BD%BD/" />
+<meta property="og:image" content="https://nevillenoah.github.io/jetpackpaging%E5%88%86%E9%A1%B5%E5%BA%93%E4%B8%8E%E7%BD%91%E7%BB%9C%E5%8A%A0%E8%BD%BD/featured-image.jpg"/>
+<meta property="article:published_time" content="2020-08-10T16:37:41+08:00" />
+<meta property="article:modified_time" content="2020-08-10T16:37:41+08:00" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://nevillenoah.github.io/jetpackpaging%E5%88%86%E9%A1%B5%E5%BA%93%E4%B8%8E%E7%BD%91%E7%BB%9C%E5%8A%A0%E8%BD%BD/featured-image.jpg"/>
+<meta name="twitter:title" content="Jetpack：Paging分页库与网络加载"/>
+<meta name="twitter:description" content="引言 Paging3的模型改了，主要特点是新增了中转器以实现网络数据的持久化存储。 Paging3模型 Paing数据加载的途径一：如果你希望数据"/>
+<meta name="application-name" content="LoveIt">
+<meta name="apple-mobile-web-app-title" content="LoveIt"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://nevillenoah.github.io/jetpackpaging%E5%88%86%E9%A1%B5%E5%BA%93%E4%B8%8E%E7%BD%91%E7%BB%9C%E5%8A%A0%E8%BD%BD/" /><link rel="prev" href="https://nevillenoah.github.io/jetpackpaging%E5%88%86%E9%A1%B5%E5%BA%93/" /><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13.0/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css"><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Jetpack：Paging分页库与网络加载",
+        "inLanguage": "zh-CN",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/nevillenoah.github.io\/jetpackpaging%E5%88%86%E9%A1%B5%E5%BA%93%E4%B8%8E%E7%BD%91%E7%BB%9C%E5%8A%A0%E8%BD%BD\/"
+        },"image": [{
+                            "@type": "ImageObject",
+                            "url": "https:\/\/nevillenoah.github.io\/jetpackpaging%E5%88%86%E9%A1%B5%E5%BA%93%E4%B8%8E%E7%BD%91%E7%BB%9C%E5%8A%A0%E8%BD%BD\/featured-image.jpg",
+                            "width":  1800 ,
+                            "height":  900 
+                        }],"genre": "posts","keywords": "Jetpack","wordcount":  4106 ,
+        "url": "https:\/\/nevillenoah.github.io\/jetpackpaging%E5%88%86%E9%A1%B5%E5%BA%93%E4%B8%8E%E7%BD%91%E7%BB%9C%E5%8A%A0%E8%BD%BD\/","datePublished": "2020-08-10T16:37:41+08:00","dateModified": "2020-08-10T16:37:41+08:00","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
+            "@type": "Organization",
+            "name": "xxxx","logo": {
+                    "@type": "ImageObject",
+                    "url": "https:\/\/nevillenoah.github.io\/images\/avatar.png",
+                    "width":  888 ,
+                    "height":  888 
+                }},"author": {
+                "@type": "Person",
+                "name": "Neville Noah"
+            },"description": ""
+    }
+    </script></head>
+    <body header-desktop="fixed" header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="Neville Noah | Blog"><span class="header-title-pre"><i class='far fa-kiss-wink-heart fa-fw'></i></span>LoveIt</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> 文章 </a><a class="menu-item" href="/tags/"> 标签 </a><a class="menu-item" href="/categories/"> 分类 </a><a class="menu-item" href="/categories/documentation/"> 文档 </a><a class="menu-item" href="/about/"> 关于 </a><a class="menu-item" href="https://github.com/dillonzq/LoveIt" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw'></i>  </a><span class="menu-item delimiter"></span><a href="javascript:void(0);" class="menu-item language" title="选择语言">简体中文<i class="fas fa-chevron-right fa-fw"></i>
+                        <select class="language-select" id="language-select-desktop" onchange="location = this.value;"><option value="/jetpackpaging%E5%88%86%E9%A1%B5%E5%BA%93%E4%B8%8E%E7%BD%91%E7%BB%9C%E5%8A%A0%E8%BD%BD/" selected>简体中文</option></select>
+                    </a><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="清空">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="Neville Noah | Blog"><span class="header-title-pre"><i class='far fa-kiss-wink-heart fa-fw'></i></span>LoveIt</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="搜索">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="清空">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        取消
+                    </a>
+                </div><a class="menu-item" href="/posts/" title="">文章</a><a class="menu-item" href="/tags/" title="">标签</a><a class="menu-item" href="/categories/" title="">分类</a><a class="menu-item" href="/categories/documentation/" title="">文档</a><a class="menu-item" href="/about/" title="">关于</a><a class="menu-item" href="https://github.com/dillonzq/LoveIt" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw'></i></a><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a><a href="javascript:void(0);" class="menu-item" title="选择语言">简体中文<i class="fas fa-chevron-right fa-fw"></i>
+                    <select class="language-select" onchange="location = this.value;"><option value="/jetpackpaging%E5%88%86%E9%A1%B5%E5%BA%93%E4%B8%8E%E7%BD%91%E7%BB%9C%E5%8A%A0%E8%BD%BD/" selected>简体中文</option></select>
+                </a></div>
+    </div>
+</header>
+<div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div>
+<main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">目录</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animated flipInX">Jetpack：Paging分页库与网络加载</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="https://github.com/nevillenoah" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Neville Noah</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/jetpack/"><i class="far fa-folder fa-fw"></i>Jetpack</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-08-10">2020-08-10</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 4106 字&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 9 分钟&nbsp;<span id="/jetpackpaging%E5%88%86%E9%A1%B5%E5%BA%93%E4%B8%8E%E7%BD%91%E7%BB%9C%E5%8A%A0%E8%BD%BD/" class="leancloud_visitors" data-flag-title="Jetpack：Paging分页库与网络加载">
+                        <i class="far fa-eye fa-fw"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
+                    </span>&nbsp;</div>
+        </div><div class="featured-image"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/jetpackpaging%E5%88%86%E9%A1%B5%E5%BA%93%E4%B8%8E%E7%BD%91%E7%BB%9C%E5%8A%A0%E8%BD%BD/featured-image.jpg"
+        data-srcset="/jetpackpaging%E5%88%86%E9%A1%B5%E5%BA%93%E4%B8%8E%E7%BD%91%E7%BB%9C%E5%8A%A0%E8%BD%BD/featured-image.jpg, /jetpackpaging%E5%88%86%E9%A1%B5%E5%BA%93%E4%B8%8E%E7%BD%91%E7%BB%9C%E5%8A%A0%E8%BD%BD/featured-image.jpg 1.5x, /jetpackpaging%E5%88%86%E9%A1%B5%E5%BA%93%E4%B8%8E%E7%BD%91%E7%BB%9C%E5%8A%A0%E8%BD%BD/featured-image.jpg 2x"
+        data-sizes="auto"
+        alt="/jetpackpaging%E5%88%86%E9%A1%B5%E5%BA%93%E4%B8%8E%E7%BD%91%E7%BB%9C%E5%8A%A0%E8%BD%BD/featured-image.jpg"
+        title="/jetpackpaging%E5%88%86%E9%A1%B5%E5%BA%93%E4%B8%8E%E7%BD%91%E7%BB%9C%E5%8A%A0%E8%BD%BD/featured-image.jpg" /></div><div class="details toc" id="toc-static"  kept="">
+                <div class="details-summary toc-title">
+                    <span>目录</span>
+                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#paging3模型">Paging3模型</a></li>
+    <li><a href="#前置准备">前置准备</a>
+      <ul>
+        <li><a href="#gradle">Gradle</a></li>
+        <li><a href="#networkservice">NetworkService</a></li>
+        <li><a href="#database">Database</a></li>
+      </ul>
+    </li>
+    <li><a href="#mediator">Mediator</a>
+      <ul>
+        <li><a href="#准备路径参数">准备路径参数</a></li>
+        <li><a href="#确定加载行为">确定加载行为</a></li>
+        <li><a href="#从网络中获取数据">从网络中获取数据</a></li>
+        <li><a href="#将数据写入数据库">将数据写入数据库</a></li>
+        <li><a href="#判断是否还有后续数据">判断是否还有后续数据</a></li>
+        <li><a href="#完整代码">完整代码</a></li>
+      </ul>
+    </li>
+    <li><a href="#paingsource">PaingSource</a>
+      <ul>
+        <li><a href="#itemkeydatasource">ItemKeyDataSource</a></li>
+        <li><a href="#pagekeydatasource">PageKeyDataSource</a></li>
+        <li><a href="#positionalkeydatasource">PositionalKeyDataSource</a></li>
+      </ul>
+    </li>
+    <li><a href="#repository">Repository</a>
+      <ul>
+        <li><a href="#networkmediatordatabase">Network+Mediator+Database</a></li>
+        <li><a href="#networkpagingsource">Network+PagingSource</a></li>
+        <li><a href="#完整代码-1">完整代码</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><h1 id="引言">引言</h1>
+<p>Paging3的模型改了，主要特点是新增了中转器以实现网络数据的持久化存储。</p>
+<h2 id="paging3模型">Paging3模型</h2>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="Jetpack%ef%bc%9aPaging%e5%88%86%e9%a1%b5%e5%ba%93%e4%b8%8e%e7%bd%91%e7%bb%9c%e5%8a%a0%e8%bd%bd.resources/6EC12CA9-F881-4747-A61D-C1ADC7B1FDB4.png"
+        data-srcset="/jetpackpaging%E5%88%86%E9%A1%B5%E5%BA%93%E4%B8%8E%E7%BD%91%E7%BB%9C%E5%8A%A0%E8%BD%BD/Jetpack%EF%BC%9APaging%E5%88%86%E9%A1%B5%E5%BA%93%E4%B8%8E%E7%BD%91%E7%BB%9C%E5%8A%A0%E8%BD%BD.resources/6EC12CA9-F881-4747-A61D-C1ADC7B1FDB4.png, Jetpack%ef%bc%9aPaging%e5%88%86%e9%a1%b5%e5%ba%93%e4%b8%8e%e7%bd%91%e7%bb%9c%e5%8a%a0%e8%bd%bd.resources/6EC12CA9-F881-4747-A61D-C1ADC7B1FDB4.png 1.5x, /jetpackpaging%E5%88%86%E9%A1%B5%E5%BA%93%E4%B8%8E%E7%BD%91%E7%BB%9C%E5%8A%A0%E8%BD%BD/Jetpack%EF%BC%9APaging%E5%88%86%E9%A1%B5%E5%BA%93%E4%B8%8E%E7%BD%91%E7%BB%9C%E5%8A%A0%E8%BD%BD.resources/6EC12CA9-F881-4747-A61D-C1ADC7B1FDB4.png 2x"
+        data-sizes="auto"
+        alt="/jetpackpaging%E5%88%86%E9%A1%B5%E5%BA%93%E4%B8%8E%E7%BD%91%E7%BB%9C%E5%8A%A0%E8%BD%BD/Jetpack%EF%BC%9APaging%E5%88%86%E9%A1%B5%E5%BA%93%E4%B8%8E%E7%BD%91%E7%BB%9C%E5%8A%A0%E8%BD%BD.resources/6EC12CA9-F881-4747-A61D-C1ADC7B1FDB4.png"
+        title="5b07d09d821d80b313bfc285be11b929" />
+Paing数据加载的途径一：如果你希望数据实现持久化存储，你可以使用上述模型，网络与数据库的中转器RemoteMediator，将从NetworkService获取的数据写入数据库中，数据库返回PagingSource作为ViewModel的数据源。
+Paing数据加载的途径二：如果你只是想从网络中加载数据而不打算持久化存储他们，你可以直接将创建PagingSource并从NetworkService将数据载入PagingSource。
+下面，让我们一起来尝试一下，我将Google官方的Demo进一步简化，以方便你能快速抓住重点。
+Demo的代码请点击<a href="https://github.com/NevilleNoah/PagingWithNetworkDemo" target="_blank" rel="noopener noreffer">PagingWithNetworkDemo</a></p>
+<h2 id="前置准备">前置准备</h2>
+<p>非重点，一笔带过。</p>
+<h3 id="gradle">Gradle</h3>
+<p>关注Paging、Room的版本号和用kapt解析注解，可参考上一篇博文。</p>
+<h3 id="networkservice">NetworkService</h3>
+<p>用于获取数据，建议添加一个<code>isFinal</code>字段来判断是否是最后一个。</p>
+<h3 id="database">Database</h3>
+<p>数据库的三层，entity、dao、databse</p>
+<h2 id="mediator">Mediator</h2>
+<p>Mediator是网络与数据库之间的中介，用于将网络中的数据存储到数据库中。我们要完成两项基本工作：</p>
+<ul>
+<li>准备路径参数：与api请求路径相关的参数。</li>
+<li>确定加载行为：判断是操作是<strong>刷新（REFRESH）</strong>、<strong>向前追加（PREPEND）<strong>还是</strong>向后追加（APPEND）</strong>，并据此确定接下来的数据加载行为。</li>
+<li>从网络中获取数据：使用NetworkService，获取response，并从中拿到data。</li>
+<li>将数据写入数据库：使用Database，获取dao，并通过dao操作将数据写入数据库。</li>
+<li>判断是否还有后续数据</li>
+</ul>
+<h3 id="准备路径参数">准备路径参数</h3>
+<p>我们根据上述提到的工作，需要传入</p>
+<ul>
+<li><code>Databse</code> 数据库。</li>
+<li><code>NetworkService</code> 网络服务，包含Api接口。</li>
+<li><code>Query</code> 请求路径<code>@Path</code>的相关参数（如果不需要也可以不传）。</li>
+</ul>
+<p>我们的实体类是<code>User</code>，因此继承<code>RemoteMediator&lt;Int, User&gt;</code>。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-kotlin" data-lang="kotlin"><span class="k">class</span> <span class="nc">UserMediator</span><span class="p">(</span>
+    <span class="k">private</span> <span class="k">val</span> <span class="py">database</span><span class="p">:</span> <span class="n">AppDatabase</span><span class="p">,</span>
+    <span class="k">private</span> <span class="k">val</span> <span class="py">networkService</span><span class="p">:</span> <span class="n">NetworkService</span><span class="p">,</span>
+    <span class="k">private</span> <span class="k">val</span> <span class="py">query</span><span class="p">:</span> <span class="n">String</span>
+<span class="p">)</span> <span class="p">:</span> <span class="n">RemoteMediator</span><span class="p">&lt;</span><span class="n">Int</span><span class="p">,</span> <span class="n">User</span><span class="p">&gt;()</span> <span class="p">{</span>
+    <span class="p">...</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="确定加载行为">确定加载行为</h3>
+<p>继承后，我们要实现<code>load</code>方法，该方法包含两个参数</p>
+<ul>
+<li><code>LoadType</code> 加载类型</li>
+<li><code>PagingState&lt;Int, User&gt;</code> 分页状态</li>
+</ul>
+<p>并返回<code>MediatorResult</code>。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-kotlin" data-lang="kotlin"><span class="k">override</span> <span class="k">suspend</span> <span class="k">fun</span> <span class="nf">load</span><span class="p">(</span><span class="n">loadType</span><span class="p">:</span> <span class="n">LoadType</span><span class="p">,</span> <span class="n">state</span><span class="p">:</span> <span class="n">PagingState</span><span class="p">&lt;</span><span class="n">Int</span><span class="p">,</span> <span class="n">User</span><span class="p">&gt;):</span> <span class="n">MediatorResult</span> <span class="p">{</span>
+   <span class="p">...</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>在方法中，我们根据参数<code>loadType</code>来确定加载行为。
+<code>LoadType</code>是一个枚举类</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-kotlin" data-lang="kotlin"><span class="k">enum</span> <span class="k">class</span> <span class="nc">LoadType</span> <span class="p">{</span>
+    <span class="n">REFRESH</span><span class="p">,</span>
+    <span class="n">PREPEND</span><span class="p">,</span>
+    <span class="n">APPEND</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>包含刷新REFRESH、向前追加PREPEND、向后追加APPEND三种状态。
+假设我们这是一个下拉加载的列表，我们对这三种状态分别进行处理：</p>
+<ul>
+<li>刷新REFRESH，即加载的方式与上一次一样，返回null即可</li>
+<li>向前追加PREPEND，不需要上拉加载，所以返回<code>MediatorResult.Success(endOfPaginationReached = true)</code>来说明向前的时候已经没有更多数据了，我们上拉的时候就不会加载数据。</li>
+<li>向后追加APPEND，一般是要加载数据的，我们根据参数<code>state</code>来判断一下是不是已经没有后续数据了，如果是就返回<code>MediatorResult.Success(endOfPaginationReached = true)</code>，不是就返回最后一条数据的id，用于后续的网络请求。</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-kotlin" data-lang="kotlin"><span class="c1">// 根据加载类型，设置加载行为的关键字
+</span><span class="c1"></span><span class="k">val</span> <span class="py">loadKey</span> <span class="p">=</span> <span class="k">when</span> <span class="p">(</span><span class="n">loadType</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// 刷新，
+</span><span class="c1"></span>    <span class="n">LoadType</span><span class="p">.</span><span class="n">REFRESH</span> <span class="p">-&gt;</span> <span class="k">null</span>
+    <span class="c1">// 向上加载
+</span><span class="c1"></span>    <span class="n">LoadType</span><span class="p">.</span><span class="n">PREPEND</span> <span class="p">-&gt;</span> <span class="k">return</span> <span class="n">MediatorResult</span><span class="p">.</span><span class="n">Success</span><span class="p">(</span><span class="n">endOfPaginationReached</span> <span class="p">=</span> <span class="k">true</span><span class="p">)</span> <span class="c1">// endOfPaginationReached判读分页是否到底了，即还有没有后续数据
+</span><span class="c1"></span>    <span class="c1">// 向下加载
+</span><span class="c1"></span>    <span class="n">LoadType</span><span class="p">.</span><span class="n">APPEND</span> <span class="p">-&gt;</span> <span class="p">{</span>
+
+        <span class="k">val</span> <span class="py">lastItem</span> <span class="p">=</span> <span class="n">state</span><span class="p">.</span><span class="n">lastItemOrNull</span><span class="p">()</span>
+            <span class="o">?:</span> <span class="k">return</span> <span class="n">MediatorResult</span><span class="p">.</span><span class="n">Success</span><span class="p">(</span><span class="n">endOfPaginationReached</span> <span class="p">=</span> <span class="k">true</span><span class="p">)</span>
+
+        <span class="n">lastItem</span><span class="p">.</span><span class="n">id</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="从网络中获取数据">从网络中获取数据</h3>
+<p>我们分别来看我们先前三种状态处理后的关键字，在网络请求中会发生什么：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-kotlin" data-lang="kotlin"><span class="c1">// 从网络获取应答
+</span><span class="c1"></span><span class="k">val</span> <span class="py">response</span> <span class="p">=</span> <span class="n">networkService</span><span class="p">.</span><span class="n">getDataByItem</span><span class="p">(</span>
+    <span class="n">query</span> <span class="p">=</span> <span class="n">query</span><span class="p">,</span>
+    <span class="n">after</span> <span class="p">=</span> <span class="n">loadKey</span><span class="p">,</span>
+    <span class="n">limit</span> <span class="p">=</span> <span class="k">when</span> <span class="p">(</span><span class="n">loadType</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">LoadType</span><span class="p">.</span><span class="n">REFRESH</span> <span class="p">-&gt;</span> <span class="n">state</span><span class="p">.</span><span class="n">config</span><span class="p">.</span><span class="n">initialLoadSize</span>
+        <span class="k">else</span> <span class="p">-&gt;</span> <span class="n">state</span><span class="p">.</span><span class="n">config</span><span class="p">.</span><span class="n">pageSize</span>
+    <span class="p">}</span>
+<span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>假设我们上一次请求了id为1～10号的数据</p>
+<ul>
+<li>刷新REFRESH，<code>after==loadKey==null</code>，<code>NetworkService</code>中会据此判断我们需要发送原来的请求，原来请求了id为1～10的数据，现在还是请求id为1～10的数据。此外，limit会根据state中配置的条目<code>initialLoadSize</code>来确定加载数据的数量。</li>
+<li>向前追加PREPEND，因为早已返回了<code>RemoteMediator.MediatorResult.Success(endOfPaginationReached = true)</code>，不会执行此段代码。</li>
+<li>向后追加APPEND，<code>after==loadKey==lastItem.id==10</code>，<code>NetworkService</code>需要请求<code>11~20</code>号的数据。</li>
+</ul>
+<h3 id="将数据写入数据库">将数据写入数据库</h3>
+<p>操作数据库需要用到dao层，因此引入<code>UserDao</code>，并通过数据库的事务<code>withTranscation</code>来存入数据。如果是刷新，就先清空原数据，再存入新数据。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-kotlin" data-lang="kotlin"><span class="k">class</span> <span class="nc">UserMediator</span><span class="p">(</span>
+    <span class="k">private</span> <span class="k">val</span> <span class="py">database</span><span class="p">:</span> <span class="n">AppDatabase</span><span class="p">,</span>
+    <span class="k">private</span> <span class="k">val</span> <span class="py">networkService</span><span class="p">:</span> <span class="n">NetworkService</span><span class="p">,</span>
+    <span class="k">private</span> <span class="k">val</span> <span class="py">query</span><span class="p">:</span> <span class="n">String</span>
+<span class="p">)</span> <span class="p">:</span> <span class="n">RemoteMediator</span><span class="p">&lt;</span><span class="n">Int</span><span class="p">,</span> <span class="n">User</span><span class="p">&gt;()</span> <span class="p">{</span>
+
+    <span class="k">private</span> <span class="k">val</span> <span class="py">userDao</span> <span class="p">=</span> <span class="n">database</span><span class="p">.</span><span class="n">getUserDao</span><span class="p">()</span>
+
+    <span class="k">override</span> <span class="k">suspend</span> <span class="k">fun</span> <span class="nf">load</span><span class="p">(</span><span class="n">loadType</span><span class="p">:</span> <span class="n">LoadType</span><span class="p">,</span> <span class="n">state</span><span class="p">:</span> <span class="n">PagingState</span><span class="p">&lt;</span><span class="n">Int</span><span class="p">,</span> <span class="n">User</span><span class="p">&gt;):</span> <span class="n">MediatorResult</span> <span class="p">{</span>
+    <span class="p">...</span>
+    
+            <span class="c1">// 将数据写入数据库
+</span><span class="c1"></span>            <span class="n">database</span><span class="p">.</span><span class="n">withTransaction</span> <span class="p">{</span>
+
+                <span class="k">if</span> <span class="p">(</span><span class="n">loadType</span> <span class="p">==</span> <span class="n">LoadType</span><span class="p">.</span><span class="n">REFRESH</span><span class="p">)</span> <span class="p">{</span>
+                    <span class="n">userDao</span><span class="p">.</span><span class="n">clearAll</span><span class="p">()</span>
+                <span class="p">}</span>
+
+                <span class="n">userDao</span><span class="p">.</span><span class="n">insertAll</span><span class="p">(</span><span class="n">response</span><span class="p">.</span><span class="k">data</span><span class="p">)</span>
+            <span class="p">}</span>
+    <span class="p">...</span>
+    <span class="p">}</span>
+    
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="判断是否还有后续数据">判断是否还有后续数据</h3>
+<p>在<code>load</code>方法中，千万不要忘记判断还有没有后续数据，毕竟load方法最后要返回<code>MediatorResult</code></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">// 根据后台给出的数据判断是否还有后续数据
+MediatorResult.Success(
+    endOfPaginationReached = response.isFinal
+)
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="完整代码">完整代码</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
+</span><span class="lnt">53
+</span><span class="lnt">54
+</span><span class="lnt">55
+</span><span class="lnt">56
+</span><span class="lnt">57
+</span><span class="lnt">58
+</span><span class="lnt">59
+</span><span class="lnt">60
+</span><span class="lnt">61
+</span><span class="lnt">62
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-kotlin" data-lang="kotlin"><span class="c1">// 网络与数据库之间的中转站
+</span><span class="c1"></span><span class="n">@OptIn</span><span class="p">(</span><span class="n">ExperimentalPagingApi</span><span class="o">::</span><span class="k">class</span><span class="p">)</span>
+<span class="k">class</span> <span class="nc">UserMediator</span><span class="p">(</span>
+    <span class="k">private</span> <span class="k">val</span> <span class="py">database</span><span class="p">:</span> <span class="n">AppDatabase</span><span class="p">,</span>
+    <span class="k">private</span> <span class="k">val</span> <span class="py">networkService</span><span class="p">:</span> <span class="n">NetworkService</span><span class="p">,</span>
+    <span class="k">private</span> <span class="k">val</span> <span class="py">query</span><span class="p">:</span> <span class="n">String</span>
+<span class="p">)</span> <span class="p">:</span> <span class="n">RemoteMediator</span><span class="p">&lt;</span><span class="n">Int</span><span class="p">,</span> <span class="n">User</span><span class="p">&gt;()</span> <span class="p">{</span>
+
+    <span class="k">private</span> <span class="k">val</span> <span class="py">userDao</span> <span class="p">=</span> <span class="n">database</span><span class="p">.</span><span class="n">getUserDao</span><span class="p">()</span>
+
+    <span class="k">override</span> <span class="k">suspend</span> <span class="k">fun</span> <span class="nf">load</span><span class="p">(</span><span class="n">loadType</span><span class="p">:</span> <span class="n">LoadType</span><span class="p">,</span> <span class="n">state</span><span class="p">:</span> <span class="n">PagingState</span><span class="p">&lt;</span><span class="n">Int</span><span class="p">,</span> <span class="n">User</span><span class="p">&gt;):</span> <span class="n">MediatorResult</span> <span class="p">{</span>
+
+        <span class="k">return</span> <span class="k">try</span> <span class="p">{</span>
+
+            <span class="c1">// 根据加载类型进行不同的操作
+</span><span class="c1"></span>            <span class="k">val</span> <span class="py">loadKey</span> <span class="p">=</span> <span class="k">when</span> <span class="p">(</span><span class="n">loadType</span><span class="p">)</span> <span class="p">{</span>
+                <span class="c1">// 刷新
+</span><span class="c1"></span>                <span class="n">LoadType</span><span class="p">.</span><span class="n">REFRESH</span> <span class="p">-&gt;</span> <span class="k">null</span>
+                <span class="c1">// 向上加载
+</span><span class="c1"></span>                <span class="n">LoadType</span><span class="p">.</span><span class="n">PREPEND</span> <span class="p">-&gt;</span> <span class="k">return</span> <span class="n">MediatorResult</span><span class="p">.</span><span class="n">Success</span><span class="p">(</span><span class="n">endOfPaginationReached</span> <span class="p">=</span> <span class="k">true</span><span class="p">)</span> <span class="c1">// endOfPaginationReached判读分页是否到底了，即还有没有后续数据
+</span><span class="c1"></span>                <span class="c1">// 向下加载
+</span><span class="c1"></span>                <span class="n">LoadType</span><span class="p">.</span><span class="n">APPEND</span> <span class="p">-&gt;</span> <span class="p">{</span>
+
+                    <span class="k">val</span> <span class="py">lastItem</span> <span class="p">=</span> <span class="n">state</span><span class="p">.</span><span class="n">lastItemOrNull</span><span class="p">()</span>
+                        <span class="o">?:</span> <span class="k">return</span> <span class="n">MediatorResult</span><span class="p">.</span><span class="n">Success</span><span class="p">(</span><span class="n">endOfPaginationReached</span> <span class="p">=</span> <span class="k">true</span><span class="p">)</span>
+
+                    <span class="n">lastItem</span><span class="p">.</span><span class="n">id</span>
+                <span class="p">}</span>
+            <span class="p">}</span>
+
+            <span class="c1">// 从网络获取应答
+</span><span class="c1"></span>            <span class="k">val</span> <span class="py">response</span> <span class="p">=</span> <span class="n">networkService</span><span class="p">.</span><span class="n">getDataByItem</span><span class="p">(</span>
+                <span class="n">query</span> <span class="p">=</span> <span class="n">query</span><span class="p">,</span>
+                <span class="n">after</span> <span class="p">=</span> <span class="n">loadKey</span><span class="p">,</span>
+                <span class="n">limit</span> <span class="p">=</span> <span class="k">when</span> <span class="p">(</span><span class="n">loadType</span><span class="p">)</span> <span class="p">{</span>
+                    <span class="n">LoadType</span><span class="p">.</span><span class="n">REFRESH</span> <span class="p">-&gt;</span> <span class="n">state</span><span class="p">.</span><span class="n">config</span><span class="p">.</span><span class="n">initialLoadSize</span>
+                    <span class="k">else</span> <span class="p">-&gt;</span> <span class="n">state</span><span class="p">.</span><span class="n">config</span><span class="p">.</span><span class="n">pageSize</span>
+                <span class="p">}</span>
+            <span class="p">)</span>
+
+            <span class="c1">// 将数据写入数据库
+</span><span class="c1"></span>            <span class="n">database</span><span class="p">.</span><span class="n">withTransaction</span> <span class="p">{</span>
+
+                <span class="k">if</span> <span class="p">(</span><span class="n">loadType</span> <span class="p">==</span> <span class="n">LoadType</span><span class="p">.</span><span class="n">REFRESH</span><span class="p">)</span> <span class="p">{</span>
+                    <span class="n">userDao</span><span class="p">.</span><span class="n">clearAll</span><span class="p">()</span>
+                <span class="p">}</span>
+
+                <span class="n">userDao</span><span class="p">.</span><span class="n">insertAll</span><span class="p">(</span><span class="n">response</span><span class="p">.</span><span class="k">data</span><span class="p">)</span>
+            <span class="p">}</span>
+
+            <span class="c1">// 根据后台给出的数据判断是否还有后续数据
+</span><span class="c1"></span>            <span class="n">MediatorResult</span><span class="p">.</span><span class="n">Success</span><span class="p">(</span>
+                <span class="n">endOfPaginationReached</span> <span class="p">=</span> <span class="n">response</span><span class="p">.</span><span class="n">isFinal</span>
+            <span class="p">)</span>
+
+        <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="n">e</span><span class="p">:</span> <span class="n">IOException</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">return</span> <span class="n">MediatorResult</span><span class="p">.</span><span class="n">Error</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
+        <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="n">e</span><span class="p">:</span> <span class="n">HttpException</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">return</span> <span class="n">MediatorResult</span><span class="p">.</span><span class="n">Error</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="paingsource">PaingSource</h2>
+<p>曾经的“三人组”已被丢弃：</p>
+<ul>
+<li>PositionalDataSource</li>
+<li>ItemKeyedDataSource</li>
+<li>PageKeyedDataSource</li>
+</ul>
+<p>已统一为：</p>
+<ul>
+<li>PagingSource</li>
+</ul>
+<p>你可以使用PagingSource来实现“三人组”的功能。
+关键在于设置<code>prevKey</code>和<code>nextKey</code>。</p>
+<h3 id="itemkeydatasource">ItemKeyDataSource</h3>
+<p><code>ItemKeyDataSource</code>继承<code>PagingSource</code>，通过网络请求来直接获得数据。适用于前后加载有关联的数据，例如有序的id等等。此例中就是运用<code>data.firstOrNull()?.id</code>和<code>data.lastOrNull()?.id</code>作为上下加载的关键字<code>prevKey</code>和<code>nextKey</code>。上拉加载就启用<code>prevKey</code>，下拉就在启用<code>nextKey</code>。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-kotlin" data-lang="kotlin"><span class="c1">// ItemKey，使用条目中的关键信息进行关联查询。
+</span><span class="c1">// 适合一些上下有关联的，例如有序的id。
+</span><span class="c1"></span><span class="k">class</span> <span class="nc">ItemKeyUserDataSource</span><span class="p">(</span>
+    <span class="k">private</span> <span class="k">val</span> <span class="py">networkService</span><span class="p">:</span> <span class="n">NetworkService</span><span class="p">,</span>
+    <span class="k">private</span> <span class="k">val</span> <span class="py">query</span><span class="p">:</span> <span class="n">String</span>
+<span class="p">)</span> <span class="p">:</span> <span class="n">PagingSource</span><span class="p">&lt;</span><span class="n">String</span><span class="p">,</span> <span class="n">User</span><span class="p">&gt;()</span> <span class="p">{</span>
+
+    <span class="k">override</span> <span class="k">suspend</span> <span class="k">fun</span> <span class="nf">load</span><span class="p">(</span><span class="n">params</span><span class="p">:</span> <span class="n">LoadParams</span><span class="p">&lt;</span><span class="n">String</span><span class="p">&gt;):</span> <span class="n">LoadResult</span><span class="p">&lt;</span><span class="n">String</span><span class="p">,</span> <span class="n">User</span><span class="p">&gt;</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="k">try</span> <span class="p">{</span>
+
+            <span class="c1">// 从网络中获取应答
+</span><span class="c1"></span>            <span class="k">val</span> <span class="py">response</span> <span class="p">=</span> <span class="n">networkService</span><span class="p">.</span><span class="n">getDataByItem</span><span class="p">(</span>
+                <span class="c1">// 后端接口查询数据库所需的信息
+</span><span class="c1"></span>                <span class="n">query</span> <span class="p">=</span> <span class="n">query</span><span class="p">,</span>
+                <span class="c1">// 如果是Append向后追加，就启用after，after是上一次请求的nextKey
+</span><span class="c1"></span>                <span class="n">after</span> <span class="p">=</span> <span class="k">if</span> <span class="p">(</span><span class="n">params</span> <span class="k">is</span> <span class="n">LoadParams</span><span class="p">.</span><span class="n">Append</span><span class="p">)</span> <span class="n">params</span><span class="p">.</span><span class="n">key</span> <span class="k">else</span> <span class="k">null</span><span class="p">,</span>
+                <span class="c1">// 如果是Prepend向前追加，就启用before，before是上一次请求的prevKey
+</span><span class="c1"></span>                <span class="n">before</span> <span class="p">=</span> <span class="k">if</span> <span class="p">(</span><span class="n">params</span> <span class="k">is</span> <span class="n">LoadParams</span><span class="p">.</span><span class="n">Prepend</span><span class="p">)</span> <span class="n">params</span><span class="p">.</span><span class="n">key</span> <span class="k">else</span> <span class="k">null</span><span class="p">,</span>
+                <span class="c1">// 尺寸
+</span><span class="c1"></span>                <span class="n">limit</span> <span class="p">=</span> <span class="n">params</span><span class="p">.</span><span class="n">loadSize</span>
+            <span class="p">)</span>
+
+            <span class="c1">// 从应答中获取数据
+</span><span class="c1"></span>            <span class="k">val</span> <span class="py">data</span> <span class="p">=</span> <span class="n">response</span><span class="p">.</span><span class="k">data</span>
+
+            <span class="c1">// 构建PageSource作为数据源
+</span><span class="c1"></span>            <span class="c1">// prevKey和nextKey用于下一次加载，根据Append和Prepend来决定加载使用哪一个
+</span><span class="c1"></span>            <span class="n">LoadResult</span><span class="p">.</span><span class="n">Page</span><span class="p">(</span>
+                <span class="k">data</span> <span class="p">=</span> <span class="k">data</span><span class="p">,</span>
+                <span class="n">prevKey</span> <span class="p">=</span> <span class="k">data</span><span class="p">.</span><span class="n">firstOrNull</span><span class="p">()</span><span class="o">?.</span><span class="n">id</span><span class="p">,</span>
+                <span class="n">nextKey</span> <span class="p">=</span> <span class="k">data</span><span class="p">.</span><span class="n">lastOrNull</span><span class="p">()</span><span class="o">?.</span><span class="n">id</span>
+            <span class="p">)</span>
+
+        <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="n">e</span><span class="p">:</span> <span class="n">IOException</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">return</span> <span class="n">LoadResult</span><span class="p">.</span><span class="n">Error</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
+        <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="n">e</span><span class="p">:</span> <span class="n">HttpException</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">return</span> <span class="n">LoadResult</span><span class="p">.</span><span class="n">Error</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="pagekeydatasource">PageKeyDataSource</h3>
+<p><code>PageKeyDataSource</code>继承<code>PagingSource</code>，使用页码<code>page</code>作为上下加载的关键字<code>prevKey</code>和<code>nextKey</code>。适合已经做好分页的数据，例如翻页书籍。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-kotlin" data-lang="kotlin"><span class="c1">// PageKey，按页码加载。
+</span><span class="c1">// 适用于分页加载的场景。
+</span><span class="c1"></span><span class="k">class</span> <span class="nc">PageKeyUserDataSource</span><span class="p">(</span>
+    <span class="k">private</span> <span class="k">val</span> <span class="py">networkService</span><span class="p">:</span> <span class="n">NetworkService</span><span class="p">,</span>
+    <span class="k">private</span> <span class="k">val</span> <span class="py">query</span><span class="p">:</span> <span class="n">String</span>
+<span class="p">)</span> <span class="p">:</span> <span class="n">PagingSource</span><span class="p">&lt;</span><span class="n">Int</span><span class="p">,</span> <span class="n">User</span><span class="p">&gt;()</span> <span class="p">{</span>
+
+    <span class="k">override</span> <span class="k">suspend</span> <span class="k">fun</span> <span class="nf">load</span><span class="p">(</span><span class="n">params</span><span class="p">:</span> <span class="n">LoadParams</span><span class="p">&lt;</span><span class="n">Int</span><span class="p">&gt;):</span> <span class="n">LoadResult</span><span class="p">&lt;</span><span class="n">Int</span><span class="p">,</span> <span class="n">User</span><span class="p">&gt;</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="k">try</span> <span class="p">{</span>
+
+            <span class="c1">// 页码
+</span><span class="c1"></span>            <span class="k">val</span> <span class="py">page</span> <span class="p">=</span> <span class="n">params</span><span class="p">.</span><span class="n">key</span> <span class="o">?:</span> <span class="m">0</span>
+
+            <span class="c1">// 从网络中获取应答
+</span><span class="c1"></span>            <span class="k">val</span> <span class="py">response</span> <span class="p">=</span> <span class="n">networkService</span><span class="p">.</span><span class="n">getDataByPage</span><span class="p">(</span>
+                <span class="c1">// 后端接口查询数据库所需的信息
+</span><span class="c1"></span>                <span class="n">query</span> <span class="p">=</span> <span class="n">query</span><span class="p">,</span>
+                <span class="c1">// 如果是Append向后追加，就启用after，after是上一次请求的nextKey
+</span><span class="c1"></span>                <span class="n">page</span> <span class="p">=</span> <span class="n">params</span><span class="p">.</span><span class="n">key</span><span class="p">,</span>
+                <span class="c1">// 尺寸
+</span><span class="c1"></span>                <span class="n">limit</span> <span class="p">=</span> <span class="n">params</span><span class="p">.</span><span class="n">loadSize</span>
+            <span class="p">)</span>
+
+            <span class="c1">// 从应答中获取数据
+</span><span class="c1"></span>            <span class="k">val</span> <span class="py">data</span> <span class="p">=</span> <span class="n">response</span><span class="p">.</span><span class="k">data</span>
+
+            <span class="c1">// 构建PageSource作为数据源
+</span><span class="c1"></span>            <span class="c1">// prevKey和nextKey用于下一次加载，根据Append和Prepend来决定加载使用哪一个
+</span><span class="c1"></span>            <span class="n">LoadResult</span><span class="p">.</span><span class="n">Page</span><span class="p">(</span>
+                <span class="k">data</span> <span class="p">=</span> <span class="k">data</span><span class="p">,</span>
+                <span class="c1">// 如果当前页码不为0，则赋值为前一页的页码
+</span><span class="c1"></span>                <span class="n">prevKey</span> <span class="p">=</span> <span class="k">if</span> <span class="p">(</span><span class="n">page</span> <span class="p">==</span> <span class="m">0</span><span class="p">)</span> <span class="k">null</span> <span class="k">else</span> <span class="n">page</span> <span class="p">-</span> <span class="m">1</span><span class="p">,</span>
+                <span class="c1">// 如果是最后一页，则下一页为空，否则赋值为下一页的页码
+</span><span class="c1"></span>                <span class="n">nextKey</span> <span class="p">=</span> <span class="k">if</span> <span class="p">(</span><span class="n">response</span><span class="p">.</span><span class="n">isFinal</span><span class="p">)</span> <span class="k">null</span> <span class="k">else</span> <span class="n">page</span> <span class="p">+</span> <span class="m">1</span>
+            <span class="p">)</span>
+
+        <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="n">e</span><span class="p">:</span> <span class="n">IOException</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">return</span> <span class="n">LoadResult</span><span class="p">.</span><span class="n">Error</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
+        <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="n">e</span><span class="p">:</span> <span class="n">HttpException</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">return</span> <span class="n">LoadResult</span><span class="p">.</span><span class="n">Error</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="positionalkeydatasource">PositionalKeyDataSource</h3>
+<p>你自己写吧，反正都一个套路&hellip;
+核心就是设置<code>prevKey</code>和<code>nextKey</code>。</p>
+<h2 id="repository">Repository</h2>
+<p>针对通过Mediator和直接对接PagingSource的数据，最终都要在<code>Repository</code>中转化为<code>PageData</code>才能供UI使用，我们在<code>ViewModel</code>中调用<code>Repository</code>中的方法来拿到<code>PagingData</code>。</p>
+<h3 id="networkmediatordatabase">Network+Mediator+Database</h3>
+<p>对于通过<code>Mediator</code>的数据，我们创建<code>Pager</code>对象时传入中转器和页面配置，并在lambda表达式中进行数据库查询操作，查询的结果作为数据源，最后<code>flow</code>成<code>PagingData</code>。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-kotlin" data-lang="kotlin"><span class="c1">// 持久化存储，运用remoteMediator将数据库和网络桥接起来，从网络将数据写入数据库
+</span><span class="c1"></span><span class="k">fun</span> <span class="nf">getUsersInDb</span><span class="p">(</span><span class="n">query</span><span class="p">:</span> <span class="n">String</span><span class="p">,</span> <span class="n">pageSize</span><span class="p">:</span> <span class="n">Int</span><span class="p">)</span> <span class="p">=</span> <span class="n">Pager</span><span class="p">(</span>
+    <span class="n">config</span> <span class="p">=</span> <span class="n">PagingConfig</span><span class="p">(</span><span class="n">pageSize</span><span class="p">),</span>
+    <span class="n">remoteMediator</span> <span class="p">=</span> <span class="n">UserMediator</span><span class="p">(</span>
+        <span class="n">database</span><span class="p">,</span>
+        <span class="n">networkService</span><span class="p">,</span>
+        <span class="n">query</span>
+    <span class="p">)</span>
+<span class="p">)</span> <span class="p">{</span>
+    <span class="n">database</span><span class="p">.</span><span class="n">getUserDao</span><span class="p">().</span><span class="n">selectAll</span><span class="p">()</span>
+<span class="p">}.</span><span class="n">flow</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="networkpagingsource">Network+PagingSource</h3>
+<p>对于直接对接PagingSource的数据，我们创建<code>Pager</code>时传入页面配置，并在lambda表达式中直接创建我们的数据源，最后<code>flow</code>成<code>PagingData</code>。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-kotlin" data-lang="kotlin"><span class="c1">// 非持久化存储，直接从网络写入内存
+</span><span class="c1"></span><span class="k">fun</span> <span class="nf">getUsersInMemory</span><span class="p">(</span><span class="n">query</span><span class="p">:</span> <span class="n">String</span><span class="p">,</span> <span class="n">pageSize</span><span class="p">:</span> <span class="n">Int</span><span class="p">)</span> <span class="p">=</span> <span class="n">Pager</span><span class="p">(</span>
+    <span class="n">config</span> <span class="p">=</span> <span class="n">PagingConfig</span><span class="p">(</span><span class="n">pageSize</span><span class="p">)</span>
+<span class="p">)</span> <span class="p">{</span>
+    <span class="n">ItemKeyUserDataSource</span><span class="p">(</span><span class="n">networkService</span><span class="p">,</span> <span class="n">query</span><span class="p">)</span>
+<span class="p">}.</span><span class="n">flow</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="完整代码-1">完整代码</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-kotlin" data-lang="kotlin"><span class="k">class</span> <span class="nc">UserRepository</span><span class="p">(</span><span class="k">private</span> <span class="k">val</span> <span class="py">database</span><span class="p">:</span> <span class="n">AppDatabase</span><span class="p">,</span> <span class="k">private</span> <span class="k">val</span> <span class="py">networkService</span><span class="p">:</span> <span class="n">NetworkService</span><span class="p">)</span> <span class="p">{</span>
+
+    <span class="c1">// 持久化存储，运用remoteMediator将数据库和网络桥接起来，从网络将数据写入数据库
+</span><span class="c1"></span>    <span class="k">fun</span> <span class="nf">getUsersInDb</span><span class="p">(</span><span class="n">query</span><span class="p">:</span> <span class="n">String</span><span class="p">,</span> <span class="n">pageSize</span><span class="p">:</span> <span class="n">Int</span><span class="p">)</span> <span class="p">=</span> <span class="n">Pager</span><span class="p">(</span>
+        <span class="n">config</span> <span class="p">=</span> <span class="n">PagingConfig</span><span class="p">(</span><span class="n">pageSize</span><span class="p">),</span>
+        <span class="n">remoteMediator</span> <span class="p">=</span> <span class="n">UserMediator</span><span class="p">(</span>
+            <span class="n">database</span><span class="p">,</span>
+            <span class="n">networkService</span><span class="p">,</span>
+            <span class="n">query</span>
+        <span class="p">)</span>
+    <span class="p">)</span> <span class="p">{</span>
+        <span class="n">database</span><span class="p">.</span><span class="n">getUserDao</span><span class="p">().</span><span class="n">selectAll</span><span class="p">()</span>
+    <span class="p">}.</span><span class="n">flow</span>
+
+    <span class="c1">// 非持久化存储，直接从网络写入内存
+</span><span class="c1"></span>    <span class="k">fun</span> <span class="nf">getUsersInMemory</span><span class="p">(</span><span class="n">query</span><span class="p">:</span> <span class="n">String</span><span class="p">,</span> <span class="n">pageSize</span><span class="p">:</span> <span class="n">Int</span><span class="p">)</span> <span class="p">=</span> <span class="n">Pager</span><span class="p">(</span>
+        <span class="n">config</span> <span class="p">=</span> <span class="n">PagingConfig</span><span class="p">(</span><span class="n">pageSize</span><span class="p">)</span>
+    <span class="p">)</span> <span class="p">{</span>
+        <span class="n">ItemKeyUserDataSource</span><span class="p">(</span><span class="n">networkService</span><span class="p">,</span> <span class="n">query</span><span class="p">)</span>
+    <span class="p">}.</span><span class="n">flow</span>
+
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>再往上ViewModel、Adapter&hellip;反正大家都会了就不写了，不会的参考我上一篇博文。</p>
+</div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>更新于 2020-08-10</span>
+            </div>
+            <div class="post-info-license"></div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md"><span>
+                            <a class="link-to-markdown" href="/jetpackpaging%E5%88%86%E9%A1%B5%E5%BA%93%E4%B8%8E%E7%BD%91%E7%BB%9C%E5%8A%A0%E8%BD%BD/index.md" target="_blank">阅读原始文档</a>
+                        </span></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="https://nevillenoah.github.io/jetpackpaging%E5%88%86%E9%A1%B5%E5%BA%93%E4%B8%8E%E7%BD%91%E7%BB%9C%E5%8A%A0%E8%BD%BD/" data-title="Jetpack：Paging分页库与网络加载" data-hashtags="Jetpack"><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="https://nevillenoah.github.io/jetpackpaging%E5%88%86%E9%A1%B5%E5%BA%93%E4%B8%8E%E7%BD%91%E7%BB%9C%E5%8A%A0%E8%BD%BD/" data-hashtag="Jetpack"><i class="fab fa-facebook-square fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Hacker News" data-sharer="hackernews" data-url="https://nevillenoah.github.io/jetpackpaging%E5%88%86%E9%A1%B5%E5%BA%93%E4%B8%8E%E7%BD%91%E7%BB%9C%E5%8A%A0%E8%BD%BD/" data-title="Jetpack：Paging分页库与网络加载"><i class="fab fa-hacker-news fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Line" data-sharer="line" data-url="https://nevillenoah.github.io/jetpackpaging%E5%88%86%E9%A1%B5%E5%BA%93%E4%B8%8E%E7%BD%91%E7%BB%9C%E5%8A%A0%E8%BD%BD/" data-title="Jetpack：Paging分页库与网络加载"><i data-svg-src="https://cdn.jsdelivr.net/npm/simple-icons@2.14.0/icons/line.svg"></i></a><a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="https://nevillenoah.github.io/jetpackpaging%E5%88%86%E9%A1%B5%E5%BA%93%E4%B8%8E%E7%BD%91%E7%BB%9C%E5%8A%A0%E8%BD%BD/" data-title="Jetpack：Paging分页库与网络加载"><i class="fab fa-weibo fa-fw"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/jetpack/">Jetpack</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/jetpackpaging%E5%88%86%E9%A1%B5%E5%BA%93/" class="prev" rel="prev" title="Jetpack：Paging分页库"><i class="fas fa-angle-left fa-fw"></i>Jetpack：Paging分页库</a></div>
+</div>
+<div id="comments"><div id="valine" class="comment"></div><noscript>
+                Please enable JavaScript to view the comments powered by <a href="https://valine.js.org/">Valine</a>.
+            </noscript></div></article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.74.0">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
+                </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2019 - 2020</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">xxxx</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="回到顶部">
+                <i class="fas fa-arrow-up fa-fw"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="查看评论">
+                <i class="fas fa-comment fa-fw"></i>
+            </a>
+        </div><link rel="stylesheet" href="/lib/valine/valine.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery.js@1.2.0/dist/css/lightgallery.min.css"><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/valine@1.4.14/dist/Valine.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/smooth-scroll@16.1.3/dist/smooth-scroll.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/autocomplete.js@0.37.1/dist/autocomplete.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/algoliasearch@4.2.0/dist/algoliasearch-lite.umd.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lazysizes@5.2.2/lazysizes.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lightgallery.js@1.2.0/dist/js/lightgallery.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lg-thumbnail.js@1.2.0/dist/lg-thumbnail.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lg-zoom.js@1.2.0/dist/lg-zoom.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/sharer.js@0.4.0/sharer.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":10},"comment":{"valine":{"appId":"QGzwQXOqs5JOhN4RGPOkR2mR-MdYXbMMI","appKey":"WBmoGyJtbqUswvfLh6L8iEBr","avatar":"mp","el":"#valine","emojiCDN":"https://cdn.jsdelivr.net/npm/emoji-datasource-google@5.0.1/img/google/64/","emojiMaps":{"100":"1f4af.png","alien":"1f47d.png","anger":"1f4a2.png","angry":"1f620.png","anguished":"1f627.png","astonished":"1f632.png","black_heart":"1f5a4.png","blue_heart":"1f499.png","blush":"1f60a.png","bomb":"1f4a3.png","boom":"1f4a5.png","broken_heart":"1f494.png","brown_heart":"1f90e.png","clown_face":"1f921.png","cold_face":"1f976.png","cold_sweat":"1f630.png","confounded":"1f616.png","confused":"1f615.png","cry":"1f622.png","crying_cat_face":"1f63f.png","cupid":"1f498.png","dash":"1f4a8.png","disappointed":"1f61e.png","disappointed_relieved":"1f625.png","dizzy":"1f4ab.png","dizzy_face":"1f635.png","drooling_face":"1f924.png","exploding_head":"1f92f.png","expressionless":"1f611.png","face_vomiting":"1f92e.png","face_with_cowboy_hat":"1f920.png","face_with_hand_over_mouth":"1f92d.png","face_with_head_bandage":"1f915.png","face_with_monocle":"1f9d0.png","face_with_raised_eyebrow":"1f928.png","face_with_rolling_eyes":"1f644.png","face_with_symbols_on_mouth":"1f92c.png","face_with_thermometer":"1f912.png","fearful":"1f628.png","flushed":"1f633.png","frowning":"1f626.png","ghost":"1f47b.png","gift_heart":"1f49d.png","green_heart":"1f49a.png","grimacing":"1f62c.png","grin":"1f601.png","grinning":"1f600.png","hankey":"1f4a9.png","hear_no_evil":"1f649.png","heart":"2764-fe0f.png","heart_decoration":"1f49f.png","heart_eyes":"1f60d.png","heart_eyes_cat":"1f63b.png","heartbeat":"1f493.png","heartpulse":"1f497.png","heavy_heart_exclamation_mark_ornament":"2763-fe0f.png","hole":"1f573-fe0f.png","hot_face":"1f975.png","hugging_face":"1f917.png","hushed":"1f62f.png","imp":"1f47f.png","innocent":"1f607.png","japanese_goblin":"1f47a.png","japanese_ogre":"1f479.png","joy":"1f602.png","joy_cat":"1f639.png","kiss":"1f48b.png","kissing":"1f617.png","kissing_cat":"1f63d.png","kissing_closed_eyes":"1f61a.png","kissing_heart":"1f618.png","kissing_smiling_eyes":"1f619.png","laughing":"1f606.png","left_speech_bubble":"1f5e8-fe0f.png","love_letter":"1f48c.png","lying_face":"1f925.png","mask":"1f637.png","money_mouth_face":"1f911.png","nauseated_face":"1f922.png","nerd_face":"1f913.png","neutral_face":"1f610.png","no_mouth":"1f636.png","open_mouth":"1f62e.png","orange_heart":"1f9e1.png","partying_face":"1f973.png","pensive":"1f614.png","persevere":"1f623.png","pleading_face":"1f97a.png","pouting_cat":"1f63e.png","purple_heart":"1f49c.png","rage":"1f621.png","relaxed":"263a-fe0f.png","relieved":"1f60c.png","revolving_hearts":"1f49e.png","right_anger_bubble":"1f5ef-fe0f.png","robot_face":"1f916.png","rolling_on_the_floor_laughing":"1f923.png","scream":"1f631.png","scream_cat":"1f640.png","see_no_evil":"1f648.png","shushing_face":"1f92b.png","skull":"1f480.png","skull_and_crossbones":"2620-fe0f.png","sleeping":"1f634.png","sleepy":"1f62a.png","slightly_frowning_face":"1f641.png","slightly_smiling_face":"1f642.png","smile":"1f604.png","smile_cat":"1f638.png","smiley":"1f603.png","smiley_cat":"1f63a.png","smiling_face_with_3_hearts":"1f970.png","smiling_imp":"1f608.png","smirk":"1f60f.png","smirk_cat":"1f63c.png","sneezing_face":"1f927.png","sob":"1f62d.png","space_invader":"1f47e.png","sparkling_heart":"1f496.png","speak_no_evil":"1f64a.png","speech_balloon":"1f4ac.png","star-struck":"1f929.png","stuck_out_tongue":"1f61b.png","stuck_out_tongue_closed_eyes":"1f61d.png","stuck_out_tongue_winking_eye":"1f61c.png","sunglasses":"1f60e.png","sweat":"1f613.png","sweat_drops":"1f4a6.png","sweat_smile":"1f605.png","thinking_face":"1f914.png","thought_balloon":"1f4ad.png","tired_face":"1f62b.png","triumph":"1f624.png","two_hearts":"1f495.png","unamused":"1f612.png","upside_down_face":"1f643.png","weary":"1f629.png","white_frowning_face":"2639-fe0f.png","white_heart":"1f90d.png","wink":"1f609.png","woozy_face":"1f974.png","worried":"1f61f.png","yawning_face":"1f971.png","yellow_heart":"1f49b.png","yum":"1f60b.png","zany_face":"1f92a.png","zipper_mouth_face":"1f910.png","zzz":"1f4a4.png"},"enableQQ":false,"highlight":true,"lang":"zh-cn","pageSize":10,"placeholder":"你的评论 ...","recordIP":true,"serverURLs":"https://leancloud.hugoloveit.com","visitor":true}},"lightGallery":{"actualSize":false,"exThumbImage":"data-thumbnail","hideBarsDelay":2000,"selector":".lightgallery","speed":400,"thumbContHeight":80,"thumbWidth":80,"thumbnail":true},"search":{"algoliaAppID":"PASDMWALPK","algoliaIndex":"index.zh-cn","algoliaSearchKey":"b42948e51daaa93df92381c8e2ac0f93","highlightTag":"em","maxResultLength":10,"noResultsFound":"没有找到结果","snippetLength":50,"type":"algolia"}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+</html>
