@@ -57,6 +57,5 @@ fun main() {
     // 生产圆形模具Circle
     val shapeFactory: ShapeFactory = ShapeFactory()
     val circle: Circle = shapeFactory.getShape(ShapeFactory.CIRCLE)
-    }
 }
 ```
