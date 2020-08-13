@@ -5,8 +5,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="robots" content="noodp" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
-        <title>结构型：代理模式 - Neville Noah | Blog</title><meta name="Description" content="关于 LoveIt 主题"><meta property="og:title" content="结构型：代理模式" />
-<meta property="og:description" content="释义 外观模式，隐藏内部逻辑的复杂性，仅提供接口供客户端访问，这些接口就是“外观”。 ShapeMaker是为客户端提供的接口，Circle和S" />
+        <title>结构型：外观模式 - Neville Noah | Blog</title><meta name="Description" content="关于 LoveIt 主题"><meta property="og:title" content="结构型：外观模式" />
+<meta property="og:description" content="释义 外观模式，隐藏内部逻辑的复杂性，仅提供接口供客户端访问，这些接口就是“外观”。 外观模式ce53a2151e332a8cb18993a7d" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://nevillenoah.github.io/%E7%BB%93%E6%9E%84%E5%9E%8B%E5%A4%96%E8%A7%82%E6%A8%A1%E5%BC%8F/" />
 <meta property="og:image" content="https://nevillenoah.github.io/%E7%BB%93%E6%9E%84%E5%9E%8B%E5%A4%96%E8%A7%82%E6%A8%A1%E5%BC%8F/featured-image.jpg"/>
@@ -14,8 +14,8 @@
 <meta property="article:modified_time" content="2020-08-13T20:20:58+08:00" />
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://nevillenoah.github.io/%E7%BB%93%E6%9E%84%E5%9E%8B%E5%A4%96%E8%A7%82%E6%A8%A1%E5%BC%8F/featured-image.jpg"/>
-<meta name="twitter:title" content="结构型：代理模式"/>
-<meta name="twitter:description" content="释义 外观模式，隐藏内部逻辑的复杂性，仅提供接口供客户端访问，这些接口就是“外观”。 ShapeMaker是为客户端提供的接口，Circle和S"/>
+<meta name="twitter:title" content="结构型：外观模式"/>
+<meta name="twitter:description" content="释义 外观模式，隐藏内部逻辑的复杂性，仅提供接口供客户端访问，这些接口就是“外观”。 外观模式ce53a2151e332a8cb18993a7d"/>
 <meta name="application-name" content="LoveIt">
 <meta name="apple-mobile-web-app-title" content="LoveIt"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -23,7 +23,7 @@
     {
         "@context": "http://schema.org",
         "@type": "BlogPosting",
-        "headline": "结构型：代理模式",
+        "headline": "结构型：外观模式",
         "inLanguage": "zh-CN",
         "mainEntityOfPage": {
             "@type": "WebPage",
@@ -33,7 +33,7 @@
                             "url": "https:\/\/nevillenoah.github.io\/%E7%BB%93%E6%9E%84%E5%9E%8B%E5%A4%96%E8%A7%82%E6%A8%A1%E5%BC%8F\/featured-image.jpg",
                             "width":  1596 ,
                             "height":  596 
-                        }],"genre": "posts","keywords": "设计模式","wordcount":  285 ,
+                        }],"genre": "posts","keywords": "设计模式","wordcount":  326 ,
         "url": "https:\/\/nevillenoah.github.io\/%E7%BB%93%E6%9E%84%E5%9E%8B%E5%A4%96%E8%A7%82%E6%A8%A1%E5%BC%8F\/","datePublished": "2020-08-13T20:20:58+08:00","dateModified": "2020-08-13T20:20:58+08:00","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
             "@type": "Organization",
             "name": "xxxx","logo": {
@@ -117,10 +117,10 @@
                 <div class="container"><div class="toc" id="toc-auto">
             <h2 class="toc-title">目录</h2>
             <div class="toc-content" id="toc-content-auto"></div>
-        </div><article class="page single"><h1 class="single-title animated flipInX">结构型：代理模式</h1><div class="post-meta">
+        </div><article class="page single"><h1 class="single-title animated flipInX">结构型：外观模式</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="https://github.com/nevillenoah" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Neville Noah</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"><i class="far fa-folder fa-fw"></i>设计模式</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-08-13">2020-08-13</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 285 字&nbsp;
-                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 1 分钟&nbsp;<span id="/%E7%BB%93%E6%9E%84%E5%9E%8B%E5%A4%96%E8%A7%82%E6%A8%A1%E5%BC%8F/" class="leancloud_visitors" data-flag-title="结构型：代理模式">
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-08-13">2020-08-13</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 326 字&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 1 分钟&nbsp;<span id="/%E7%BB%93%E6%9E%84%E5%9E%8B%E5%A4%96%E8%A7%82%E6%A8%A1%E5%BC%8F/" class="leancloud_visitors" data-flag-title="结构型：外观模式">
                         <i class="far fa-eye fa-fw"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
                     </span>&nbsp;</div>
         </div><div class="featured-image"><img
@@ -145,14 +145,16 @@
 </nav></div>
             </div><div class="content" id="content"><h2 id="释义">释义</h2>
 <p>外观模式，隐藏内部逻辑的复杂性，仅提供接口供客户端访问，这些接口就是“外观”。
-<img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="%e7%bb%93%e6%9e%84%e5%9e%8b%ef%bc%9a%e5%a4%96%e8%a7%82%e6%a8%a1%e5%bc%8f.resources/DC7A37C5-A999-4220-85B9-D8067AA9E13D.png"
-        data-srcset="/%E7%BB%93%E6%9E%84%E5%9E%8B%E5%A4%96%E8%A7%82%E6%A8%A1%E5%BC%8F/%E7%BB%93%E6%9E%84%E5%9E%8B%EF%BC%9A%E5%A4%96%E8%A7%82%E6%A8%A1%E5%BC%8F.resources/DC7A37C5-A999-4220-85B9-D8067AA9E13D.png, %e7%bb%93%e6%9e%84%e5%9e%8b%ef%bc%9a%e5%a4%96%e8%a7%82%e6%a8%a1%e5%bc%8f.resources/DC7A37C5-A999-4220-85B9-D8067AA9E13D.png 1.5x, /%E7%BB%93%E6%9E%84%E5%9E%8B%E5%A4%96%E8%A7%82%E6%A8%A1%E5%BC%8F/%E7%BB%93%E6%9E%84%E5%9E%8B%EF%BC%9A%E5%A4%96%E8%A7%82%E6%A8%A1%E5%BC%8F.resources/DC7A37C5-A999-4220-85B9-D8067AA9E13D.png 2x"
-        data-sizes="auto"
-        alt="/%E7%BB%93%E6%9E%84%E5%9E%8B%E5%A4%96%E8%A7%82%E6%A8%A1%E5%BC%8F/%E7%BB%93%E6%9E%84%E5%9E%8B%EF%BC%9A%E5%A4%96%E8%A7%82%E6%A8%A1%E5%BC%8F.resources/DC7A37C5-A999-4220-85B9-D8067AA9E13D.png"
-        title="ce53a2151e332a8cb18993a7dc9970a6" />
+<figure><a class="lightgallery" href="/%E7%BB%93%E6%9E%84%E5%9E%8B%E5%A4%96%E8%A7%82%E6%A8%A1%E5%BC%8F/%E7%BB%93%E6%9E%84%E5%9E%8B%EF%BC%9A%E5%A4%96%E8%A7%82%E6%A8%A1%E5%BC%8F.resources/DC7A37C5-A999-4220-85B9-D8067AA9E13D.png" title="ce53a2151e332a8cb18993a7dc9970a6" data-thumbnail="/%E7%BB%93%E6%9E%84%E5%9E%8B%E5%A4%96%E8%A7%82%E6%A8%A1%E5%BC%8F/%E7%BB%93%E6%9E%84%E5%9E%8B%EF%BC%9A%E5%A4%96%E8%A7%82%E6%A8%A1%E5%BC%8F.resources/DC7A37C5-A999-4220-85B9-D8067AA9E13D.png" data-sub-html="<h2>外观模式</h2><p>ce53a2151e332a8cb18993a7dc9970a6</p>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="%e7%bb%93%e6%9e%84%e5%9e%8b%ef%bc%9a%e5%a4%96%e8%a7%82%e6%a8%a1%e5%bc%8f.resources/DC7A37C5-A999-4220-85B9-D8067AA9E13D.png"
+            data-srcset="/%E7%BB%93%E6%9E%84%E5%9E%8B%E5%A4%96%E8%A7%82%E6%A8%A1%E5%BC%8F/%E7%BB%93%E6%9E%84%E5%9E%8B%EF%BC%9A%E5%A4%96%E8%A7%82%E6%A8%A1%E5%BC%8F.resources/DC7A37C5-A999-4220-85B9-D8067AA9E13D.png, %e7%bb%93%e6%9e%84%e5%9e%8b%ef%bc%9a%e5%a4%96%e8%a7%82%e6%a8%a1%e5%bc%8f.resources/DC7A37C5-A999-4220-85B9-D8067AA9E13D.png 1.5x, /%E7%BB%93%E6%9E%84%E5%9E%8B%E5%A4%96%E8%A7%82%E6%A8%A1%E5%BC%8F/%E7%BB%93%E6%9E%84%E5%9E%8B%EF%BC%9A%E5%A4%96%E8%A7%82%E6%A8%A1%E5%BC%8F.resources/DC7A37C5-A999-4220-85B9-D8067AA9E13D.png 2x"
+            data-sizes="auto"
+            alt="/%E7%BB%93%E6%9E%84%E5%9E%8B%E5%A4%96%E8%A7%82%E6%A8%A1%E5%BC%8F/%E7%BB%93%E6%9E%84%E5%9E%8B%EF%BC%9A%E5%A4%96%E8%A7%82%E6%A8%A1%E5%BC%8F.resources/DC7A37C5-A999-4220-85B9-D8067AA9E13D.png" />
+    </a><figcaption class="image-caption">外观模式</figcaption>
+    </figure>
 <code>ShapeMaker</code>是为客户端提供的接口，<code>Circle</code>和<code>Square</code>接入<code>Shape</code>。客户端通过<code>ShapeMaker</code>中的各种接口在<code>ShapeMaker</code>中创建<code>Shape</code>的各种实例并调用实例的方法。</p>
 <h2 id="基础类">基础类</h2>
 <div class="highlight"><div class="chroma">
@@ -264,7 +266,7 @@
                             <a class="link-to-markdown" href="/%E7%BB%93%E6%9E%84%E5%9E%8B%E5%A4%96%E8%A7%82%E6%A8%A1%E5%BC%8F/index.md" target="_blank">阅读原始文档</a>
                         </span></div>
             <div class="post-info-share">
-                <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="https://nevillenoah.github.io/%E7%BB%93%E6%9E%84%E5%9E%8B%E5%A4%96%E8%A7%82%E6%A8%A1%E5%BC%8F/" data-title="结构型：代理模式" data-hashtags="设计模式"><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="https://nevillenoah.github.io/%E7%BB%93%E6%9E%84%E5%9E%8B%E5%A4%96%E8%A7%82%E6%A8%A1%E5%BC%8F/" data-hashtag="设计模式"><i class="fab fa-facebook-square fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Hacker News" data-sharer="hackernews" data-url="https://nevillenoah.github.io/%E7%BB%93%E6%9E%84%E5%9E%8B%E5%A4%96%E8%A7%82%E6%A8%A1%E5%BC%8F/" data-title="结构型：代理模式"><i class="fab fa-hacker-news fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Line" data-sharer="line" data-url="https://nevillenoah.github.io/%E7%BB%93%E6%9E%84%E5%9E%8B%E5%A4%96%E8%A7%82%E6%A8%A1%E5%BC%8F/" data-title="结构型：代理模式"><i data-svg-src="https://cdn.jsdelivr.net/npm/simple-icons@2.14.0/icons/line.svg"></i></a><a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="https://nevillenoah.github.io/%E7%BB%93%E6%9E%84%E5%9E%8B%E5%A4%96%E8%A7%82%E6%A8%A1%E5%BC%8F/" data-title="结构型：代理模式"><i class="fab fa-weibo fa-fw"></i></a></span>
+                <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="https://nevillenoah.github.io/%E7%BB%93%E6%9E%84%E5%9E%8B%E5%A4%96%E8%A7%82%E6%A8%A1%E5%BC%8F/" data-title="结构型：外观模式" data-hashtags="设计模式"><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="https://nevillenoah.github.io/%E7%BB%93%E6%9E%84%E5%9E%8B%E5%A4%96%E8%A7%82%E6%A8%A1%E5%BC%8F/" data-hashtag="设计模式"><i class="fab fa-facebook-square fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Hacker News" data-sharer="hackernews" data-url="https://nevillenoah.github.io/%E7%BB%93%E6%9E%84%E5%9E%8B%E5%A4%96%E8%A7%82%E6%A8%A1%E5%BC%8F/" data-title="结构型：外观模式"><i class="fab fa-hacker-news fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Line" data-sharer="line" data-url="https://nevillenoah.github.io/%E7%BB%93%E6%9E%84%E5%9E%8B%E5%A4%96%E8%A7%82%E6%A8%A1%E5%BC%8F/" data-title="结构型：外观模式"><i data-svg-src="https://cdn.jsdelivr.net/npm/simple-icons@2.14.0/icons/line.svg"></i></a><a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="https://nevillenoah.github.io/%E7%BB%93%E6%9E%84%E5%9E%8B%E5%A4%96%E8%A7%82%E6%A8%A1%E5%BC%8F/" data-title="结构型：外观模式"><i class="fab fa-weibo fa-fw"></i></a></span>
             </div>
         </div>
     </div>
