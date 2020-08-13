@@ -24,18 +24,20 @@ class Circle {
 
 ## 装饰器
 ```kotlin
-abstract Decorator {
-    override fun draw()
+abstract class Decorator(val shape: Shape): Shape {
+    override fun draw() {
+        shape.draw()
+    }
 }
 
-class RedDecorator() { // Shape都可以
-    override fun draw(shape: Shape) {
+class RedDecorator(shape: Shape): Shape(shape) { // Shape都可以
+    override fun draw() {
         shape.draw() // 调用Shape的方法来画出图形
         drawRed(shape) // 把图形“装饰”成红色
     }
     
     // 涂成红色
-    override fun drawRed(shape: Shape) {
+    override fun drawRed() {
         ...
     }
 }
@@ -45,12 +47,9 @@ class RedDecorator() { // Shape都可以
 ```kotlin
 fun main() {
     val circle: Circle = Circle()
-    val redDecorator: RedDecorator = RedDecorator()
-    
-    
-    // 把圆形装饰成红色
-    redDecorator.drawRed(circle)
-    
+    // 被涂成红色的圆形
+    val redCircle: Decorator = RedDecorator(circle)
+    redCircle.draw() // 会调用RedDecorator中的draw()
 }
 ```
 
