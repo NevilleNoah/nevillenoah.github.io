@@ -5,36 +5,37 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="robots" content="noodp" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
-        <title>设计模式：原型模式 - Neville Noah | Blog</title><meta name="Description" content="关于 LoveIt 主题"><meta property="og:title" content="设计模式：原型模式" />
-<meta property="og:description" content="释义 原型模式，暂存一个原型，当需要创建该类的对象的时候（尤其是需要大量该类对象的时候），直接从这个原型复制一个对象出来而不是从头开始创建。 原" />
+        <title>设计模式：桥接模式 - Neville Noah | Blog</title><meta name="Description" content="关于 LoveIt 主题"><meta property="og:title" content="设计模式：桥接模式" />
+<meta property="og:description" content="释义 桥接模式，在类的基础上，增加一个接口作为“桥”。接口的实现类和该类都可以独立变换而互不影响。 桥接模式41b8ab4c00e4fb477a" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://nevillenoah.github.io/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E5%8E%9F%E5%9E%8B%E6%A8%A1%E5%BC%8F/" />
-<meta property="og:image" content="https://nevillenoah.github.io/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E5%8E%9F%E5%9E%8B%E6%A8%A1%E5%BC%8F/featured-image.jpg"/>
-<meta property="article:published_time" content="2020-08-12T17:32:58+08:00" />
-<meta property="article:modified_time" content="2020-08-12T17:32:58+08:00" />
+<meta property="og:url" content="https://nevillenoah.github.io/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E6%A1%A5%E6%8E%A5%E6%A8%A1%E5%BC%8F/" />
+<meta property="og:image" content="https://nevillenoah.github.io/logo.png"/>
+<meta property="article:published_time" content="2020-08-13T14:27:58+08:00" />
+<meta property="article:modified_time" content="2020-08-13T14:27:58+08:00" />
 <meta name="twitter:card" content="summary_large_image"/>
-<meta name="twitter:image" content="https://nevillenoah.github.io/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E5%8E%9F%E5%9E%8B%E6%A8%A1%E5%BC%8F/featured-image.jpg"/>
-<meta name="twitter:title" content="设计模式：原型模式"/>
-<meta name="twitter:description" content="释义 原型模式，暂存一个原型，当需要创建该类的对象的时候（尤其是需要大量该类对象的时候），直接从这个原型复制一个对象出来而不是从头开始创建。 原"/>
+<meta name="twitter:image" content="https://nevillenoah.github.io/logo.png"/>
+
+<meta name="twitter:title" content="设计模式：桥接模式"/>
+<meta name="twitter:description" content="释义 桥接模式，在类的基础上，增加一个接口作为“桥”。接口的实现类和该类都可以独立变换而互不影响。 桥接模式41b8ab4c00e4fb477a"/>
 <meta name="application-name" content="LoveIt">
 <meta name="apple-mobile-web-app-title" content="LoveIt"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://nevillenoah.github.io/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E5%8E%9F%E5%9E%8B%E6%A8%A1%E5%BC%8F/" /><link rel="prev" href="https://nevillenoah.github.io/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F/" /><link rel="next" href="https://nevillenoah.github.io/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E9%80%82%E9%85%8D%E5%99%A8%E6%A8%A1%E5%BC%8F/" /><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13.0/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css"><script type="application/ld+json">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://nevillenoah.github.io/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E6%A1%A5%E6%8E%A5%E6%A8%A1%E5%BC%8F/" /><link rel="prev" href="https://nevillenoah.github.io/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E9%80%82%E9%85%8D%E5%99%A8%E6%A8%A1%E5%BC%8F/" /><link rel="next" href="https://nevillenoah.github.io/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E8%BF%87%E6%BB%A4%E5%99%A8%E6%A8%A1%E5%BC%8F/" /><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13.0/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css"><script type="application/ld+json">
     {
         "@context": "http://schema.org",
         "@type": "BlogPosting",
-        "headline": "设计模式：原型模式",
+        "headline": "设计模式：桥接模式",
         "inLanguage": "zh-CN",
         "mainEntityOfPage": {
             "@type": "WebPage",
-            "@id": "https:\/\/nevillenoah.github.io\/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E5%8E%9F%E5%9E%8B%E6%A8%A1%E5%BC%8F\/"
+            "@id": "https:\/\/nevillenoah.github.io\/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E6%A1%A5%E6%8E%A5%E6%A8%A1%E5%BC%8F\/"
         },"image": [{
                             "@type": "ImageObject",
-                            "url": "https:\/\/nevillenoah.github.io\/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E5%8E%9F%E5%9E%8B%E6%A8%A1%E5%BC%8F\/featured-image.jpg",
-                            "width":  1596 ,
-                            "height":  596 
-                        }],"genre": "posts","keywords": "设计模式","wordcount":  441 ,
-        "url": "https:\/\/nevillenoah.github.io\/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E5%8E%9F%E5%9E%8B%E6%A8%A1%E5%BC%8F\/","datePublished": "2020-08-12T17:32:58+08:00","dateModified": "2020-08-12T17:32:58+08:00","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
+                            "url": "https:\/\/nevillenoah.github.io\/images\/Apple-Devices-Preview.png",
+                            "width":  3200 ,
+                            "height":  2048 
+                        }],"genre": "posts","keywords": "设计模式","wordcount":  352 ,
+        "url": "https:\/\/nevillenoah.github.io\/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E6%A1%A5%E6%8E%A5%E6%A8%A1%E5%BC%8F\/","datePublished": "2020-08-13T14:27:58+08:00","dateModified": "2020-08-13T14:27:58+08:00","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
             "@type": "Organization",
             "name": "xxxx","logo": {
                     "@type": "ImageObject",
@@ -56,7 +57,7 @@
         </div>
         <div class="menu">
             <div class="menu-inner"><a class="menu-item" href="/posts/"> 文章 </a><a class="menu-item" href="/tags/"> 标签 </a><a class="menu-item" href="/categories/"> 分类 </a><a class="menu-item" href="/categories/documentation/"> 文档 </a><a class="menu-item" href="/about/"> 关于 </a><a class="menu-item" href="https://github.com/dillonzq/LoveIt" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw'></i>  </a><span class="menu-item delimiter"></span><a href="javascript:void(0);" class="menu-item language" title="选择语言">简体中文<i class="fas fa-chevron-right fa-fw"></i>
-                        <select class="language-select" id="language-select-desktop" onchange="location = this.value;"><option value="/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E5%8E%9F%E5%9E%8B%E6%A8%A1%E5%BC%8F/" selected>简体中文</option></select>
+                        <select class="language-select" id="language-select-desktop" onchange="location = this.value;"><option value="/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E6%A1%A5%E6%8E%A5%E6%A8%A1%E5%BC%8F/" selected>简体中文</option></select>
                     </a><span class="menu-item search" id="search-desktop">
                         <input type="text" placeholder="搜索文章标题或内容..." id="search-input-desktop">
                         <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
@@ -103,7 +104,7 @@
                 </div><a class="menu-item" href="/posts/" title="">文章</a><a class="menu-item" href="/tags/" title="">标签</a><a class="menu-item" href="/categories/" title="">分类</a><a class="menu-item" href="/categories/documentation/" title="">文档</a><a class="menu-item" href="/about/" title="">关于</a><a class="menu-item" href="https://github.com/dillonzq/LoveIt" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw'></i></a><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
                 <i class="fas fa-adjust fa-fw"></i>
             </a><a href="javascript:void(0);" class="menu-item" title="选择语言">简体中文<i class="fas fa-chevron-right fa-fw"></i>
-                    <select class="language-select" onchange="location = this.value;"><option value="/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E5%8E%9F%E5%9E%8B%E6%A8%A1%E5%BC%8F/" selected>简体中文</option></select>
+                    <select class="language-select" onchange="location = this.value;"><option value="/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E6%A1%A5%E6%8E%A5%E6%A8%A1%E5%BC%8F/" selected>简体中文</option></select>
                 </a></div>
     </div>
 </header>
@@ -117,20 +118,13 @@
                 <div class="container"><div class="toc" id="toc-auto">
             <h2 class="toc-title">目录</h2>
             <div class="toc-content" id="toc-content-auto"></div>
-        </div><article class="page single"><h1 class="single-title animated flipInX">设计模式：原型模式</h1><div class="post-meta">
+        </div><article class="page single"><h1 class="single-title animated flipInX">设计模式：桥接模式</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="https://github.com/nevillenoah" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Neville Noah</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"><i class="far fa-folder fa-fw"></i>设计模式</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-08-12">2020-08-12</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 441 字&nbsp;
-                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 1 分钟&nbsp;<span id="/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E5%8E%9F%E5%9E%8B%E6%A8%A1%E5%BC%8F/" class="leancloud_visitors" data-flag-title="设计模式：原型模式">
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-08-13">2020-08-13</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 352 字&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 1 分钟&nbsp;<span id="/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E6%A1%A5%E6%8E%A5%E6%A8%A1%E5%BC%8F/" class="leancloud_visitors" data-flag-title="设计模式：桥接模式">
                         <i class="far fa-eye fa-fw"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
                     </span>&nbsp;</div>
-        </div><div class="featured-image"><img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E5%8E%9F%E5%9E%8B%E6%A8%A1%E5%BC%8F/featured-image.jpg"
-        data-srcset="/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E5%8E%9F%E5%9E%8B%E6%A8%A1%E5%BC%8F/featured-image.jpg, /%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E5%8E%9F%E5%9E%8B%E6%A8%A1%E5%BC%8F/featured-image.jpg 1.5x, /%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E5%8E%9F%E5%9E%8B%E6%A8%A1%E5%BC%8F/featured-image.jpg 2x"
-        data-sizes="auto"
-        alt="/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E5%8E%9F%E5%9E%8B%E6%A8%A1%E5%BC%8F/featured-image.jpg"
-        title="/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E5%8E%9F%E5%9E%8B%E6%A8%A1%E5%BC%8F/featured-image.jpg" /></div><div class="details toc" id="toc-static"  kept="">
+        </div><div class="details toc" id="toc-static"  kept="">
                 <div class="details-summary toc-title">
                     <span>目录</span>
                     <span><i class="details-icon fas fa-angle-right"></i></span>
@@ -138,60 +132,74 @@
                 <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
   <ul>
     <li><a href="#释义">释义</a></li>
-    <li><a href="#接入cloneable">接入Cloneable</a></li>
-    <li><a href="#子类">子类</a></li>
-    <li><a href="#存入shapemap">存入ShapeMap</a></li>
+    <li><a href="#桥">桥</a></li>
+    <li><a href="#基础类">基础类</a></li>
+    <li><a href="#桥的实现类">桥的实现类</a></li>
+    <li><a href="#基础类的实现类">基础类的实现类</a></li>
     <li><a href="#使用">使用</a></li>
   </ul>
 </nav></div>
             </div><div class="content" id="content"><h2 id="释义">释义</h2>
-<p>原型模式，暂存一个原型，当需要创建该类的对象的时候（尤其是需要大量该类对象的时候），直接从这个原型复制一个对象出来而不是从头开始创建。
-<figure><a class="lightgallery" href="/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E5%8E%9F%E5%9E%8B%E6%A8%A1%E5%BC%8F/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%EF%BC%9A%E5%8E%9F%E5%9E%8B%E6%A8%A1%E5%BC%8F.resources/45A35061-DE3E-4CC3-87EB-4CB90A6BAFF8.png" title="a1b59f8549bb36211a237d4f059a3141" data-thumbnail="/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E5%8E%9F%E5%9E%8B%E6%A8%A1%E5%BC%8F/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%EF%BC%9A%E5%8E%9F%E5%9E%8B%E6%A8%A1%E5%BC%8F.resources/45A35061-DE3E-4CC3-87EB-4CB90A6BAFF8.png" data-sub-html="<h2>原型模式</h2><p>a1b59f8549bb36211a237d4f059a3141</p>">
+<p>桥接模式，在类的基础上，增加一个接口作为“桥”。接口的实现类和该类都可以独立变换而互不影响。
+<figure><a class="lightgallery" href="/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E6%A1%A5%E6%8E%A5%E6%A8%A1%E5%BC%8F/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%EF%BC%9A%E6%A1%A5%E6%8E%A5%E6%A8%A1%E5%BC%8F.resources/49F9BE77-67C1-414D-9D29-8B980E204A26.png" title="41b8ab4c00e4fb477a9c86b18fe55eae" data-thumbnail="/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E6%A1%A5%E6%8E%A5%E6%A8%A1%E5%BC%8F/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%EF%BC%9A%E6%A1%A5%E6%8E%A5%E6%A8%A1%E5%BC%8F.resources/49F9BE77-67C1-414D-9D29-8B980E204A26.png" data-sub-html="<h2>桥接模式</h2><p>41b8ab4c00e4fb477a9c86b18fe55eae</p>">
         <img
             class="lazyload"
             src="/svg/loading.min.svg"
-            data-src="%e8%ae%be%e8%ae%a1%e6%a8%a1%e5%bc%8f%ef%bc%9a%e5%8e%9f%e5%9e%8b%e6%a8%a1%e5%bc%8f.resources/45A35061-DE3E-4CC3-87EB-4CB90A6BAFF8.png"
-            data-srcset="/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E5%8E%9F%E5%9E%8B%E6%A8%A1%E5%BC%8F/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%EF%BC%9A%E5%8E%9F%E5%9E%8B%E6%A8%A1%E5%BC%8F.resources/45A35061-DE3E-4CC3-87EB-4CB90A6BAFF8.png, %e8%ae%be%e8%ae%a1%e6%a8%a1%e5%bc%8f%ef%bc%9a%e5%8e%9f%e5%9e%8b%e6%a8%a1%e5%bc%8f.resources/45A35061-DE3E-4CC3-87EB-4CB90A6BAFF8.png 1.5x, /%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E5%8E%9F%E5%9E%8B%E6%A8%A1%E5%BC%8F/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%EF%BC%9A%E5%8E%9F%E5%9E%8B%E6%A8%A1%E5%BC%8F.resources/45A35061-DE3E-4CC3-87EB-4CB90A6BAFF8.png 2x"
+            data-src="%e8%ae%be%e8%ae%a1%e6%a8%a1%e5%bc%8f%ef%bc%9a%e6%a1%a5%e6%8e%a5%e6%a8%a1%e5%bc%8f.resources/49F9BE77-67C1-414D-9D29-8B980E204A26.png"
+            data-srcset="/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E6%A1%A5%E6%8E%A5%E6%A8%A1%E5%BC%8F/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%EF%BC%9A%E6%A1%A5%E6%8E%A5%E6%A8%A1%E5%BC%8F.resources/49F9BE77-67C1-414D-9D29-8B980E204A26.png, %e8%ae%be%e8%ae%a1%e6%a8%a1%e5%bc%8f%ef%bc%9a%e6%a1%a5%e6%8e%a5%e6%a8%a1%e5%bc%8f.resources/49F9BE77-67C1-414D-9D29-8B980E204A26.png 1.5x, /%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E6%A1%A5%E6%8E%A5%E6%A8%A1%E5%BC%8F/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%EF%BC%9A%E6%A1%A5%E6%8E%A5%E6%A8%A1%E5%BC%8F.resources/49F9BE77-67C1-414D-9D29-8B980E204A26.png 2x"
             data-sizes="auto"
-            alt="/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E5%8E%9F%E5%9E%8B%E6%A8%A1%E5%BC%8F/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%EF%BC%9A%E5%8E%9F%E5%9E%8B%E6%A8%A1%E5%BC%8F.resources/45A35061-DE3E-4CC3-87EB-4CB90A6BAFF8.png" />
-    </a><figcaption class="image-caption">原型模式</figcaption>
-    </figure></p>
-<h2 id="接入cloneable">接入Cloneable</h2>
-<p>需要被克隆的类必须接上<code>Cloneable</code>，建议重写<code>clone</code>方法。</p>
+            alt="/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E6%A1%A5%E6%8E%A5%E6%A8%A1%E5%BC%8F/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%EF%BC%9A%E6%A1%A5%E6%8E%A5%E6%A8%A1%E5%BC%8F.resources/49F9BE77-67C1-414D-9D29-8B980E204A26.png" />
+    </a><figcaption class="image-caption">桥接模式</figcaption>
+    </figure>
+对于抽象类<code>Shape</code>，为他接入接口<code>Drawable</code>。<code>Circle</code>是抽象类<code>Shape</code>的实现类，<code>Rabbit</code>是接口<code>Drawable</code>的实现类。<code>Circle</code>和<code>Rabbit</code>可以互不干扰、独立实现。</p>
+<h2 id="桥">桥</h2>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-kotlin" data-lang="kotlin"><span class="k">class</span> <span class="nc">Shape</span> <span class="p">:</span> <span class="n">Cloneable</span> <span class="p">{</span>
-    <span class="k">open</span> <span class="k">var</span> <span class="py">name</span><span class="p">:</span> <span class="n">String</span><span class="p">?</span> <span class="p">=</span> <span class="k">null</span>
-
-    <span class="k">public</span> <span class="k">override</span> <span class="k">fun</span> <span class="nf">clone</span><span class="p">():</span> <span class="n">Any</span><span class="p">?</span> <span class="p">{</span>
-        <span class="k">var</span> <span class="py">clone</span><span class="p">:</span> <span class="n">Any</span><span class="p">?</span> <span class="p">=</span> <span class="k">null</span>
-        <span class="k">try</span> <span class="p">{</span>
-            <span class="n">clone</span> <span class="p">=</span> <span class="k">super</span><span class="p">.</span><span class="n">clone</span><span class="p">()</span>
-        <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="n">e</span><span class="p">:</span> <span class="n">CloneNotSupportedException</span><span class="p">)</span> <span class="p">{</span>
-            <span class="n">e</span><span class="p">.</span><span class="n">printStackTrace</span><span class="p">()</span>
-        <span class="p">}</span>
-        <span class="k">return</span> <span class="n">clone</span>
+<pre class="chroma"><code class="language-kotlin" data-lang="kotlin"><span class="k">interface</span> <span class="nc">Drawable</span> <span class="p">{</span>
+    <span class="k">fun</span> <span class="nf">draw</span><span class="p">()</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="基础类">基础类</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-kotlin" data-lang="kotlin"><span class="k">abstract</span> <span class="k">class</span> <span class="nc">Shape</span> <span class="p">:</span> <span class="n">Drawable</span><span class="p">{</span>
+    <span class="k">override</span> <span class="k">fun</span> <span class="nf">draw</span><span class="p">()</span>
+    
+    <span class="k">fun</span> <span class="nf">show</span><span class="p">()</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="桥的实现类">桥的实现类</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-kotlin" data-lang="kotlin"><span class="k">class</span> <span class="nc">Rabbit</span> <span class="p">:</span> <span class="n">Drawable</span><span class="p">{</span>
+    <span class="k">override</span> <span class="k">fun</span> <span class="nf">draw</span><span class="p">()</span> <span class="p">{</span>
+        <span class="n">drawRabbit</span><span class="p">()</span>
     <span class="p">}</span>
 <span class="p">}</span>
 </code></pre></td></tr></table>
 </div>
-</div><h2 id="子类">子类</h2>
-<p>Circle</p>
+</div><h2 id="基础类的实现类">基础类的实现类</h2>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt">1
@@ -199,79 +207,19 @@
 </span><span class="lnt">3
 </span><span class="lnt">4
 </span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-kotlin" data-lang="kotlin"><span class="k">class</span> <span class="nc">Circle</span> <span class="p">:</span> <span class="n">Shape</span><span class="p">()</span> <span class="p">{</span>
-    <span class="k">override</span> <span class="k">var</span> <span class="py">name</span> <span class="p">=</span> <span class="s">&#34;Circle&#34;</span>
-    
-    <span class="p">...</span>
-<span class="p">}</span>
-</code></pre></td></tr></table>
-</div>
-</div><p>Square</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-kotlin" data-lang="kotlin"><span class="k">class</span> <span class="nc">Square</span> <span class="p">:</span> <span class="n">Shape</span><span class="p">()</span> <span class="p">{</span>
-    <span class="k">override</span> <span class="k">var</span> <span class="py">name</span> <span class="p">=</span> <span class="s">&#34;Square&#34;</span>
-    
-    <span class="p">...</span>
-<span class="p">}</span>
-</code></pre></td></tr></table>
-</div>
-</div><p>Rectangle</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-kotlin" data-lang="kotlin"><span class="k">class</span> <span class="nc">Rectangle</span> <span class="p">:</span> <span class="n">Shape</span><span class="p">()</span> <span class="p">{</span>
-    <span class="k">override</span> <span class="k">var</span> <span class="py">name</span> <span class="p">=</span> <span class="s">&#34;Rectangle&#34;</span>
-    
-    <span class="p">...</span>
-<span class="p">}</span>
-</code></pre></td></tr></table>
-</div>
-</div><h2 id="存入shapemap">存入ShapeMap</h2>
-<p>创建<code>ShapeCache</code>对象来存储ShapeMap</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-kotlin" data-lang="kotlin"><span class="k">class</span> <span class="nc">ShapeCache</span> <span class="p">{</span>
-
-    <span class="k">private</span> <span class="k">var</span> <span class="py">shapeMap</span><span class="p">:</span> <span class="n">MutableMap</span><span class="p">&lt;</span><span class="n">String</span><span class="p">,</span> <span class="n">Shape</span><span class="p">&gt;</span> <span class="p">=</span>  <span class="n">MutableMap</span><span class="p">&lt;</span><span class="n">String</span><span class="p">,</span> <span class="n">Shape</span><span class="p">&gt;()</span>
-
-    <span class="c1">// 向缓存中放入Shape
-</span><span class="c1"></span>    <span class="k">fun</span> <span class="nf">loadCache</span><span class="p">(</span><span class="n">shape</span><span class="p">:</span> <span class="n">Shape</span><span class="p">)</span> <span class="p">{</span>
-        <span class="n">shapeMap</span><span class="o">?.</span><span class="k">set</span><span class="p">(</span><span class="s">&#34;name&#34;</span><span class="p">,</span> <span class="n">shape</span><span class="p">)</span>
+<pre class="chroma"><code class="language-kotlin" data-lang="kotlin"><span class="k">class</span> <span class="nc">Circle</span> <span class="p">:</span> <span class="n">Shape</span> <span class="p">{</span>
+    <span class="k">override</span> <span class="k">fun</span> <span class="nf">draw</span><span class="p">()</span> <span class="p">{</span>
+        <span class="n">drawCircle</span><span class="p">()</span>
     <span class="p">}</span>
     
-    <span class="k">fun</span> <span class="nf">getShape</span><span class="p">(</span><span class="n">name</span><span class="p">:</span> <span class="n">String</span><span class="p">):</span> <span class="n">Shape</span> <span class="p">{</span>
-        <span class="k">return</span> <span class="n">shapeMap</span><span class="p">.</span><span class="k">get</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+    <span class="k">override</span> <span class="k">fun</span> <span class="nf">show</span><span class="p">()</span> <span class="p">{</span>
+        <span class="n">showCircle</span><span class="p">()</span>
     <span class="p">}</span>
 <span class="p">}</span>
 </code></pre></td></tr></table>
@@ -290,36 +238,18 @@
 </span><span class="lnt"> 9
 </span><span class="lnt">10
 </span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span><span class="lnt">14
-</span><span class="lnt">15
-</span><span class="lnt">16
-</span><span class="lnt">17
-</span><span class="lnt">18
-</span><span class="lnt">19
-</span><span class="lnt">20
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-kotlin" data-lang="kotlin"><span class="k">fun</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">val</span> <span class="py">rabbit</span><span class="p">:</span> <span class="n">Rabbit</span> <span class="p">=</span> <span class="n">Rabbit</span><span class="p">()</span>
+    <span class="k">val</span> <span class="py">circle</span><span class="p">:</span> <span class="n">Circle</span> <span class="p">=</span> <span class="n">Circle</span><span class="p">()</span>
     
-    <span class="c1">// 创建三个对象
-</span><span class="c1"></span>    <span class="k">val</span> <span class="py">circle</span><span class="p">:</span> <span class="n">Circle</span> <span class="p">=</span> <span class="n">Circle</span><span class="p">()</span>
-    <span class="k">val</span> <span class="py">square</span><span class="p">:</span> <span class="n">Square</span> <span class="p">=</span> <span class="n">Square</span><span class="p">()</span>
-    <span class="k">val</span> <span class="py">rectangle</span><span class="p">:</span> <span class="n">Rectangle</span> <span class="p">=</span> <span class="n">Rectangle</span><span class="p">()</span>
+    <span class="c1">// rabbit实现Drawable，可以draw()
+</span><span class="c1"></span>    <span class="n">rabbit</span><span class="p">.</span><span class="n">draw</span><span class="p">()</span>
     
-    <span class="c1">// 创建缓存
-</span><span class="c1"></span>    <span class="k">val</span> <span class="py">shapeCache</span><span class="p">:</span> <span class="n">ShapeCache</span> <span class="p">=</span> <span class="n">ShapeCache</span><span class="p">()</span>
-    
-    <span class="c1">// 将对象存入缓存
-</span><span class="c1"></span>    <span class="n">shapeCache</span><span class="p">.</span><span class="n">loadCache</span><span class="p">(</span><span class="n">circle</span><span class="p">)</span>
-    <span class="n">shapeCache</span><span class="p">.</span><span class="n">loadCache</span><span class="p">(</span><span class="n">square</span><span class="p">)</span>
-    <span class="n">shapeCache</span><span class="p">.</span><span class="n">loadCache</span><span class="p">(</span><span class="n">rectangle</span><span class="p">)</span>
-    
-    <span class="c1">// 克隆
-</span><span class="c1"></span>    <span class="k">val</span> <span class="py">circleClone</span><span class="p">:</span> <span class="n">Circle</span> <span class="p">=</span> <span class="n">shapeCache</span><span class="p">.</span><span class="k">get</span><span class="p">(</span><span class="s">&#34;circle&#34;</span><span class="p">).</span><span class="n">clone</span><span class="p">()</span> <span class="k">as</span> <span class="n">Circle</span>
-    <span class="k">val</span> <span class="py">squareClone</span><span class="p">:</span> <span class="n">Square</span> <span class="p">=</span> <span class="n">shapeCache</span><span class="p">.</span><span class="k">get</span><span class="p">(</span><span class="s">&#34;square&#34;</span><span class="p">).</span><span class="n">clone</span><span class="p">()</span> <span class="k">as</span> <span class="n">Square</span>
-    <span class="k">val</span> <span class="py">rectangleClone</span><span class="p">:</span> <span class="n">Rectangle</span> <span class="p">=</span> <span class="n">shapeCache</span><span class="p">.</span><span class="k">get</span><span class="p">(</span><span class="s">&#34;rectangle&#34;</span><span class="p">).</span><span class="n">clone</span><span class="p">()</span> <span class="k">as</span> <span class="n">Rectangle</span>
+    <span class="c1">// circle实现Shape，可以draw()和show()
+</span><span class="c1"></span>    <span class="n">rabbit</span><span class="p">.</span><span class="n">draw</span><span class="p">()</span>
+    <span class="n">rabbit</span><span class="p">.</span><span class="n">show</span><span class="p">()</span>
 <span class="p">}</span>
 </code></pre></td></tr></table>
 </div>
@@ -327,16 +257,16 @@
     <div class="post-info">
         <div class="post-info-line">
             <div class="post-info-mod">
-                <span>更新于 2020-08-12</span>
+                <span>更新于 2020-08-13</span>
             </div>
             <div class="post-info-license"></div>
         </div>
         <div class="post-info-line">
             <div class="post-info-md"><span>
-                            <a class="link-to-markdown" href="/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E5%8E%9F%E5%9E%8B%E6%A8%A1%E5%BC%8F/index.md" target="_blank">阅读原始文档</a>
+                            <a class="link-to-markdown" href="/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E6%A1%A5%E6%8E%A5%E6%A8%A1%E5%BC%8F/index.md" target="_blank">阅读原始文档</a>
                         </span></div>
             <div class="post-info-share">
-                <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="https://nevillenoah.github.io/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E5%8E%9F%E5%9E%8B%E6%A8%A1%E5%BC%8F/" data-title="设计模式：原型模式" data-hashtags="设计模式"><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="https://nevillenoah.github.io/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E5%8E%9F%E5%9E%8B%E6%A8%A1%E5%BC%8F/" data-hashtag="设计模式"><i class="fab fa-facebook-square fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Hacker News" data-sharer="hackernews" data-url="https://nevillenoah.github.io/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E5%8E%9F%E5%9E%8B%E6%A8%A1%E5%BC%8F/" data-title="设计模式：原型模式"><i class="fab fa-hacker-news fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Line" data-sharer="line" data-url="https://nevillenoah.github.io/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E5%8E%9F%E5%9E%8B%E6%A8%A1%E5%BC%8F/" data-title="设计模式：原型模式"><i data-svg-src="https://cdn.jsdelivr.net/npm/simple-icons@2.14.0/icons/line.svg"></i></a><a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="https://nevillenoah.github.io/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E5%8E%9F%E5%9E%8B%E6%A8%A1%E5%BC%8F/" data-title="设计模式：原型模式"><i class="fab fa-weibo fa-fw"></i></a></span>
+                <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="https://nevillenoah.github.io/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E6%A1%A5%E6%8E%A5%E6%A8%A1%E5%BC%8F/" data-title="设计模式：桥接模式" data-hashtags="设计模式"><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="https://nevillenoah.github.io/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E6%A1%A5%E6%8E%A5%E6%A8%A1%E5%BC%8F/" data-hashtag="设计模式"><i class="fab fa-facebook-square fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Hacker News" data-sharer="hackernews" data-url="https://nevillenoah.github.io/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E6%A1%A5%E6%8E%A5%E6%A8%A1%E5%BC%8F/" data-title="设计模式：桥接模式"><i class="fab fa-hacker-news fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Line" data-sharer="line" data-url="https://nevillenoah.github.io/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E6%A1%A5%E6%8E%A5%E6%A8%A1%E5%BC%8F/" data-title="设计模式：桥接模式"><i data-svg-src="https://cdn.jsdelivr.net/npm/simple-icons@2.14.0/icons/line.svg"></i></a><a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="https://nevillenoah.github.io/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E6%A1%A5%E6%8E%A5%E6%A8%A1%E5%BC%8F/" data-title="设计模式：桥接模式"><i class="fab fa-weibo fa-fw"></i></a></span>
             </div>
         </div>
     </div>
@@ -348,8 +278,8 @@
         </section>
     </div>
 
-    <div class="post-nav"><a href="/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F/" class="prev" rel="prev" title="设计模式：单例模式"><i class="fas fa-angle-left fa-fw"></i>设计模式：单例模式</a>
-            <a href="/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E9%80%82%E9%85%8D%E5%99%A8%E6%A8%A1%E5%BC%8F/" class="next" rel="next" title="设计模式：适配器模式">设计模式：适配器模式<i class="fas fa-angle-right fa-fw"></i></a></div>
+    <div class="post-nav"><a href="/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E9%80%82%E9%85%8D%E5%99%A8%E6%A8%A1%E5%BC%8F/" class="prev" rel="prev" title="设计模式：适配器模式"><i class="fas fa-angle-left fa-fw"></i>设计模式：适配器模式</a>
+            <a href="/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E8%BF%87%E6%BB%A4%E5%99%A8%E6%A8%A1%E5%BC%8F/" class="next" rel="next" title="设计模式：过滤器模式">设计模式：过滤器模式<i class="fas fa-angle-right fa-fw"></i></a></div>
 </div>
 <div id="comments"><div id="valine" class="comment"></div><noscript>
                 Please enable JavaScript to view the comments powered by <a href="https://valine.js.org/">Valine</a>.

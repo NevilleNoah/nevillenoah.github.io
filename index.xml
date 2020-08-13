@@ -3,9 +3,37 @@
         <title>Neville Noah | Blog</title>
         <link>https://nevillenoah.github.io/</link>
         <description>关于 LoveIt 主题</description>
-        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Wed, 12 Aug 2020 17:32:58 &#43;0800</lastBuildDate>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Thu, 13 Aug 2020 15:11:58 &#43;0800</lastBuildDate>
             <atom:link href="https://nevillenoah.github.io/index.xml" rel="self" type="application/rss+xml" />
         <item>
+    <title>设计模式：组合模式</title>
+    <link>https://nevillenoah.github.io/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E7%BB%84%E5%90%88%E6%A8%A1%E5%BC%8F/</link>
+    <pubDate>Thu, 13 Aug 2020 15:11:58 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://nevillenoah.github.io/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E7%BB%84%E5%90%88%E6%A8%A1%E5%BC%8F/</guid>
+    <description><![CDATA[释义 组合模式，将结构相近的对象写为单一对象，并将这个对象作为树的节点类型，然后依据树形结构来构造对象。 组合模式b5768dc89a2325f]]></description>
+</item><item>
+    <title>设计模式：过滤器模式</title>
+    <link>https://nevillenoah.github.io/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E8%BF%87%E6%BB%A4%E5%99%A8%E6%A8%A1%E5%BC%8F/</link>
+    <pubDate>Thu, 13 Aug 2020 14:52:58 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://nevillenoah.github.io/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E8%BF%87%E6%BB%A4%E5%99%A8%E6%A8%A1%E5%BC%8F/</guid>
+    <description><![CDATA[释义 过滤器模式，运用不同标准的过滤器筛选出数据。 过滤器模式769a4d5cf4761be7e9f6a751104aad43 " 过滤器模式 Mal]]></description>
+</item><item>
+    <title>设计模式：桥接模式</title>
+    <link>https://nevillenoah.github.io/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E6%A1%A5%E6%8E%A5%E6%A8%A1%E5%BC%8F/</link>
+    <pubDate>Thu, 13 Aug 2020 14:27:58 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://nevillenoah.github.io/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E6%A1%A5%E6%8E%A5%E6%A8%A1%E5%BC%8F/</guid>
+    <description><![CDATA[释义 桥接模式，在类的基础上，增加一个接口作为“桥”。接口的实现类和该类都可以独立变换而互不影响。 桥接模式41b8ab4c00e4fb477a]]></description>
+</item><item>
+    <title>设计模式：适配器模式</title>
+    <link>https://nevillenoah.github.io/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E9%80%82%E9%85%8D%E5%99%A8%E6%A8%A1%E5%BC%8F/</link>
+    <pubDate>Thu, 13 Aug 2020 11:26:58 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://nevillenoah.github.io/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E9%80%82%E9%85%8D%E5%99%A8%E6%A8%A1%E5%BC%8F/</guid>
+    <description><![CDATA[释义 适配器模式，实现接口兼容。为对象增加一个适配器，使得其兼容原先无法使用的内容。 适配器模式9c65ccf874a5d487704889f9]]></description>
+</item><item>
     <title>设计模式：原型模式</title>
     <link>https://nevillenoah.github.io/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E5%8E%9F%E5%9E%8B%E6%A8%A1%E5%BC%8F/</link>
     <pubDate>Wed, 12 Aug 2020 17:32:58 &#43;0800</pubDate>
@@ -47,33 +75,5 @@
     <author>作者</author>
     <guid>https://nevillenoah.github.io/jetpackpaging%E5%88%86%E9%A1%B5%E5%BA%93%E4%B9%8B%E8%BF%9B%E5%BA%A6%E7%8A%B6%E6%80%81/</guid>
     <description><![CDATA[引言 我们在数据加载的过程中需要用到进度组件（例如加载圈、进度条）来显示加载状态。Paging为此提供了一个非常优秀的适配器LoadState]]></description>
-</item><item>
-    <title>Jetpack：Paging分页库与网络加载</title>
-    <link>https://nevillenoah.github.io/jetpackpaging%E5%88%86%E9%A1%B5%E5%BA%93%E4%B8%8E%E7%BD%91%E7%BB%9C%E5%8A%A0%E8%BD%BD/</link>
-    <pubDate>Mon, 10 Aug 2020 16:37:41 &#43;0800</pubDate>
-    <author>作者</author>
-    <guid>https://nevillenoah.github.io/jetpackpaging%E5%88%86%E9%A1%B5%E5%BA%93%E4%B8%8E%E7%BD%91%E7%BB%9C%E5%8A%A0%E8%BD%BD/</guid>
-    <description><![CDATA[引言 Paging3的模型改了，主要特点是新增了中转器以实现网络数据的持久化存储。 Paging3模型 Paing数据加载的途径一：如果你希望数据]]></description>
-</item><item>
-    <title>Jetpack：Paging分页库之使用基础</title>
-    <link>https://nevillenoah.github.io/jetpackpaging%E5%88%86%E9%A1%B5%E5%BA%93%E4%B9%8B%E4%BD%BF%E7%94%A8%E5%9F%BA%E7%A1%80/</link>
-    <pubDate>Wed, 05 Aug 2020 21:46:41 &#43;0800</pubDate>
-    <author>作者</author>
-    <guid>https://nevillenoah.github.io/jetpackpaging%E5%88%86%E9%A1%B5%E5%BA%93%E4%B9%8B%E4%BD%BF%E7%94%A8%E5%9F%BA%E7%A1%80/</guid>
-    <description><![CDATA[引言 也许你还在RecyclerView的下拉加载而烦恼，也许你还在为做分页缓存而头疼，所以，他来了——Paging分页库。 我将代码存到了gi]]></description>
-</item><item>
-    <title>Gradle：仓库</title>
-    <link>https://nevillenoah.github.io/gradle%E4%BB%93%E5%BA%93/</link>
-    <pubDate>Tue, 04 Aug 2020 16:33:58 &#43;0800</pubDate>
-    <author>作者</author>
-    <guid>https://nevillenoah.github.io/gradle%E4%BB%93%E5%BA%93/</guid>
-    <description><![CDATA[引言 你有没有很奇怪，我们的远程引入的依赖库为什么只需要写入源即可？难道还有不需要网络协议就能获取到的资源？怎么可能。那么协议写到了哪里？写到]]></description>
-</item><item>
-    <title>Gradle：依赖库</title>
-    <link>https://nevillenoah.github.io/gradle%E4%BE%9D%E8%B5%96%E5%BA%93/</link>
-    <pubDate>Tue, 04 Aug 2020 15:05:58 &#43;0800</pubDate>
-    <author>作者</author>
-    <guid>https://nevillenoah.github.io/gradle%E4%BE%9D%E8%B5%96%E5%BA%93/</guid>
-    <description><![CDATA[引言 很多同学写了Android很久，对于依赖库的引入却是傻傻分不清。因为Gradle随着版本的升级，语义在不断的变化，从compile到im]]></description>
 </item></channel>
 </rss>
