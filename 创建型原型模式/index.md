@@ -57,7 +57,7 @@ class Rectangle : Shape() {
 ```kotlin
 class ShapeCache {
 
-    private var shapeMap: MutableMap<String, Shape> =  MutableMap<String, Shape>()
+    private var shapeMap: MutableMap<String, Shape> =  mutableMapOf()
 
     // 向缓存中放入Shape
     fun loadCache(shape: Shape) {
