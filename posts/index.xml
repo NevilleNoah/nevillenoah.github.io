@@ -3,7 +3,21 @@
         <title>所有文章 - Neville Noah | Blog</title>
         <link>https://nevillenoah.github.io/posts/</link>
         <description>所有文章 | Neville Noah | Blog</description>
-        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Fri, 14 Aug 2020 15:01:58 &#43;0800</lastBuildDate><atom:link href="https://nevillenoah.github.io/posts/" rel="self" type="application/rss+xml" /><item>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Fri, 14 Aug 2020 18:01:58 &#43;0800</lastBuildDate><atom:link href="https://nevillenoah.github.io/posts/" rel="self" type="application/rss+xml" /><item>
+    <title>行为型：备忘录模式</title>
+    <link>https://nevillenoah.github.io/%E8%A1%8C%E4%B8%BA%E5%9E%8B%E5%A4%87%E5%BF%98%E5%BD%95%E6%A8%A1%E5%BC%8F/</link>
+    <pubDate>Fri, 14 Aug 2020 18:01:58 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://nevillenoah.github.io/%E8%A1%8C%E4%B8%BA%E5%9E%8B%E5%A4%87%E5%BF%98%E5%BD%95%E6%A8%A1%E5%BC%8F/</guid>
+    <description><![CDATA[释义 备忘录模式，存储对象状态，在需要时恢复。 备忘录模式b8e7c788a3bdf575c160966ffb09674a " 备忘录模式 基础类Or]]></description>
+</item><item>
+    <title>行为型：中介者模式</title>
+    <link>https://nevillenoah.github.io/%E8%A1%8C%E4%B8%BA%E5%9E%8B%E4%B8%AD%E4%BB%8B%E8%80%85%E6%A8%A1%E5%BC%8F/</link>
+    <pubDate>Fri, 14 Aug 2020 17:01:58 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://nevillenoah.github.io/%E8%A1%8C%E4%B8%BA%E5%9E%8B%E4%B8%AD%E4%BB%8B%E8%80%85%E6%A8%A1%E5%BC%8F/</guid>
+    <description><![CDATA[释义 中介者模式，在通信的两者间，增加一个中介类去处理通信问题，我们在通信时只需要维护中介类即可。 中介者模式e12e12f895f10e2d7]]></description>
+</item><item>
     <title>行为型：迭代器模式</title>
     <link>https://nevillenoah.github.io/%E8%A1%8C%E4%B8%BA%E5%9E%8B%E8%BF%AD%E4%BB%A3%E5%99%A8%E6%A8%A1%E5%BC%8F/</link>
     <pubDate>Fri, 14 Aug 2020 15:01:58 &#43;0800</pubDate>
@@ -59,19 +73,5 @@
     <author>作者</author>
     <guid>https://nevillenoah.github.io/%E7%BB%93%E6%9E%84%E5%9E%8B%E4%BB%A3%E7%90%86%E6%A8%A1%E5%BC%8F/</guid>
     <description><![CDATA[释义 代理模式，自己完不成的事交由另一位能完成的代理人去完成。 代理模式c19c222aa00e32333e041890b84f031e " 代理模]]></description>
-</item><item>
-    <title>结构型：组合模式</title>
-    <link>https://nevillenoah.github.io/%E7%BB%93%E6%9E%84%E5%9E%8B%E7%BB%84%E5%90%88%E6%A8%A1%E5%BC%8F/</link>
-    <pubDate>Thu, 13 Aug 2020 15:11:58 &#43;0800</pubDate>
-    <author>作者</author>
-    <guid>https://nevillenoah.github.io/%E7%BB%93%E6%9E%84%E5%9E%8B%E7%BB%84%E5%90%88%E6%A8%A1%E5%BC%8F/</guid>
-    <description><![CDATA[释义 组合模式，将结构相近的对象写为单一对象，并将这个对象作为树的节点类型，然后依据树形结构来构造对象。 组合模式b5768dc89a2325f]]></description>
-</item><item>
-    <title>结构型：过滤器模式</title>
-    <link>https://nevillenoah.github.io/%E7%BB%93%E6%9E%84%E5%9E%8B%E8%BF%87%E6%BB%A4%E5%99%A8%E6%A8%A1%E5%BC%8F/</link>
-    <pubDate>Thu, 13 Aug 2020 14:52:58 &#43;0800</pubDate>
-    <author>作者</author>
-    <guid>https://nevillenoah.github.io/%E7%BB%93%E6%9E%84%E5%9E%8B%E8%BF%87%E6%BB%A4%E5%99%A8%E6%A8%A1%E5%BC%8F/</guid>
-    <description><![CDATA[释义 过滤器模式，运用不同标准的过滤器筛选出数据。 过滤器模式769a4d5cf4761be7e9f6a751104aad43 " 过滤器模式 Mal]]></description>
 </item></channel>
 </rss>
