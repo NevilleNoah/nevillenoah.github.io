@@ -5,36 +5,36 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="robots" content="noodp" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
-        <title>行为型：命令模式 - Neville Noah | Blog</title><meta name="Description" content="关于 LoveIt 主题"><meta property="og:title" content="行为型：命令模式" />
-<meta property="og:description" content="释义 命令模式，将请求封装为命令类，传给调用类，调用类寻找合适的对象执行命令。 命令模式540f04195f757b23e8f2cb4d54e2" />
+        <title>行为型：解释器模式 - Neville Noah | Blog</title><meta name="Description" content="关于 LoveIt 主题"><meta property="og:title" content="行为型：解释器模式" />
+<meta property="og:description" content="释义 解释器模式，通过解释器对内容进行解释。 解释器模式034aa5120a20e4969f6be05a3e9ab3fe &#34; 解释器模式 表达式Exp" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://nevillenoah.github.io/%E8%A1%8C%E4%B8%BA%E5%9E%8B%E5%91%BD%E4%BB%A4%E6%A8%A1%E5%BC%8F/" />
-<meta property="og:image" content="https://nevillenoah.github.io/%E8%A1%8C%E4%B8%BA%E5%9E%8B%E5%91%BD%E4%BB%A4%E6%A8%A1%E5%BC%8F/featured-image.jpg"/>
-<meta property="article:published_time" content="2020-08-14T12:11:58+08:00" />
-<meta property="article:modified_time" content="2020-08-14T12:11:58+08:00" />
+<meta property="og:url" content="https://nevillenoah.github.io/%E8%A1%8C%E4%B8%BA%E5%9E%8B%E8%A7%A3%E9%87%8A%E5%99%A8%E6%A8%A1%E5%BC%8F/" />
+<meta property="og:image" content="https://nevillenoah.github.io/%E8%A1%8C%E4%B8%BA%E5%9E%8B%E8%A7%A3%E9%87%8A%E5%99%A8%E6%A8%A1%E5%BC%8F/featured-image.jpg"/>
+<meta property="article:published_time" content="2020-08-14T14:33:58+08:00" />
+<meta property="article:modified_time" content="2020-08-14T14:33:58+08:00" />
 <meta name="twitter:card" content="summary_large_image"/>
-<meta name="twitter:image" content="https://nevillenoah.github.io/%E8%A1%8C%E4%B8%BA%E5%9E%8B%E5%91%BD%E4%BB%A4%E6%A8%A1%E5%BC%8F/featured-image.jpg"/>
-<meta name="twitter:title" content="行为型：命令模式"/>
-<meta name="twitter:description" content="释义 命令模式，将请求封装为命令类，传给调用类，调用类寻找合适的对象执行命令。 命令模式540f04195f757b23e8f2cb4d54e2"/>
+<meta name="twitter:image" content="https://nevillenoah.github.io/%E8%A1%8C%E4%B8%BA%E5%9E%8B%E8%A7%A3%E9%87%8A%E5%99%A8%E6%A8%A1%E5%BC%8F/featured-image.jpg"/>
+<meta name="twitter:title" content="行为型：解释器模式"/>
+<meta name="twitter:description" content="释义 解释器模式，通过解释器对内容进行解释。 解释器模式034aa5120a20e4969f6be05a3e9ab3fe &#34; 解释器模式 表达式Exp"/>
 <meta name="application-name" content="LoveIt">
 <meta name="apple-mobile-web-app-title" content="LoveIt"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://nevillenoah.github.io/%E8%A1%8C%E4%B8%BA%E5%9E%8B%E5%91%BD%E4%BB%A4%E6%A8%A1%E5%BC%8F/" /><link rel="prev" href="https://nevillenoah.github.io/%E8%A1%8C%E4%B8%BA%E5%9E%8B%E8%B4%A3%E4%BB%BB%E9%93%BE%E6%A8%A1%E5%BC%8F/" /><link rel="next" href="https://nevillenoah.github.io/%E8%A1%8C%E4%B8%BA%E5%9E%8B%E8%A7%A3%E9%87%8A%E5%99%A8%E6%A8%A1%E5%BC%8F/" /><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13.0/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css"><script type="application/ld+json">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://nevillenoah.github.io/%E8%A1%8C%E4%B8%BA%E5%9E%8B%E8%A7%A3%E9%87%8A%E5%99%A8%E6%A8%A1%E5%BC%8F/" /><link rel="prev" href="https://nevillenoah.github.io/%E8%A1%8C%E4%B8%BA%E5%9E%8B%E5%91%BD%E4%BB%A4%E6%A8%A1%E5%BC%8F/" /><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13.0/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css"><script type="application/ld+json">
     {
         "@context": "http://schema.org",
         "@type": "BlogPosting",
-        "headline": "行为型：命令模式",
+        "headline": "行为型：解释器模式",
         "inLanguage": "zh-CN",
         "mainEntityOfPage": {
             "@type": "WebPage",
-            "@id": "https:\/\/nevillenoah.github.io\/%E8%A1%8C%E4%B8%BA%E5%9E%8B%E5%91%BD%E4%BB%A4%E6%A8%A1%E5%BC%8F\/"
+            "@id": "https:\/\/nevillenoah.github.io\/%E8%A1%8C%E4%B8%BA%E5%9E%8B%E8%A7%A3%E9%87%8A%E5%99%A8%E6%A8%A1%E5%BC%8F\/"
         },"image": [{
                             "@type": "ImageObject",
-                            "url": "https:\/\/nevillenoah.github.io\/%E8%A1%8C%E4%B8%BA%E5%9E%8B%E5%91%BD%E4%BB%A4%E6%A8%A1%E5%BC%8F\/featured-image.jpg",
+                            "url": "https:\/\/nevillenoah.github.io\/%E8%A1%8C%E4%B8%BA%E5%9E%8B%E8%A7%A3%E9%87%8A%E5%99%A8%E6%A8%A1%E5%BC%8F\/featured-image.jpg",
                             "width":  1596 ,
                             "height":  596 
-                        }],"genre": "posts","keywords": "设计模式","wordcount":  361 ,
-        "url": "https:\/\/nevillenoah.github.io\/%E8%A1%8C%E4%B8%BA%E5%9E%8B%E5%91%BD%E4%BB%A4%E6%A8%A1%E5%BC%8F\/","datePublished": "2020-08-14T12:11:58+08:00","dateModified": "2020-08-14T12:11:58+08:00","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
+                        }],"genre": "posts","keywords": "设计模式","wordcount":  288 ,
+        "url": "https:\/\/nevillenoah.github.io\/%E8%A1%8C%E4%B8%BA%E5%9E%8B%E8%A7%A3%E9%87%8A%E5%99%A8%E6%A8%A1%E5%BC%8F\/","datePublished": "2020-08-14T14:33:58+08:00","dateModified": "2020-08-14T14:33:58+08:00","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
             "@type": "Organization",
             "name": "xxxx","logo": {
                     "@type": "ImageObject",
@@ -56,7 +56,7 @@
         </div>
         <div class="menu">
             <div class="menu-inner"><a class="menu-item" href="/posts/"> 文章 </a><a class="menu-item" href="/tags/"> 标签 </a><a class="menu-item" href="/categories/"> 分类 </a><a class="menu-item" href="/categories/documentation/"> 文档 </a><a class="menu-item" href="/about/"> 关于 </a><a class="menu-item" href="https://github.com/dillonzq/LoveIt" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw'></i>  </a><span class="menu-item delimiter"></span><a href="javascript:void(0);" class="menu-item language" title="选择语言">简体中文<i class="fas fa-chevron-right fa-fw"></i>
-                        <select class="language-select" id="language-select-desktop" onchange="location = this.value;"><option value="/%E8%A1%8C%E4%B8%BA%E5%9E%8B%E5%91%BD%E4%BB%A4%E6%A8%A1%E5%BC%8F/" selected>简体中文</option></select>
+                        <select class="language-select" id="language-select-desktop" onchange="location = this.value;"><option value="/%E8%A1%8C%E4%B8%BA%E5%9E%8B%E8%A7%A3%E9%87%8A%E5%99%A8%E6%A8%A1%E5%BC%8F/" selected>简体中文</option></select>
                     </a><span class="menu-item search" id="search-desktop">
                         <input type="text" placeholder="搜索文章标题或内容..." id="search-input-desktop">
                         <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
@@ -103,7 +103,7 @@
                 </div><a class="menu-item" href="/posts/" title="">文章</a><a class="menu-item" href="/tags/" title="">标签</a><a class="menu-item" href="/categories/" title="">分类</a><a class="menu-item" href="/categories/documentation/" title="">文档</a><a class="menu-item" href="/about/" title="">关于</a><a class="menu-item" href="https://github.com/dillonzq/LoveIt" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw'></i></a><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
                 <i class="fas fa-adjust fa-fw"></i>
             </a><a href="javascript:void(0);" class="menu-item" title="选择语言">简体中文<i class="fas fa-chevron-right fa-fw"></i>
-                    <select class="language-select" onchange="location = this.value;"><option value="/%E8%A1%8C%E4%B8%BA%E5%9E%8B%E5%91%BD%E4%BB%A4%E6%A8%A1%E5%BC%8F/" selected>简体中文</option></select>
+                    <select class="language-select" onchange="location = this.value;"><option value="/%E8%A1%8C%E4%B8%BA%E5%9E%8B%E8%A7%A3%E9%87%8A%E5%99%A8%E6%A8%A1%E5%BC%8F/" selected>简体中文</option></select>
                 </a></div>
     </div>
 </header>
@@ -117,20 +117,20 @@
                 <div class="container"><div class="toc" id="toc-auto">
             <h2 class="toc-title">目录</h2>
             <div class="toc-content" id="toc-content-auto"></div>
-        </div><article class="page single"><h1 class="single-title animated flipInX">行为型：命令模式</h1><div class="post-meta">
+        </div><article class="page single"><h1 class="single-title animated flipInX">行为型：解释器模式</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="https://github.com/nevillenoah" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Neville Noah</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"><i class="far fa-folder fa-fw"></i>设计模式</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-08-14">2020-08-14</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 361 字&nbsp;
-                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 1 分钟&nbsp;<span id="/%E8%A1%8C%E4%B8%BA%E5%9E%8B%E5%91%BD%E4%BB%A4%E6%A8%A1%E5%BC%8F/" class="leancloud_visitors" data-flag-title="行为型：命令模式">
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-08-14">2020-08-14</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 288 字&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 1 分钟&nbsp;<span id="/%E8%A1%8C%E4%B8%BA%E5%9E%8B%E8%A7%A3%E9%87%8A%E5%99%A8%E6%A8%A1%E5%BC%8F/" class="leancloud_visitors" data-flag-title="行为型：解释器模式">
                         <i class="far fa-eye fa-fw"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
                     </span>&nbsp;</div>
         </div><div class="featured-image"><img
         class="lazyload"
         src="/svg/loading.min.svg"
-        data-src="/%E8%A1%8C%E4%B8%BA%E5%9E%8B%E5%91%BD%E4%BB%A4%E6%A8%A1%E5%BC%8F/featured-image.jpg"
-        data-srcset="/%E8%A1%8C%E4%B8%BA%E5%9E%8B%E5%91%BD%E4%BB%A4%E6%A8%A1%E5%BC%8F/featured-image.jpg, /%E8%A1%8C%E4%B8%BA%E5%9E%8B%E5%91%BD%E4%BB%A4%E6%A8%A1%E5%BC%8F/featured-image.jpg 1.5x, /%E8%A1%8C%E4%B8%BA%E5%9E%8B%E5%91%BD%E4%BB%A4%E6%A8%A1%E5%BC%8F/featured-image.jpg 2x"
+        data-src="/%E8%A1%8C%E4%B8%BA%E5%9E%8B%E8%A7%A3%E9%87%8A%E5%99%A8%E6%A8%A1%E5%BC%8F/featured-image.jpg"
+        data-srcset="/%E8%A1%8C%E4%B8%BA%E5%9E%8B%E8%A7%A3%E9%87%8A%E5%99%A8%E6%A8%A1%E5%BC%8F/featured-image.jpg, /%E8%A1%8C%E4%B8%BA%E5%9E%8B%E8%A7%A3%E9%87%8A%E5%99%A8%E6%A8%A1%E5%BC%8F/featured-image.jpg 1.5x, /%E8%A1%8C%E4%B8%BA%E5%9E%8B%E8%A7%A3%E9%87%8A%E5%99%A8%E6%A8%A1%E5%BC%8F/featured-image.jpg 2x"
         data-sizes="auto"
-        alt="/%E8%A1%8C%E4%B8%BA%E5%9E%8B%E5%91%BD%E4%BB%A4%E6%A8%A1%E5%BC%8F/featured-image.jpg"
-        title="/%E8%A1%8C%E4%B8%BA%E5%9E%8B%E5%91%BD%E4%BB%A4%E6%A8%A1%E5%BC%8F/featured-image.jpg" /></div><div class="details toc" id="toc-static"  kept="">
+        alt="/%E8%A1%8C%E4%B8%BA%E5%9E%8B%E8%A7%A3%E9%87%8A%E5%99%A8%E6%A8%A1%E5%BC%8F/featured-image.jpg"
+        title="/%E8%A1%8C%E4%B8%BA%E5%9E%8B%E8%A7%A3%E9%87%8A%E5%99%A8%E6%A8%A1%E5%BC%8F/featured-image.jpg" /></div><div class="details toc" id="toc-static"  kept="">
                 <div class="details-summary toc-title">
                     <span>目录</span>
                     <span><i class="details-icon fas fa-angle-right"></i></span>
@@ -138,112 +138,81 @@
                 <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
   <ul>
     <li><a href="#释义">释义</a></li>
-    <li><a href="#命令">命令</a></li>
-    <li><a href="#请求类">请求类</a></li>
-    <li><a href="#调用类">调用类</a></li>
+    <li><a href="#表达式">表达式</a></li>
+    <li><a href="#基础表达式">基础表达式</a></li>
+    <li><a href="#解释器">解释器</a></li>
     <li><a href="#使用">使用</a></li>
   </ul>
 </nav></div>
             </div><div class="content" id="content"><h2 id="释义">释义</h2>
-<p>命令模式，将请求封装为命令类，传给调用类，调用类寻找合适的对象执行命令。
-<figure><a class="lightgallery" href="/%E8%A1%8C%E4%B8%BA%E5%9E%8B%E5%91%BD%E4%BB%A4%E6%A8%A1%E5%BC%8F/%E8%A1%8C%E4%B8%BA%E5%9E%8B%EF%BC%9A%E5%91%BD%E4%BB%A4%E6%A8%A1%E5%BC%8F.resources/E3E8920B-0990-41E3-9B10-75E771363300.png" title="540f04195f757b23e8f2cb4d54e2a9e1" data-thumbnail="/%E8%A1%8C%E4%B8%BA%E5%9E%8B%E5%91%BD%E4%BB%A4%E6%A8%A1%E5%BC%8F/%E8%A1%8C%E4%B8%BA%E5%9E%8B%EF%BC%9A%E5%91%BD%E4%BB%A4%E6%A8%A1%E5%BC%8F.resources/E3E8920B-0990-41E3-9B10-75E771363300.png" data-sub-html="<h2>命令模式</h2><p>540f04195f757b23e8f2cb4d54e2a9e1</p>">
+<p>解释器模式，通过解释器对内容进行解释。
+<figure><a class="lightgallery" href="/%E8%A1%8C%E4%B8%BA%E5%9E%8B%E8%A7%A3%E9%87%8A%E5%99%A8%E6%A8%A1%E5%BC%8F/%E8%A1%8C%E4%B8%BA%E5%9E%8B%EF%BC%9A%E8%A7%A3%E9%87%8A%E5%99%A8%E6%A8%A1%E5%BC%8F.resources/1CF1C70C-25F1-4221-B3D3-5B23CF716289.png" title="034aa5120a20e4969f6be05a3e9ab3fe" data-thumbnail="/%E8%A1%8C%E4%B8%BA%E5%9E%8B%E8%A7%A3%E9%87%8A%E5%99%A8%E6%A8%A1%E5%BC%8F/%E8%A1%8C%E4%B8%BA%E5%9E%8B%EF%BC%9A%E8%A7%A3%E9%87%8A%E5%99%A8%E6%A8%A1%E5%BC%8F.resources/1CF1C70C-25F1-4221-B3D3-5B23CF716289.png" data-sub-html="<h2>解释器模式</h2><p>034aa5120a20e4969f6be05a3e9ab3fe</p>">
         <img
             class="lazyload"
             src="/svg/loading.min.svg"
-            data-src="%e8%a1%8c%e4%b8%ba%e5%9e%8b%ef%bc%9a%e5%91%bd%e4%bb%a4%e6%a8%a1%e5%bc%8f.resources/E3E8920B-0990-41E3-9B10-75E771363300.png"
-            data-srcset="/%E8%A1%8C%E4%B8%BA%E5%9E%8B%E5%91%BD%E4%BB%A4%E6%A8%A1%E5%BC%8F/%E8%A1%8C%E4%B8%BA%E5%9E%8B%EF%BC%9A%E5%91%BD%E4%BB%A4%E6%A8%A1%E5%BC%8F.resources/E3E8920B-0990-41E3-9B10-75E771363300.png, %e8%a1%8c%e4%b8%ba%e5%9e%8b%ef%bc%9a%e5%91%bd%e4%bb%a4%e6%a8%a1%e5%bc%8f.resources/E3E8920B-0990-41E3-9B10-75E771363300.png 1.5x, /%E8%A1%8C%E4%B8%BA%E5%9E%8B%E5%91%BD%E4%BB%A4%E6%A8%A1%E5%BC%8F/%E8%A1%8C%E4%B8%BA%E5%9E%8B%EF%BC%9A%E5%91%BD%E4%BB%A4%E6%A8%A1%E5%BC%8F.resources/E3E8920B-0990-41E3-9B10-75E771363300.png 2x"
+            data-src="%e8%a1%8c%e4%b8%ba%e5%9e%8b%ef%bc%9a%e8%a7%a3%e9%87%8a%e5%99%a8%e6%a8%a1%e5%bc%8f.resources/1CF1C70C-25F1-4221-B3D3-5B23CF716289.png"
+            data-srcset="/%E8%A1%8C%E4%B8%BA%E5%9E%8B%E8%A7%A3%E9%87%8A%E5%99%A8%E6%A8%A1%E5%BC%8F/%E8%A1%8C%E4%B8%BA%E5%9E%8B%EF%BC%9A%E8%A7%A3%E9%87%8A%E5%99%A8%E6%A8%A1%E5%BC%8F.resources/1CF1C70C-25F1-4221-B3D3-5B23CF716289.png, %e8%a1%8c%e4%b8%ba%e5%9e%8b%ef%bc%9a%e8%a7%a3%e9%87%8a%e5%99%a8%e6%a8%a1%e5%bc%8f.resources/1CF1C70C-25F1-4221-B3D3-5B23CF716289.png 1.5x, /%E8%A1%8C%E4%B8%BA%E5%9E%8B%E8%A7%A3%E9%87%8A%E5%99%A8%E6%A8%A1%E5%BC%8F/%E8%A1%8C%E4%B8%BA%E5%9E%8B%EF%BC%9A%E8%A7%A3%E9%87%8A%E5%99%A8%E6%A8%A1%E5%BC%8F.resources/1CF1C70C-25F1-4221-B3D3-5B23CF716289.png 2x"
             data-sizes="auto"
-            alt="/%E8%A1%8C%E4%B8%BA%E5%9E%8B%E5%91%BD%E4%BB%A4%E6%A8%A1%E5%BC%8F/%E8%A1%8C%E4%B8%BA%E5%9E%8B%EF%BC%9A%E5%91%BD%E4%BB%A4%E6%A8%A1%E5%BC%8F.resources/E3E8920B-0990-41E3-9B10-75E771363300.png" />
-    </a><figcaption class="image-caption">命令模式</figcaption>
-    </figure>
-调用类<code>Call</code>，使用<code>Command</code>命令。将<code>BuyFood</code>和<code>SellFood</code>两条命令交给<code>Food</code>去执行，分别调用<code>Food</code>中的<code>buy()</code>和<code>sell()</code>。</p>
-<h2 id="命令">命令</h2>
+            alt="/%E8%A1%8C%E4%B8%BA%E5%9E%8B%E8%A7%A3%E9%87%8A%E5%99%A8%E6%A8%A1%E5%BC%8F/%E8%A1%8C%E4%B8%BA%E5%9E%8B%EF%BC%9A%E8%A7%A3%E9%87%8A%E5%99%A8%E6%A8%A1%E5%BC%8F.resources/1CF1C70C-25F1-4221-B3D3-5B23CF716289.png" />
+    </a><figcaption class="image-caption">解释器模式</figcaption>
+    </figure></p>
+<p>表达式<code>Expression</code>由两个子类：</p>
+<ul>
+<li>基础表达式<code>BaseExpression</code></li>
+<li>与解释器<code>AndInterpreter</code></li>
+</ul>
+<p>基础表达式的两个实例<code>exp1</code>和<code>exp2</code>传入与解释器，使用与解释器对<code>interpreter()</code>进行解释。</p>
+<h2 id="表达式">表达式</h2>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span><span class="lnt">14
-</span><span class="lnt">15
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-kotlin" data-lang="kotlin"><span class="k">interface</span> <span class="nc">Command</span><span class="p">()</span> <span class="p">{</span>
-    <span class="k">fun</span> <span class="nf">execute</span><span class="p">()</span>
-<span class="p">}</span>
-
-<span class="k">class</span> <span class="nc">BuyFood</span><span class="p">(</span><span class="k">val</span> <span class="py">food</span><span class="p">:</span> <span class="n">Food</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">fun</span> <span class="nf">execute</span><span class="p">()</span> <span class="p">{</span> 
-        <span class="n">food</span><span class="p">.</span><span class="n">buy</span><span class="p">()</span> 
-    <span class="p">}</span>
-<span class="p">}</span>
-
-<span class="k">class</span> <span class="nc">SellFood</span><span class="p">(</span><span class="k">val</span> <span class="py">food</span><span class="p">:</span> <span class="n">Food</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">fun</span> <span class="nf">execute</span><span class="p">()</span> <span class="p">{</span> 
-        <span class="n">food</span><span class="p">.</span><span class="n">sell</span><span class="p">()</span>
-    <span class="p">}</span>
+<pre class="chroma"><code class="language-kotlin" data-lang="kotlin"><span class="k">interface</span> <span class="nc">Expression</span> <span class="p">{</span>
+    <span class="k">fun</span> <span class="nf">interpreter</span><span class="p">()</span>
 <span class="p">}</span>
 </code></pre></td></tr></table>
 </div>
-</div><h2 id="请求类">请求类</h2>
+</div><h2 id="基础表达式">基础表达式</h2>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
+</span><span class="lnt">5
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-kotlin" data-lang="kotlin"><span class="k">class</span> <span class="nc">Food</span> <span class="p">{</span>
-    <span class="k">fun</span> <span class="nf">buy</span><span class="p">()</span> <span class="p">{</span> <span class="p">...</span> <span class="p">}</span>
-    <span class="k">fun</span> <span class="nf">sell</span><span class="p">()</span> <span class="p">{</span> <span class="p">...</span> <span class="p">}</span>
+<pre class="chroma"><code class="language-kotlin" data-lang="kotlin"><span class="k">class</span> <span class="nc">BaseExpression</span><span class="p">()</span> <span class="p">:</span> <span class="n">Expression</span> <span class="p">{</span>
+    <span class="k">override</span> <span class="k">fun</span> <span class="nf">interpreter</span><span class="p">(</span><span class="n">context</span><span class="p">:</span> <span class="n">String</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">doInterpreter</span><span class="p">(</span><span class="n">context</span><span class="p">)</span>
+    <span class="p">}</span>
 <span class="p">}</span>
 </code></pre></td></tr></table>
 </div>
-</div><h2 id="调用类">调用类</h2>
+</div><h2 id="解释器">解释器</h2>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span><span class="lnt">14
-</span><span class="lnt">15
-</span><span class="lnt">16
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-kotlin" data-lang="kotlin"><span class="k">class</span> <span class="nc">Call</span><span class="p">(</span>
-    <span class="c1">// 创建一个命令队列
-</span><span class="c1"></span>    <span class="k">val</span> <span class="py">commands</span><span class="p">:</span> <span class="n">MutableList</span><span class="p">&lt;</span><span class="n">Command</span><span class="p">&gt;</span> <span class="p">=</span>  <span class="n">mutableListOf</span><span class="p">&lt;</span><span class="n">Command</span><span class="p">&gt;()</span>
+<pre class="chroma"><code class="language-kotlin" data-lang="kotlin"><span class="k">class</span> <span class="nc">AndInterpreter</span><span class="p">(</span>
+    <span class="k">var</span> <span class="py">String</span> <span class="n">exp1</span><span class="p">,</span>
+    <span class="k">var</span> <span class="py">String</span> <span class="n">exp2</span>
 <span class="p">)</span> <span class="p">{</span>
-    <span class="c1">// 向命令队列中新增命令
-</span><span class="c1"></span>    <span class="k">fun</span> <span class="nf">addCommand</span><span class="p">(</span><span class="n">command</span><span class="p">:</span> <span class="n">Command</span><span class="p">)</span> <span class="p">{</span>
-        <span class="n">list</span><span class="p">.</span><span class="n">add</span><span class="p">(</span><span class="n">command</span><span class="p">)</span>
-    <span class="p">}</span>
-    
-    <span class="c1">// 执行命令
-</span><span class="c1"></span>    <span class="k">fun</span> <span class="nf">executeCommand</span><span class="p">()</span> <span class="p">{</span>
-        <span class="k">for</span><span class="p">(</span><span class="n">command</span> <span class="k">in</span> <span class="n">commands</span><span class="p">)</span> <span class="p">{</span>
-            <span class="n">command</span><span class="p">.</span><span class="n">execute</span><span class="p">()</span>
-        <span class="p">}</span>
+    <span class="k">override</span> <span class="k">fun</span> <span class="nf">interpreter</span><span class="p">()</span> <span class="p">{</span>
+        <span class="c1">// “与”
+</span><span class="c1"></span>        <span class="n">exp1</span><span class="p">.</span><span class="n">interpreter</span><span class="p">()&amp;&amp;</span><span class="n">exp2</span><span class="p">.</span><span class="n">interpreter</span><span class="p">()</span>
     <span class="p">}</span>
 <span class="p">}</span>
 </code></pre></td></tr></table>
@@ -251,41 +220,25 @@
 </div><h2 id="使用">使用</h2>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span><span class="lnt">14
-</span><span class="lnt">15
-</span><span class="lnt">16
-</span><span class="lnt">17
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-kotlin" data-lang="kotlin"><span class="k">fun</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
-
-    <span class="c1">// 命令目标对象
-</span><span class="c1"></span>    <span class="k">val</span> <span class="py">food</span><span class="p">:</span> <span class="n">Food</span> <span class="p">=</span> <span class="n">Food</span><span class="p">()</span>
-    <span class="c1">// 命令
-</span><span class="c1"></span>    <span class="k">val</span> <span class="py">buyFood</span><span class="p">:</span> <span class="n">BuyFood</span> <span class="p">=</span> <span class="n">BuyFood</span><span class="p">()</span>
-    <span class="k">val</span> <span class="py">sellFood</span><span class="p">:</span> <span class="n">SellFood</span> <span class="p">=</span> <span class="n">SellFood</span><span class="p">()</span>
-    <span class="c1">// 命令调度器
-</span><span class="c1"></span>    <span class="k">val</span> <span class="py">call</span><span class="p">:</span> <span class="n">Call</span> <span class="p">=</span> <span class="n">Call</span><span class="p">()</span>
-    
-    <span class="c1">// 添加命令
-</span><span class="c1"></span>    <span class="n">call</span><span class="p">.</span><span class="n">addCommand</span><span class="p">(</span><span class="n">buyFood</span><span class="p">)</span>
-    <span class="n">call</span><span class="p">.</span><span class="n">addCommand</span><span class="p">(</span><span class="n">sellFood</span><span class="p">)</span>
-    <span class="c1">// 执行命令
-</span><span class="c1"></span>    <span class="n">call</span><span class="p">.</span><span class="n">executeCommand</span><span class="p">()</span>
-    
+    <span class="c1">// 创建基础表达式
+</span><span class="c1"></span>    <span class="k">val</span> <span class="py">exp1</span><span class="p">:</span> <span class="n">Expression</span> <span class="p">=</span> <span class="n">BaseExpression</span><span class="p">(</span><span class="s">&#34;string1&#34;</span><span class="p">)</span>
+    <span class="k">val</span> <span class="py">exp2</span><span class="p">:</span> <span class="n">Expression</span> <span class="p">=</span> <span class="n">BaseExpression</span><span class="p">(</span><span class="s">&#34;string2&#34;</span><span class="p">)</span>
+    <span class="c1">// 创建解释器
+</span><span class="c1"></span>    <span class="k">val</span> <span class="py">interpreter</span><span class="p">:</span> <span class="n">AndInterpreter</span> <span class="p">=</span> <span class="n">AndInterpreter</span><span class="p">(</span><span class="n">exp1</span><span class="p">,</span> <span class="n">exp2</span><span class="p">)</span>
+    <span class="c1">// 解释
+</span><span class="c1"></span>    <span class="n">interpreter</span><span class="p">.</span><span class="n">interpreter</span><span class="p">()</span>
 <span class="p">}</span>
 </code></pre></td></tr></table>
 </div>
@@ -299,10 +252,10 @@
         </div>
         <div class="post-info-line">
             <div class="post-info-md"><span>
-                            <a class="link-to-markdown" href="/%E8%A1%8C%E4%B8%BA%E5%9E%8B%E5%91%BD%E4%BB%A4%E6%A8%A1%E5%BC%8F/index.md" target="_blank">阅读原始文档</a>
+                            <a class="link-to-markdown" href="/%E8%A1%8C%E4%B8%BA%E5%9E%8B%E8%A7%A3%E9%87%8A%E5%99%A8%E6%A8%A1%E5%BC%8F/index.md" target="_blank">阅读原始文档</a>
                         </span></div>
             <div class="post-info-share">
-                <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="https://nevillenoah.github.io/%E8%A1%8C%E4%B8%BA%E5%9E%8B%E5%91%BD%E4%BB%A4%E6%A8%A1%E5%BC%8F/" data-title="行为型：命令模式" data-hashtags="设计模式"><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="https://nevillenoah.github.io/%E8%A1%8C%E4%B8%BA%E5%9E%8B%E5%91%BD%E4%BB%A4%E6%A8%A1%E5%BC%8F/" data-hashtag="设计模式"><i class="fab fa-facebook-square fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Hacker News" data-sharer="hackernews" data-url="https://nevillenoah.github.io/%E8%A1%8C%E4%B8%BA%E5%9E%8B%E5%91%BD%E4%BB%A4%E6%A8%A1%E5%BC%8F/" data-title="行为型：命令模式"><i class="fab fa-hacker-news fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Line" data-sharer="line" data-url="https://nevillenoah.github.io/%E8%A1%8C%E4%B8%BA%E5%9E%8B%E5%91%BD%E4%BB%A4%E6%A8%A1%E5%BC%8F/" data-title="行为型：命令模式"><i data-svg-src="https://cdn.jsdelivr.net/npm/simple-icons@2.14.0/icons/line.svg"></i></a><a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="https://nevillenoah.github.io/%E8%A1%8C%E4%B8%BA%E5%9E%8B%E5%91%BD%E4%BB%A4%E6%A8%A1%E5%BC%8F/" data-title="行为型：命令模式"><i class="fab fa-weibo fa-fw"></i></a></span>
+                <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="https://nevillenoah.github.io/%E8%A1%8C%E4%B8%BA%E5%9E%8B%E8%A7%A3%E9%87%8A%E5%99%A8%E6%A8%A1%E5%BC%8F/" data-title="行为型：解释器模式" data-hashtags="设计模式"><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="https://nevillenoah.github.io/%E8%A1%8C%E4%B8%BA%E5%9E%8B%E8%A7%A3%E9%87%8A%E5%99%A8%E6%A8%A1%E5%BC%8F/" data-hashtag="设计模式"><i class="fab fa-facebook-square fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Hacker News" data-sharer="hackernews" data-url="https://nevillenoah.github.io/%E8%A1%8C%E4%B8%BA%E5%9E%8B%E8%A7%A3%E9%87%8A%E5%99%A8%E6%A8%A1%E5%BC%8F/" data-title="行为型：解释器模式"><i class="fab fa-hacker-news fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Line" data-sharer="line" data-url="https://nevillenoah.github.io/%E8%A1%8C%E4%B8%BA%E5%9E%8B%E8%A7%A3%E9%87%8A%E5%99%A8%E6%A8%A1%E5%BC%8F/" data-title="行为型：解释器模式"><i data-svg-src="https://cdn.jsdelivr.net/npm/simple-icons@2.14.0/icons/line.svg"></i></a><a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="https://nevillenoah.github.io/%E8%A1%8C%E4%B8%BA%E5%9E%8B%E8%A7%A3%E9%87%8A%E5%99%A8%E6%A8%A1%E5%BC%8F/" data-title="行为型：解释器模式"><i class="fab fa-weibo fa-fw"></i></a></span>
             </div>
         </div>
     </div>
@@ -314,8 +267,7 @@
         </section>
     </div>
 
-    <div class="post-nav"><a href="/%E8%A1%8C%E4%B8%BA%E5%9E%8B%E8%B4%A3%E4%BB%BB%E9%93%BE%E6%A8%A1%E5%BC%8F/" class="prev" rel="prev" title="行为型：责任链模式"><i class="fas fa-angle-left fa-fw"></i>行为型：责任链模式</a>
-            <a href="/%E8%A1%8C%E4%B8%BA%E5%9E%8B%E8%A7%A3%E9%87%8A%E5%99%A8%E6%A8%A1%E5%BC%8F/" class="next" rel="next" title="行为型：解释器模式">行为型：解释器模式<i class="fas fa-angle-right fa-fw"></i></a></div>
+    <div class="post-nav"><a href="/%E8%A1%8C%E4%B8%BA%E5%9E%8B%E5%91%BD%E4%BB%A4%E6%A8%A1%E5%BC%8F/" class="prev" rel="prev" title="行为型：命令模式"><i class="fas fa-angle-left fa-fw"></i>行为型：命令模式</a></div>
 </div>
 <div id="comments"><div id="valine" class="comment"></div><noscript>
                 Please enable JavaScript to view the comments powered by <a href="https://valine.js.org/">Valine</a>.

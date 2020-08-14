@@ -3,7 +3,14 @@
         <title>所有文章 - Neville Noah | Blog</title>
         <link>https://nevillenoah.github.io/posts/</link>
         <description>所有文章 | Neville Noah | Blog</description>
-        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Fri, 14 Aug 2020 12:11:58 &#43;0800</lastBuildDate><atom:link href="https://nevillenoah.github.io/posts/" rel="self" type="application/rss+xml" /><item>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Fri, 14 Aug 2020 14:33:58 &#43;0800</lastBuildDate><atom:link href="https://nevillenoah.github.io/posts/" rel="self" type="application/rss+xml" /><item>
+    <title>行为型：解释器模式</title>
+    <link>https://nevillenoah.github.io/%E8%A1%8C%E4%B8%BA%E5%9E%8B%E8%A7%A3%E9%87%8A%E5%99%A8%E6%A8%A1%E5%BC%8F/</link>
+    <pubDate>Fri, 14 Aug 2020 14:33:58 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://nevillenoah.github.io/%E8%A1%8C%E4%B8%BA%E5%9E%8B%E8%A7%A3%E9%87%8A%E5%99%A8%E6%A8%A1%E5%BC%8F/</guid>
+    <description><![CDATA[释义 解释器模式，通过解释器对内容进行解释。 解释器模式034aa5120a20e4969f6be05a3e9ab3fe " 解释器模式 表达式Exp]]></description>
+</item><item>
     <title>行为型：命令模式</title>
     <link>https://nevillenoah.github.io/%E8%A1%8C%E4%B8%BA%E5%9E%8B%E5%91%BD%E4%BB%A4%E6%A8%A1%E5%BC%8F/</link>
     <pubDate>Fri, 14 Aug 2020 12:11:58 &#43;0800</pubDate>
@@ -66,12 +73,5 @@
     <author>作者</author>
     <guid>https://nevillenoah.github.io/%E7%BB%93%E6%9E%84%E5%9E%8B%E6%A1%A5%E6%8E%A5%E6%A8%A1%E5%BC%8F/</guid>
     <description><![CDATA[释义 桥接模式，在类的基础上，增加一个接口作为“桥”。接口的实现类和该类都可以独立变换而互不影响。 桥接模式41b8ab4c00e4fb477a]]></description>
-</item><item>
-    <title>结构型：适配器模式</title>
-    <link>https://nevillenoah.github.io/%E7%BB%93%E6%9E%84%E5%9E%8B%E9%80%82%E9%85%8D%E5%99%A8%E6%A8%A1%E5%BC%8F/</link>
-    <pubDate>Thu, 13 Aug 2020 11:26:58 &#43;0800</pubDate>
-    <author>作者</author>
-    <guid>https://nevillenoah.github.io/%E7%BB%93%E6%9E%84%E5%9E%8B%E9%80%82%E9%85%8D%E5%99%A8%E6%A8%A1%E5%BC%8F/</guid>
-    <description><![CDATA[释义 适配器模式，实现接口兼容。为对象增加一个适配器，使得其兼容原先无法使用的内容。 适配器模式9c65ccf874a5d487704889f9]]></description>
 </item></channel>
 </rss>
