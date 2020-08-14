@@ -5,36 +5,36 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="robots" content="noodp" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
-        <title>结构型：外观模式 - Neville Noah | Blog</title><meta name="Description" content="关于 LoveIt 主题"><meta property="og:title" content="结构型：外观模式" />
-<meta property="og:description" content="释义 外观模式，隐藏内部逻辑的复杂性，仅提供接口供客户端访问，这些接口就是“外观”。 外观模式ce53a2151e332a8cb18993a7d" />
+        <title>结构型：享元模式 - Neville Noah | Blog</title><meta name="Description" content="关于 LoveIt 主题"><meta property="og:title" content="结构型：享元模式" />
+<meta property="og:description" content="释义 享元模式，“元”即某个属性，“享元”即共享属性。如果计划创建的对象有某个属性值与已存在的实例相同的话，则共享这个属性，即直接用这个实例而" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://nevillenoah.github.io/%E7%BB%93%E6%9E%84%E5%9E%8B%E5%A4%96%E8%A7%82%E6%A8%A1%E5%BC%8F/" />
-<meta property="og:image" content="https://nevillenoah.github.io/%E7%BB%93%E6%9E%84%E5%9E%8B%E5%A4%96%E8%A7%82%E6%A8%A1%E5%BC%8F/featured-image.jpg"/>
-<meta property="article:published_time" content="2020-08-13T20:20:58+08:00" />
-<meta property="article:modified_time" content="2020-08-13T20:20:58+08:00" />
+<meta property="og:url" content="https://nevillenoah.github.io/%E7%BB%93%E6%9E%84%E5%9E%8B%E4%BA%AB%E5%85%83%E6%A8%A1%E5%BC%8F/" />
+<meta property="og:image" content="https://nevillenoah.github.io/%E7%BB%93%E6%9E%84%E5%9E%8B%E4%BA%AB%E5%85%83%E6%A8%A1%E5%BC%8F/featured-image.jpg"/>
+<meta property="article:published_time" content="2020-08-13T21:21:58+08:00" />
+<meta property="article:modified_time" content="2020-08-13T21:21:58+08:00" />
 <meta name="twitter:card" content="summary_large_image"/>
-<meta name="twitter:image" content="https://nevillenoah.github.io/%E7%BB%93%E6%9E%84%E5%9E%8B%E5%A4%96%E8%A7%82%E6%A8%A1%E5%BC%8F/featured-image.jpg"/>
-<meta name="twitter:title" content="结构型：外观模式"/>
-<meta name="twitter:description" content="释义 外观模式，隐藏内部逻辑的复杂性，仅提供接口供客户端访问，这些接口就是“外观”。 外观模式ce53a2151e332a8cb18993a7d"/>
+<meta name="twitter:image" content="https://nevillenoah.github.io/%E7%BB%93%E6%9E%84%E5%9E%8B%E4%BA%AB%E5%85%83%E6%A8%A1%E5%BC%8F/featured-image.jpg"/>
+<meta name="twitter:title" content="结构型：享元模式"/>
+<meta name="twitter:description" content="释义 享元模式，“元”即某个属性，“享元”即共享属性。如果计划创建的对象有某个属性值与已存在的实例相同的话，则共享这个属性，即直接用这个实例而"/>
 <meta name="application-name" content="LoveIt">
 <meta name="apple-mobile-web-app-title" content="LoveIt"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://nevillenoah.github.io/%E7%BB%93%E6%9E%84%E5%9E%8B%E5%A4%96%E8%A7%82%E6%A8%A1%E5%BC%8F/" /><link rel="prev" href="https://nevillenoah.github.io/%E7%BB%93%E6%9E%84%E5%9E%8B%E8%A3%85%E9%A5%B0%E5%99%A8%E6%A8%A1%E5%BC%8F/" /><link rel="next" href="https://nevillenoah.github.io/%E7%BB%93%E6%9E%84%E5%9E%8B%E4%BA%AB%E5%85%83%E6%A8%A1%E5%BC%8F/" /><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13.0/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css"><script type="application/ld+json">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://nevillenoah.github.io/%E7%BB%93%E6%9E%84%E5%9E%8B%E4%BA%AB%E5%85%83%E6%A8%A1%E5%BC%8F/" /><link rel="prev" href="https://nevillenoah.github.io/%E7%BB%93%E6%9E%84%E5%9E%8B%E5%A4%96%E8%A7%82%E6%A8%A1%E5%BC%8F/" /><link rel="next" href="https://nevillenoah.github.io/%E8%A1%8C%E4%B8%BA%E5%9E%8B%E8%B4%A3%E4%BB%BB%E9%93%BE%E6%A8%A1%E5%BC%8F/" /><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13.0/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css"><script type="application/ld+json">
     {
         "@context": "http://schema.org",
         "@type": "BlogPosting",
-        "headline": "结构型：外观模式",
+        "headline": "结构型：享元模式",
         "inLanguage": "zh-CN",
         "mainEntityOfPage": {
             "@type": "WebPage",
-            "@id": "https:\/\/nevillenoah.github.io\/%E7%BB%93%E6%9E%84%E5%9E%8B%E5%A4%96%E8%A7%82%E6%A8%A1%E5%BC%8F\/"
+            "@id": "https:\/\/nevillenoah.github.io\/%E7%BB%93%E6%9E%84%E5%9E%8B%E4%BA%AB%E5%85%83%E6%A8%A1%E5%BC%8F\/"
         },"image": [{
                             "@type": "ImageObject",
-                            "url": "https:\/\/nevillenoah.github.io\/%E7%BB%93%E6%9E%84%E5%9E%8B%E5%A4%96%E8%A7%82%E6%A8%A1%E5%BC%8F\/featured-image.jpg",
+                            "url": "https:\/\/nevillenoah.github.io\/%E7%BB%93%E6%9E%84%E5%9E%8B%E4%BA%AB%E5%85%83%E6%A8%A1%E5%BC%8F\/featured-image.jpg",
                             "width":  1596 ,
                             "height":  596 
-                        }],"genre": "posts","keywords": "设计模式","wordcount":  326 ,
-        "url": "https:\/\/nevillenoah.github.io\/%E7%BB%93%E6%9E%84%E5%9E%8B%E5%A4%96%E8%A7%82%E6%A8%A1%E5%BC%8F\/","datePublished": "2020-08-13T20:20:58+08:00","dateModified": "2020-08-13T20:20:58+08:00","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
+                        }],"genre": "posts","keywords": "设计模式","wordcount":  469 ,
+        "url": "https:\/\/nevillenoah.github.io\/%E7%BB%93%E6%9E%84%E5%9E%8B%E4%BA%AB%E5%85%83%E6%A8%A1%E5%BC%8F\/","datePublished": "2020-08-13T21:21:58+08:00","dateModified": "2020-08-13T21:21:58+08:00","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
             "@type": "Organization",
             "name": "xxxx","logo": {
                     "@type": "ImageObject",
@@ -56,7 +56,7 @@
         </div>
         <div class="menu">
             <div class="menu-inner"><a class="menu-item" href="/posts/"> 文章 </a><a class="menu-item" href="/tags/"> 标签 </a><a class="menu-item" href="/categories/"> 分类 </a><a class="menu-item" href="/categories/documentation/"> 文档 </a><a class="menu-item" href="/about/"> 关于 </a><a class="menu-item" href="https://github.com/dillonzq/LoveIt" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw'></i>  </a><span class="menu-item delimiter"></span><a href="javascript:void(0);" class="menu-item language" title="选择语言">简体中文<i class="fas fa-chevron-right fa-fw"></i>
-                        <select class="language-select" id="language-select-desktop" onchange="location = this.value;"><option value="/%E7%BB%93%E6%9E%84%E5%9E%8B%E5%A4%96%E8%A7%82%E6%A8%A1%E5%BC%8F/" selected>简体中文</option></select>
+                        <select class="language-select" id="language-select-desktop" onchange="location = this.value;"><option value="/%E7%BB%93%E6%9E%84%E5%9E%8B%E4%BA%AB%E5%85%83%E6%A8%A1%E5%BC%8F/" selected>简体中文</option></select>
                     </a><span class="menu-item search" id="search-desktop">
                         <input type="text" placeholder="搜索文章标题或内容..." id="search-input-desktop">
                         <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
@@ -103,7 +103,7 @@
                 </div><a class="menu-item" href="/posts/" title="">文章</a><a class="menu-item" href="/tags/" title="">标签</a><a class="menu-item" href="/categories/" title="">分类</a><a class="menu-item" href="/categories/documentation/" title="">文档</a><a class="menu-item" href="/about/" title="">关于</a><a class="menu-item" href="https://github.com/dillonzq/LoveIt" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw'></i></a><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
                 <i class="fas fa-adjust fa-fw"></i>
             </a><a href="javascript:void(0);" class="menu-item" title="选择语言">简体中文<i class="fas fa-chevron-right fa-fw"></i>
-                    <select class="language-select" onchange="location = this.value;"><option value="/%E7%BB%93%E6%9E%84%E5%9E%8B%E5%A4%96%E8%A7%82%E6%A8%A1%E5%BC%8F/" selected>简体中文</option></select>
+                    <select class="language-select" onchange="location = this.value;"><option value="/%E7%BB%93%E6%9E%84%E5%9E%8B%E4%BA%AB%E5%85%83%E6%A8%A1%E5%BC%8F/" selected>简体中文</option></select>
                 </a></div>
     </div>
 </header>
@@ -117,20 +117,20 @@
                 <div class="container"><div class="toc" id="toc-auto">
             <h2 class="toc-title">目录</h2>
             <div class="toc-content" id="toc-content-auto"></div>
-        </div><article class="page single"><h1 class="single-title animated flipInX">结构型：外观模式</h1><div class="post-meta">
+        </div><article class="page single"><h1 class="single-title animated flipInX">结构型：享元模式</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="https://github.com/nevillenoah" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Neville Noah</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"><i class="far fa-folder fa-fw"></i>设计模式</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-08-13">2020-08-13</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 326 字&nbsp;
-                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 1 分钟&nbsp;<span id="/%E7%BB%93%E6%9E%84%E5%9E%8B%E5%A4%96%E8%A7%82%E6%A8%A1%E5%BC%8F/" class="leancloud_visitors" data-flag-title="结构型：外观模式">
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-08-13">2020-08-13</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 469 字&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 1 分钟&nbsp;<span id="/%E7%BB%93%E6%9E%84%E5%9E%8B%E4%BA%AB%E5%85%83%E6%A8%A1%E5%BC%8F/" class="leancloud_visitors" data-flag-title="结构型：享元模式">
                         <i class="far fa-eye fa-fw"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
                     </span>&nbsp;</div>
         </div><div class="featured-image"><img
         class="lazyload"
         src="/svg/loading.min.svg"
-        data-src="/%E7%BB%93%E6%9E%84%E5%9E%8B%E5%A4%96%E8%A7%82%E6%A8%A1%E5%BC%8F/featured-image.jpg"
-        data-srcset="/%E7%BB%93%E6%9E%84%E5%9E%8B%E5%A4%96%E8%A7%82%E6%A8%A1%E5%BC%8F/featured-image.jpg, /%E7%BB%93%E6%9E%84%E5%9E%8B%E5%A4%96%E8%A7%82%E6%A8%A1%E5%BC%8F/featured-image.jpg 1.5x, /%E7%BB%93%E6%9E%84%E5%9E%8B%E5%A4%96%E8%A7%82%E6%A8%A1%E5%BC%8F/featured-image.jpg 2x"
+        data-src="/%E7%BB%93%E6%9E%84%E5%9E%8B%E4%BA%AB%E5%85%83%E6%A8%A1%E5%BC%8F/featured-image.jpg"
+        data-srcset="/%E7%BB%93%E6%9E%84%E5%9E%8B%E4%BA%AB%E5%85%83%E6%A8%A1%E5%BC%8F/featured-image.jpg, /%E7%BB%93%E6%9E%84%E5%9E%8B%E4%BA%AB%E5%85%83%E6%A8%A1%E5%BC%8F/featured-image.jpg 1.5x, /%E7%BB%93%E6%9E%84%E5%9E%8B%E4%BA%AB%E5%85%83%E6%A8%A1%E5%BC%8F/featured-image.jpg 2x"
         data-sizes="auto"
-        alt="/%E7%BB%93%E6%9E%84%E5%9E%8B%E5%A4%96%E8%A7%82%E6%A8%A1%E5%BC%8F/featured-image.jpg"
-        title="/%E7%BB%93%E6%9E%84%E5%9E%8B%E5%A4%96%E8%A7%82%E6%A8%A1%E5%BC%8F/featured-image.jpg" /></div><div class="details toc" id="toc-static"  kept="">
+        alt="/%E7%BB%93%E6%9E%84%E5%9E%8B%E4%BA%AB%E5%85%83%E6%A8%A1%E5%BC%8F/featured-image.jpg"
+        title="/%E7%BB%93%E6%9E%84%E5%9E%8B%E4%BA%AB%E5%85%83%E6%A8%A1%E5%BC%8F/featured-image.jpg" /></div><div class="details toc" id="toc-static"  kept="">
                 <div class="details-summary toc-title">
                     <span>目录</span>
                     <span><i class="details-icon fas fa-angle-right"></i></span>
@@ -139,24 +139,53 @@
   <ul>
     <li><a href="#释义">释义</a></li>
     <li><a href="#基础类">基础类</a></li>
-    <li><a href="#接口">接口</a></li>
+    <li><a href="#工厂类">工厂类</a></li>
     <li><a href="#使用">使用</a></li>
   </ul>
 </nav></div>
             </div><div class="content" id="content"><h2 id="释义">释义</h2>
-<p>外观模式，隐藏内部逻辑的复杂性，仅提供接口供客户端访问，这些接口就是“外观”。
-<figure><a class="lightgallery" href="/%E7%BB%93%E6%9E%84%E5%9E%8B%E5%A4%96%E8%A7%82%E6%A8%A1%E5%BC%8F/%E7%BB%93%E6%9E%84%E5%9E%8B%EF%BC%9A%E5%A4%96%E8%A7%82%E6%A8%A1%E5%BC%8F.resources/DC7A37C5-A999-4220-85B9-D8067AA9E13D.png" title="ce53a2151e332a8cb18993a7dc9970a6" data-thumbnail="/%E7%BB%93%E6%9E%84%E5%9E%8B%E5%A4%96%E8%A7%82%E6%A8%A1%E5%BC%8F/%E7%BB%93%E6%9E%84%E5%9E%8B%EF%BC%9A%E5%A4%96%E8%A7%82%E6%A8%A1%E5%BC%8F.resources/DC7A37C5-A999-4220-85B9-D8067AA9E13D.png" data-sub-html="<h2>外观模式</h2><p>ce53a2151e332a8cb18993a7dc9970a6</p>">
+<p>享元模式，“元”即某个属性，“享元”即共享属性。如果计划创建的对象有某个属性值与已存在的实例相同的话，则共享这个属性，即直接用这个实例而不是重新创建。
+<figure><a class="lightgallery" href="/%E7%BB%93%E6%9E%84%E5%9E%8B%E4%BA%AB%E5%85%83%E6%A8%A1%E5%BC%8F/%E7%BB%93%E6%9E%84%E5%9E%8B%EF%BC%9A%E4%BA%AB%E5%85%83%E6%A8%A1%E5%BC%8F.resources/FF9228CD-390F-403B-88E4-EEA7A55022B5.png" title="12980bdb503baa4f5700ec00eb5c5334" data-thumbnail="/%E7%BB%93%E6%9E%84%E5%9E%8B%E4%BA%AB%E5%85%83%E6%A8%A1%E5%BC%8F/%E7%BB%93%E6%9E%84%E5%9E%8B%EF%BC%9A%E4%BA%AB%E5%85%83%E6%A8%A1%E5%BC%8F.resources/FF9228CD-390F-403B-88E4-EEA7A55022B5.png" data-sub-html="<h2>享元模式</h2><p>12980bdb503baa4f5700ec00eb5c5334</p>">
         <img
             class="lazyload"
             src="/svg/loading.min.svg"
-            data-src="%e7%bb%93%e6%9e%84%e5%9e%8b%ef%bc%9a%e5%a4%96%e8%a7%82%e6%a8%a1%e5%bc%8f.resources/DC7A37C5-A999-4220-85B9-D8067AA9E13D.png"
-            data-srcset="/%E7%BB%93%E6%9E%84%E5%9E%8B%E5%A4%96%E8%A7%82%E6%A8%A1%E5%BC%8F/%E7%BB%93%E6%9E%84%E5%9E%8B%EF%BC%9A%E5%A4%96%E8%A7%82%E6%A8%A1%E5%BC%8F.resources/DC7A37C5-A999-4220-85B9-D8067AA9E13D.png, %e7%bb%93%e6%9e%84%e5%9e%8b%ef%bc%9a%e5%a4%96%e8%a7%82%e6%a8%a1%e5%bc%8f.resources/DC7A37C5-A999-4220-85B9-D8067AA9E13D.png 1.5x, /%E7%BB%93%E6%9E%84%E5%9E%8B%E5%A4%96%E8%A7%82%E6%A8%A1%E5%BC%8F/%E7%BB%93%E6%9E%84%E5%9E%8B%EF%BC%9A%E5%A4%96%E8%A7%82%E6%A8%A1%E5%BC%8F.resources/DC7A37C5-A999-4220-85B9-D8067AA9E13D.png 2x"
+            data-src="%e7%bb%93%e6%9e%84%e5%9e%8b%ef%bc%9a%e4%ba%ab%e5%85%83%e6%a8%a1%e5%bc%8f.resources/FF9228CD-390F-403B-88E4-EEA7A55022B5.png"
+            data-srcset="/%E7%BB%93%E6%9E%84%E5%9E%8B%E4%BA%AB%E5%85%83%E6%A8%A1%E5%BC%8F/%E7%BB%93%E6%9E%84%E5%9E%8B%EF%BC%9A%E4%BA%AB%E5%85%83%E6%A8%A1%E5%BC%8F.resources/FF9228CD-390F-403B-88E4-EEA7A55022B5.png, %e7%bb%93%e6%9e%84%e5%9e%8b%ef%bc%9a%e4%ba%ab%e5%85%83%e6%a8%a1%e5%bc%8f.resources/FF9228CD-390F-403B-88E4-EEA7A55022B5.png 1.5x, /%E7%BB%93%E6%9E%84%E5%9E%8B%E4%BA%AB%E5%85%83%E6%A8%A1%E5%BC%8F/%E7%BB%93%E6%9E%84%E5%9E%8B%EF%BC%9A%E4%BA%AB%E5%85%83%E6%A8%A1%E5%BC%8F.resources/FF9228CD-390F-403B-88E4-EEA7A55022B5.png 2x"
             data-sizes="auto"
-            alt="/%E7%BB%93%E6%9E%84%E5%9E%8B%E5%A4%96%E8%A7%82%E6%A8%A1%E5%BC%8F/%E7%BB%93%E6%9E%84%E5%9E%8B%EF%BC%9A%E5%A4%96%E8%A7%82%E6%A8%A1%E5%BC%8F.resources/DC7A37C5-A999-4220-85B9-D8067AA9E13D.png" />
-    </a><figcaption class="image-caption">外观模式</figcaption>
+            alt="/%E7%BB%93%E6%9E%84%E5%9E%8B%E4%BA%AB%E5%85%83%E6%A8%A1%E5%BC%8F/%E7%BB%93%E6%9E%84%E5%9E%8B%EF%BC%9A%E4%BA%AB%E5%85%83%E6%A8%A1%E5%BC%8F.resources/FF9228CD-390F-403B-88E4-EEA7A55022B5.png" />
+    </a><figcaption class="image-caption">享元模式</figcaption>
     </figure>
-<code>ShapeMaker</code>是为客户端提供的接口，<code>Circle</code>和<code>Square</code>接入<code>Shape</code>。客户端通过<code>ShapeMaker</code>中的各种接口在<code>ShapeMaker</code>中创建<code>Shape</code>的各种实例并调用实例的方法。</p>
+<code>ShapeFactory</code>创建<code>Shape</code>，如果计划创建的<code>Shape</code>的某个属性和<code>Map&lt;Shape&gt;</code>中已经存在某个实例相同，则直接取用<code>Map&lt;Shape&gt;</code>中的那个<code>Shape</code>。</p>
 <h2 id="基础类">基础类</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-kotlin" data-lang="kotlin"><span class="k">interface</span> <span class="nc">Shape</span> <span class="p">{</span>
+    <span class="k">fun</span> <span class="nf">draw</span><span class="p">()</span>
+<span class="p">}</span>
+
+<span class="k">class</span> <span class="nc">Circle</span><span class="p">(</span>
+    <span class="k">var</span> <span class="py">color</span>
+<span class="p">)</span> <span class="p">:</span> <span class="n">Shape</span> <span class="p">{</span>
+    <span class="k">override</span> <span class="k">fun</span> <span class="nf">draw</span><span class="p">()</span> <span class="p">{</span>
+        <span class="n">drawCircle</span><span class="p">()</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="工厂类">工厂类</h2>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt"> 1
@@ -174,26 +203,28 @@
 </span><span class="lnt">13
 </span><span class="lnt">14
 </span><span class="lnt">15
+</span><span class="lnt">16
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-kotlin" data-lang="kotlin"><span class="k">interface</span> <span class="nc">Shape</span> <span class="p">{</span>
-    <span class="k">fun</span> <span class="nf">draw</span><span class="p">()</span>
-<span class="p">}</span>
-
-<span class="k">class</span> <span class="nc">Circle</span> <span class="p">:</span> <span class="n">Shape</span> <span class="p">{</span>
-    <span class="k">override</span> <span class="k">fun</span> <span class="nf">draw</span><span class="p">()</span> <span class="p">{</span>
-        <span class="n">drawCircle</span><span class="p">()</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-
-<span class="k">class</span> <span class="nc">Square</span> <span class="p">:</span> <span class="n">Shape</span> <span class="p">{</span>
-    <span class="k">override</span> <span class="k">fun</span> <span class="nf">draw</span><span class="p">()</span> <span class="p">{</span>
-        <span class="n">drawSquare</span><span class="p">()</span>
+<pre class="chroma"><code class="language-kotlin" data-lang="kotlin"><span class="k">class</span> <span class="nc">ShapeFactory</span> <span class="p">{</span>
+    <span class="k">private</span> <span class="k">val</span> <span class="py">circleMap</span><span class="p">:</span> <span class="n">MutableMap</span><span class="p">&lt;</span><span class="n">String</span><span class="p">,</span> <span class="n">Shape</span><span class="p">&gt;</span> <span class="p">=</span> <span class="n">mutableMapOf</span><span class="p">()</span>
+    
+    <span class="k">fun</span> <span class="nf">getCircle</span><span class="p">(</span><span class="n">color</span><span class="p">:</span> <span class="n">String</span><span class="p">)</span> <span class="p">{</span>
+        <span class="c1">// 查找Map中有没有相同color的Circle
+</span><span class="c1"></span>        <span class="k">var</span> <span class="py">circle</span><span class="p">:</span> <span class="n">Circle</span> <span class="p">=</span> <span class="n">circleMap</span><span class="p">.</span><span class="k">get</span><span class="p">(</span><span class="n">color</span><span class="p">)</span> <span class="k">as</span> <span class="n">Shape</span>
+        <span class="c1">// 如果没有则创建新的Circle
+</span><span class="c1"></span>        <span class="k">if</span><span class="p">(</span><span class="n">circle</span> <span class="p">==</span> <span class="k">null</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">circle</span> <span class="p">=</span> <span class="n">Circle</span><span class="p">(</span><span class="n">color</span><span class="p">)</span>
+            <span class="c1">// 添加到Map中
+</span><span class="c1"></span>            <span class="n">circle</span><span class="p">.</span><span class="k">set</span><span class="p">(</span><span class="n">color</span><span class="p">,</span> <span class="n">circle</span><span class="p">)</span>
+        <span class="p">}</span>
+        
+        <span class="k">return</span> <span class="n">circle</span>
     <span class="p">}</span>
 <span class="p">}</span>
 </code></pre></td></tr></table>
 </div>
-</div><h2 id="接口">接口</h2>
+</div><h2 id="使用">使用</h2>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt"> 1
@@ -206,50 +237,17 @@
 </span><span class="lnt"> 8
 </span><span class="lnt"> 9
 </span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span><span class="lnt">14
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-kotlin" data-lang="kotlin"><span class="k">class</span> <span class="nc">ShapeMaker</span><span class="p">(</span> 
-    <span class="c1">// 包含的Shape类
-</span><span class="c1"></span>    <span class="k">private</span> <span class="k">var</span> <span class="py">circle</span> <span class="p">:</span> <span class="n">Circle</span>
-    <span class="k">private</span> <span class="k">var</span> <span class="py">square</span> <span class="p">:</span> <span class="n">Square</span>
-<span class="p">)</span> <span class="p">{</span>
-    <span class="c1">// 向客户端提供接口
-</span><span class="c1"></span>    <span class="k">public</span> <span class="k">fun</span> <span class="nf">drawCircle</span><span class="p">()</span> <span class="p">{</span>
-        <span class="n">circle</span><span class="p">.</span><span class="n">draw</span><span class="p">()</span>
-    <span class="p">}</span>
-    
-    <span class="k">public</span> <span class="k">fun</span> <span class="nf">drawSquare</span><span class="p">()</span> <span class="p">{</span>
-        <span class="n">square</span><span class="p">.</span><span class="n">draw</span><span class="p">()</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-</code></pre></td></tr></table>
-</div>
-</div><h2 id="使用">使用</h2>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span><span class="lnt">6
-</span><span class="lnt">7
-</span><span class="lnt">8
-</span><span class="lnt">9
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-kotlin" data-lang="kotlin"><span class="k">fun</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
-    <span class="k">val</span> <span class="py">circle</span><span class="p">:</span> <span class="n">Circle</span> <span class="p">=</span> <span class="n">Circle</span><span class="p">()</span>
-    <span class="k">val</span> <span class="py">square</span><span class="p">:</span> <span class="n">Square</span> <span class="p">=</span> <span class="n">Square</span><span class="p">()</span>
+    <span class="k">val</span> <span class="py">red</span><span class="p">:</span> <span class="n">String</span> <span class="p">=</span> <span class="s">&#34;Red&#34;</span>
     
-    <span class="k">val</span> <span class="py">shapeMaker</span><span class="p">:</span> <span class="n">ShapeMaker</span> <span class="p">=</span> <span class="n">ShapeMaker</span><span class="p">(</span><span class="n">circle</span><span class="p">,</span> <span class="n">square</span><span class="p">)</span>
-    <span class="c1">// 调用接口
-</span><span class="c1"></span>    <span class="n">shapeMaker</span><span class="p">.</span><span class="n">drawCircle</span><span class="p">()</span>
-    <span class="n">shapeMaker</span><span class="p">.</span><span class="n">drawSqaure</span><span class="p">()</span>
+    <span class="k">val</span> <span class="py">shapeFactory</span><span class="p">:</span> <span class="n">ShapeFactory</span> <span class="p">=</span> <span class="n">ShapeFactory</span><span class="p">()</span>
+    
+    <span class="c1">// 第一次circleMap中还没有color为Red的，因此会创建
+</span><span class="c1"></span>    <span class="k">val</span> <span class="py">circle1</span> <span class="p">=</span> <span class="n">shapeFactory</span><span class="p">.</span><span class="n">getCircle</span><span class="p">(</span><span class="s">&#34;Red&#34;</span><span class="p">)</span> 
+    <span class="c1">// 第二次circleMap中已经有color为Red的circle，会直接从circleMap中获取
+</span><span class="c1"></span>    <span class="k">val</span> <span class="py">circle2</span> <span class="p">=</span> <span class="n">shapeFactory</span><span class="p">.</span><span class="n">getCircle</span><span class="p">(</span><span class="s">&#34;Red&#34;</span><span class="p">)</span> 
 <span class="p">}</span>
 </code></pre></td></tr></table>
 </div>
@@ -263,10 +261,10 @@
         </div>
         <div class="post-info-line">
             <div class="post-info-md"><span>
-                            <a class="link-to-markdown" href="/%E7%BB%93%E6%9E%84%E5%9E%8B%E5%A4%96%E8%A7%82%E6%A8%A1%E5%BC%8F/index.md" target="_blank">阅读原始文档</a>
+                            <a class="link-to-markdown" href="/%E7%BB%93%E6%9E%84%E5%9E%8B%E4%BA%AB%E5%85%83%E6%A8%A1%E5%BC%8F/index.md" target="_blank">阅读原始文档</a>
                         </span></div>
             <div class="post-info-share">
-                <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="https://nevillenoah.github.io/%E7%BB%93%E6%9E%84%E5%9E%8B%E5%A4%96%E8%A7%82%E6%A8%A1%E5%BC%8F/" data-title="结构型：外观模式" data-hashtags="设计模式"><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="https://nevillenoah.github.io/%E7%BB%93%E6%9E%84%E5%9E%8B%E5%A4%96%E8%A7%82%E6%A8%A1%E5%BC%8F/" data-hashtag="设计模式"><i class="fab fa-facebook-square fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Hacker News" data-sharer="hackernews" data-url="https://nevillenoah.github.io/%E7%BB%93%E6%9E%84%E5%9E%8B%E5%A4%96%E8%A7%82%E6%A8%A1%E5%BC%8F/" data-title="结构型：外观模式"><i class="fab fa-hacker-news fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Line" data-sharer="line" data-url="https://nevillenoah.github.io/%E7%BB%93%E6%9E%84%E5%9E%8B%E5%A4%96%E8%A7%82%E6%A8%A1%E5%BC%8F/" data-title="结构型：外观模式"><i data-svg-src="https://cdn.jsdelivr.net/npm/simple-icons@2.14.0/icons/line.svg"></i></a><a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="https://nevillenoah.github.io/%E7%BB%93%E6%9E%84%E5%9E%8B%E5%A4%96%E8%A7%82%E6%A8%A1%E5%BC%8F/" data-title="结构型：外观模式"><i class="fab fa-weibo fa-fw"></i></a></span>
+                <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="https://nevillenoah.github.io/%E7%BB%93%E6%9E%84%E5%9E%8B%E4%BA%AB%E5%85%83%E6%A8%A1%E5%BC%8F/" data-title="结构型：享元模式" data-hashtags="设计模式"><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="https://nevillenoah.github.io/%E7%BB%93%E6%9E%84%E5%9E%8B%E4%BA%AB%E5%85%83%E6%A8%A1%E5%BC%8F/" data-hashtag="设计模式"><i class="fab fa-facebook-square fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Hacker News" data-sharer="hackernews" data-url="https://nevillenoah.github.io/%E7%BB%93%E6%9E%84%E5%9E%8B%E4%BA%AB%E5%85%83%E6%A8%A1%E5%BC%8F/" data-title="结构型：享元模式"><i class="fab fa-hacker-news fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Line" data-sharer="line" data-url="https://nevillenoah.github.io/%E7%BB%93%E6%9E%84%E5%9E%8B%E4%BA%AB%E5%85%83%E6%A8%A1%E5%BC%8F/" data-title="结构型：享元模式"><i data-svg-src="https://cdn.jsdelivr.net/npm/simple-icons@2.14.0/icons/line.svg"></i></a><a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="https://nevillenoah.github.io/%E7%BB%93%E6%9E%84%E5%9E%8B%E4%BA%AB%E5%85%83%E6%A8%A1%E5%BC%8F/" data-title="结构型：享元模式"><i class="fab fa-weibo fa-fw"></i></a></span>
             </div>
         </div>
     </div>
@@ -278,8 +276,8 @@
         </section>
     </div>
 
-    <div class="post-nav"><a href="/%E7%BB%93%E6%9E%84%E5%9E%8B%E8%A3%85%E9%A5%B0%E5%99%A8%E6%A8%A1%E5%BC%8F/" class="prev" rel="prev" title="结构型：装饰器模式"><i class="fas fa-angle-left fa-fw"></i>结构型：装饰器模式</a>
-            <a href="/%E7%BB%93%E6%9E%84%E5%9E%8B%E4%BA%AB%E5%85%83%E6%A8%A1%E5%BC%8F/" class="next" rel="next" title="结构型：享元模式">结构型：享元模式<i class="fas fa-angle-right fa-fw"></i></a></div>
+    <div class="post-nav"><a href="/%E7%BB%93%E6%9E%84%E5%9E%8B%E5%A4%96%E8%A7%82%E6%A8%A1%E5%BC%8F/" class="prev" rel="prev" title="结构型：外观模式"><i class="fas fa-angle-left fa-fw"></i>结构型：外观模式</a>
+            <a href="/%E8%A1%8C%E4%B8%BA%E5%9E%8B%E8%B4%A3%E4%BB%BB%E9%93%BE%E6%A8%A1%E5%BC%8F/" class="next" rel="next" title="行为型：责任链模式">行为型：责任链模式<i class="fas fa-angle-right fa-fw"></i></a></div>
 </div>
 <div id="comments"><div id="valine" class="comment"></div><noscript>
                 Please enable JavaScript to view the comments powered by <a href="https://valine.js.org/">Valine</a>.
