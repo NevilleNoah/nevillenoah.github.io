@@ -3,9 +3,23 @@
         <title>Neville Noah | Blog</title>
         <link>https://nevillenoah.github.io/</link>
         <description>关于 LoveIt 主题</description>
-        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Sat, 15 Aug 2020 10:17:58 &#43;0800</lastBuildDate>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Sat, 15 Aug 2020 17:17:58 &#43;0800</lastBuildDate>
             <atom:link href="https://nevillenoah.github.io/index.xml" rel="self" type="application/rss+xml" />
         <item>
+    <title>行为型：空对象模式</title>
+    <link>https://nevillenoah.github.io/%E8%A1%8C%E4%B8%BA%E5%9E%8B%E7%A9%BA%E5%AF%B9%E8%B1%A1%E6%A8%A1%E5%BC%8F/</link>
+    <pubDate>Sat, 15 Aug 2020 17:17:58 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://nevillenoah.github.io/%E8%A1%8C%E4%B8%BA%E5%9E%8B%E7%A9%BA%E5%AF%B9%E8%B1%A1%E6%A8%A1%E5%BC%8F/</guid>
+    <description><![CDATA[释义 空对象模式，用返回“空对象”而不是“判空”来应对“空”的情况。 空对象模式8c0402ce528d83f07ece90a9f83bcaad]]></description>
+</item><item>
+    <title>行为型：状态模式</title>
+    <link>https://nevillenoah.github.io/%E8%A1%8C%E4%B8%BA%E5%9E%8B%E7%8A%B6%E6%80%81%E6%A8%A1%E5%BC%8F/</link>
+    <pubDate>Sat, 15 Aug 2020 11:17:58 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://nevillenoah.github.io/%E8%A1%8C%E4%B8%BA%E5%9E%8B%E7%8A%B6%E6%80%81%E6%A8%A1%E5%BC%8F/</guid>
+    <description><![CDATA[释义 状态模式，多个状态类，将状态类传入主体类，主体类会随着状态类不同而做不同的操作。 状态模式7a40cc3bb31985e4fb6b3ef5]]></description>
+</item><item>
     <title>行为型：观察者模式</title>
     <link>https://nevillenoah.github.io/%E8%A1%8C%E4%B8%BA%E5%9E%8B%E8%A7%82%E5%AF%9F%E8%80%85%E6%A8%A1%E5%BC%8F/</link>
     <pubDate>Sat, 15 Aug 2020 10:17:58 &#43;0800</pubDate>
@@ -61,19 +75,5 @@
     <author>作者</author>
     <guid>https://nevillenoah.github.io/%E7%BB%93%E6%9E%84%E5%9E%8B%E4%BA%AB%E5%85%83%E6%A8%A1%E5%BC%8F/</guid>
     <description><![CDATA[释义 享元模式，“元”即某个属性，“享元”即共享属性。如果计划创建的对象有某个属性值与已存在的实例相同的话，则共享这个属性，即直接用这个实例而]]></description>
-</item><item>
-    <title>结构型：外观模式</title>
-    <link>https://nevillenoah.github.io/%E7%BB%93%E6%9E%84%E5%9E%8B%E5%A4%96%E8%A7%82%E6%A8%A1%E5%BC%8F/</link>
-    <pubDate>Thu, 13 Aug 2020 20:20:58 &#43;0800</pubDate>
-    <author>作者</author>
-    <guid>https://nevillenoah.github.io/%E7%BB%93%E6%9E%84%E5%9E%8B%E5%A4%96%E8%A7%82%E6%A8%A1%E5%BC%8F/</guid>
-    <description><![CDATA[释义 外观模式，隐藏内部逻辑的复杂性，仅提供接口供客户端访问，这些接口就是“外观”。 外观模式ce53a2151e332a8cb18993a7d]]></description>
-</item><item>
-    <title>结构型：装饰器模式</title>
-    <link>https://nevillenoah.github.io/%E7%BB%93%E6%9E%84%E5%9E%8B%E8%A3%85%E9%A5%B0%E5%99%A8%E6%A8%A1%E5%BC%8F/</link>
-    <pubDate>Thu, 13 Aug 2020 16:47:58 &#43;0800</pubDate>
-    <author>作者</author>
-    <guid>https://nevillenoah.github.io/%E7%BB%93%E6%9E%84%E5%9E%8B%E8%A3%85%E9%A5%B0%E5%99%A8%E6%A8%A1%E5%BC%8F/</guid>
-    <description><![CDATA[释义 装饰器模式，在原来的基础上再加一点点。 装饰器模式eff1373ae046481f906c08ce236e9afd " 装饰器模式 圆Circl]]></description>
 </item></channel>
 </rss>
