@@ -5,36 +5,36 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="robots" content="noodp" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
-        <title>行为型：空对象模式 - Neville Noah | Blog</title><meta name="Description" content="关于 LoveIt 主题"><meta property="og:title" content="行为型：空对象模式" />
-<meta property="og:description" content="释义 空对象模式，用返回“空对象”而不是“判空”来应对“空”的情况。 空对象模式8c0402ce528d83f07ece90a9f83bcaad" />
+        <title>行为型：策略模式 - Neville Noah | Blog</title><meta name="Description" content="关于 LoveIt 主题"><meta property="og:title" content="行为型：策略模式" />
+<meta property="og:description" content="释义 策略模式，制定多种策略，主体对象根据需要使用不同的策略。 策略模式4b054073d842cbcaa716881d8dfbd732 &#34; 策略模" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://nevillenoah.github.io/%E8%A1%8C%E4%B8%BA%E5%9E%8B%E7%A9%BA%E5%AF%B9%E8%B1%A1%E6%A8%A1%E5%BC%8F/" />
-<meta property="og:image" content="https://nevillenoah.github.io/%E8%A1%8C%E4%B8%BA%E5%9E%8B%E7%A9%BA%E5%AF%B9%E8%B1%A1%E6%A8%A1%E5%BC%8F/featured-image.jpg"/>
-<meta property="article:published_time" content="2020-08-15T17:17:58+08:00" />
-<meta property="article:modified_time" content="2020-08-15T17:17:58+08:00" />
+<meta property="og:url" content="https://nevillenoah.github.io/%E8%A1%8C%E4%B8%BA%E5%9E%8B%E7%AD%96%E7%95%A5%E6%A8%A1%E5%BC%8F/" />
+<meta property="og:image" content="https://nevillenoah.github.io/%E8%A1%8C%E4%B8%BA%E5%9E%8B%E7%AD%96%E7%95%A5%E6%A8%A1%E5%BC%8F/featured-image.jpg"/>
+<meta property="article:published_time" content="2020-08-15T18:17:58+08:00" />
+<meta property="article:modified_time" content="2020-08-15T18:17:58+08:00" />
 <meta name="twitter:card" content="summary_large_image"/>
-<meta name="twitter:image" content="https://nevillenoah.github.io/%E8%A1%8C%E4%B8%BA%E5%9E%8B%E7%A9%BA%E5%AF%B9%E8%B1%A1%E6%A8%A1%E5%BC%8F/featured-image.jpg"/>
-<meta name="twitter:title" content="行为型：空对象模式"/>
-<meta name="twitter:description" content="释义 空对象模式，用返回“空对象”而不是“判空”来应对“空”的情况。 空对象模式8c0402ce528d83f07ece90a9f83bcaad"/>
+<meta name="twitter:image" content="https://nevillenoah.github.io/%E8%A1%8C%E4%B8%BA%E5%9E%8B%E7%AD%96%E7%95%A5%E6%A8%A1%E5%BC%8F/featured-image.jpg"/>
+<meta name="twitter:title" content="行为型：策略模式"/>
+<meta name="twitter:description" content="释义 策略模式，制定多种策略，主体对象根据需要使用不同的策略。 策略模式4b054073d842cbcaa716881d8dfbd732 &#34; 策略模"/>
 <meta name="application-name" content="LoveIt">
 <meta name="apple-mobile-web-app-title" content="LoveIt"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://nevillenoah.github.io/%E8%A1%8C%E4%B8%BA%E5%9E%8B%E7%A9%BA%E5%AF%B9%E8%B1%A1%E6%A8%A1%E5%BC%8F/" /><link rel="prev" href="https://nevillenoah.github.io/%E8%A1%8C%E4%B8%BA%E5%9E%8B%E7%8A%B6%E6%80%81%E6%A8%A1%E5%BC%8F/" /><link rel="next" href="https://nevillenoah.github.io/%E8%A1%8C%E4%B8%BA%E5%9E%8B%E7%AD%96%E7%95%A5%E6%A8%A1%E5%BC%8F/" /><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13.0/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css"><script type="application/ld+json">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://nevillenoah.github.io/%E8%A1%8C%E4%B8%BA%E5%9E%8B%E7%AD%96%E7%95%A5%E6%A8%A1%E5%BC%8F/" /><link rel="prev" href="https://nevillenoah.github.io/%E8%A1%8C%E4%B8%BA%E5%9E%8B%E7%A9%BA%E5%AF%B9%E8%B1%A1%E6%A8%A1%E5%BC%8F/" /><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13.0/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css"><script type="application/ld+json">
     {
         "@context": "http://schema.org",
         "@type": "BlogPosting",
-        "headline": "行为型：空对象模式",
+        "headline": "行为型：策略模式",
         "inLanguage": "zh-CN",
         "mainEntityOfPage": {
             "@type": "WebPage",
-            "@id": "https:\/\/nevillenoah.github.io\/%E8%A1%8C%E4%B8%BA%E5%9E%8B%E7%A9%BA%E5%AF%B9%E8%B1%A1%E6%A8%A1%E5%BC%8F\/"
+            "@id": "https:\/\/nevillenoah.github.io\/%E8%A1%8C%E4%B8%BA%E5%9E%8B%E7%AD%96%E7%95%A5%E6%A8%A1%E5%BC%8F\/"
         },"image": [{
                             "@type": "ImageObject",
-                            "url": "https:\/\/nevillenoah.github.io\/%E8%A1%8C%E4%B8%BA%E5%9E%8B%E7%A9%BA%E5%AF%B9%E8%B1%A1%E6%A8%A1%E5%BC%8F\/featured-image.jpg",
+                            "url": "https:\/\/nevillenoah.github.io\/%E8%A1%8C%E4%B8%BA%E5%9E%8B%E7%AD%96%E7%95%A5%E6%A8%A1%E5%BC%8F\/featured-image.jpg",
                             "width":  1596 ,
                             "height":  596 
-                        }],"genre": "posts","keywords": "设计模式","wordcount":  413 ,
-        "url": "https:\/\/nevillenoah.github.io\/%E8%A1%8C%E4%B8%BA%E5%9E%8B%E7%A9%BA%E5%AF%B9%E8%B1%A1%E6%A8%A1%E5%BC%8F\/","datePublished": "2020-08-15T17:17:58+08:00","dateModified": "2020-08-15T17:17:58+08:00","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
+                        }],"genre": "posts","keywords": "设计模式","wordcount":  306 ,
+        "url": "https:\/\/nevillenoah.github.io\/%E8%A1%8C%E4%B8%BA%E5%9E%8B%E7%AD%96%E7%95%A5%E6%A8%A1%E5%BC%8F\/","datePublished": "2020-08-15T18:17:58+08:00","dateModified": "2020-08-15T18:17:58+08:00","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
             "@type": "Organization",
             "name": "xxxx","logo": {
                     "@type": "ImageObject",
@@ -56,7 +56,7 @@
         </div>
         <div class="menu">
             <div class="menu-inner"><a class="menu-item" href="/posts/"> 文章 </a><a class="menu-item" href="/tags/"> 标签 </a><a class="menu-item" href="/categories/"> 分类 </a><a class="menu-item" href="/categories/documentation/"> 文档 </a><a class="menu-item" href="/about/"> 关于 </a><a class="menu-item" href="https://github.com/dillonzq/LoveIt" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw'></i>  </a><span class="menu-item delimiter"></span><a href="javascript:void(0);" class="menu-item language" title="选择语言">简体中文<i class="fas fa-chevron-right fa-fw"></i>
-                        <select class="language-select" id="language-select-desktop" onchange="location = this.value;"><option value="/%E8%A1%8C%E4%B8%BA%E5%9E%8B%E7%A9%BA%E5%AF%B9%E8%B1%A1%E6%A8%A1%E5%BC%8F/" selected>简体中文</option></select>
+                        <select class="language-select" id="language-select-desktop" onchange="location = this.value;"><option value="/%E8%A1%8C%E4%B8%BA%E5%9E%8B%E7%AD%96%E7%95%A5%E6%A8%A1%E5%BC%8F/" selected>简体中文</option></select>
                     </a><span class="menu-item search" id="search-desktop">
                         <input type="text" placeholder="搜索文章标题或内容..." id="search-input-desktop">
                         <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
@@ -103,7 +103,7 @@
                 </div><a class="menu-item" href="/posts/" title="">文章</a><a class="menu-item" href="/tags/" title="">标签</a><a class="menu-item" href="/categories/" title="">分类</a><a class="menu-item" href="/categories/documentation/" title="">文档</a><a class="menu-item" href="/about/" title="">关于</a><a class="menu-item" href="https://github.com/dillonzq/LoveIt" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw'></i></a><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
                 <i class="fas fa-adjust fa-fw"></i>
             </a><a href="javascript:void(0);" class="menu-item" title="选择语言">简体中文<i class="fas fa-chevron-right fa-fw"></i>
-                    <select class="language-select" onchange="location = this.value;"><option value="/%E8%A1%8C%E4%B8%BA%E5%9E%8B%E7%A9%BA%E5%AF%B9%E8%B1%A1%E6%A8%A1%E5%BC%8F/" selected>简体中文</option></select>
+                    <select class="language-select" onchange="location = this.value;"><option value="/%E8%A1%8C%E4%B8%BA%E5%9E%8B%E7%AD%96%E7%95%A5%E6%A8%A1%E5%BC%8F/" selected>简体中文</option></select>
                 </a></div>
     </div>
 </header>
@@ -117,20 +117,20 @@
                 <div class="container"><div class="toc" id="toc-auto">
             <h2 class="toc-title">目录</h2>
             <div class="toc-content" id="toc-content-auto"></div>
-        </div><article class="page single"><h1 class="single-title animated flipInX">行为型：空对象模式</h1><div class="post-meta">
+        </div><article class="page single"><h1 class="single-title animated flipInX">行为型：策略模式</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="https://github.com/nevillenoah" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Neville Noah</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"><i class="far fa-folder fa-fw"></i>设计模式</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-08-15">2020-08-15</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 413 字&nbsp;
-                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 1 分钟&nbsp;<span id="/%E8%A1%8C%E4%B8%BA%E5%9E%8B%E7%A9%BA%E5%AF%B9%E8%B1%A1%E6%A8%A1%E5%BC%8F/" class="leancloud_visitors" data-flag-title="行为型：空对象模式">
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-08-15">2020-08-15</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 306 字&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 1 分钟&nbsp;<span id="/%E8%A1%8C%E4%B8%BA%E5%9E%8B%E7%AD%96%E7%95%A5%E6%A8%A1%E5%BC%8F/" class="leancloud_visitors" data-flag-title="行为型：策略模式">
                         <i class="far fa-eye fa-fw"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
                     </span>&nbsp;</div>
         </div><div class="featured-image"><img
         class="lazyload"
         src="/svg/loading.min.svg"
-        data-src="/%E8%A1%8C%E4%B8%BA%E5%9E%8B%E7%A9%BA%E5%AF%B9%E8%B1%A1%E6%A8%A1%E5%BC%8F/featured-image.jpg"
-        data-srcset="/%E8%A1%8C%E4%B8%BA%E5%9E%8B%E7%A9%BA%E5%AF%B9%E8%B1%A1%E6%A8%A1%E5%BC%8F/featured-image.jpg, /%E8%A1%8C%E4%B8%BA%E5%9E%8B%E7%A9%BA%E5%AF%B9%E8%B1%A1%E6%A8%A1%E5%BC%8F/featured-image.jpg 1.5x, /%E8%A1%8C%E4%B8%BA%E5%9E%8B%E7%A9%BA%E5%AF%B9%E8%B1%A1%E6%A8%A1%E5%BC%8F/featured-image.jpg 2x"
+        data-src="/%E8%A1%8C%E4%B8%BA%E5%9E%8B%E7%AD%96%E7%95%A5%E6%A8%A1%E5%BC%8F/featured-image.jpg"
+        data-srcset="/%E8%A1%8C%E4%B8%BA%E5%9E%8B%E7%AD%96%E7%95%A5%E6%A8%A1%E5%BC%8F/featured-image.jpg, /%E8%A1%8C%E4%B8%BA%E5%9E%8B%E7%AD%96%E7%95%A5%E6%A8%A1%E5%BC%8F/featured-image.jpg 1.5x, /%E8%A1%8C%E4%B8%BA%E5%9E%8B%E7%AD%96%E7%95%A5%E6%A8%A1%E5%BC%8F/featured-image.jpg 2x"
         data-sizes="auto"
-        alt="/%E8%A1%8C%E4%B8%BA%E5%9E%8B%E7%A9%BA%E5%AF%B9%E8%B1%A1%E6%A8%A1%E5%BC%8F/featured-image.jpg"
-        title="/%E8%A1%8C%E4%B8%BA%E5%9E%8B%E7%A9%BA%E5%AF%B9%E8%B1%A1%E6%A8%A1%E5%BC%8F/featured-image.jpg" /></div><div class="details toc" id="toc-static"  kept="">
+        alt="/%E8%A1%8C%E4%B8%BA%E5%9E%8B%E7%AD%96%E7%95%A5%E6%A8%A1%E5%BC%8F/featured-image.jpg"
+        title="/%E8%A1%8C%E4%B8%BA%E5%9E%8B%E7%AD%96%E7%95%A5%E6%A8%A1%E5%BC%8F/featured-image.jpg" /></div><div class="details toc" id="toc-static"  kept="">
                 <div class="details-summary toc-title">
                     <span>目录</span>
                     <span><i class="details-icon fas fa-angle-right"></i></span>
@@ -138,82 +138,25 @@
                 <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
   <ul>
     <li><a href="#释义">释义</a></li>
-    <li><a href="#抽象对象">抽象对象</a></li>
-    <li><a href="#实际对象">实际对象</a></li>
-    <li><a href="#空对象">空对象</a></li>
-    <li><a href="#工厂类">工厂类</a></li>
+    <li><a href="#策略类">策略类</a></li>
+    <li><a href="#主体对象">主体对象</a></li>
     <li><a href="#使用">使用</a></li>
   </ul>
 </nav></div>
             </div><div class="content" id="content"><h2 id="释义">释义</h2>
-<p>空对象模式，用返回“空对象”而不是“判空”来应对“空”的情况。
-<figure><a class="lightgallery" href="/%E8%A1%8C%E4%B8%BA%E5%9E%8B%E7%A9%BA%E5%AF%B9%E8%B1%A1%E6%A8%A1%E5%BC%8F/%E8%A1%8C%E4%B8%BA%E5%9E%8B%EF%BC%9A%E7%A9%BA%E5%AF%B9%E8%B1%A1%E6%A8%A1%E5%BC%8F.resources/A7E08E37-D0E9-47A9-8C02-6289DAD72C76.png" title="8c0402ce528d83f07ece90a9f83bcaad" data-thumbnail="/%E8%A1%8C%E4%B8%BA%E5%9E%8B%E7%A9%BA%E5%AF%B9%E8%B1%A1%E6%A8%A1%E5%BC%8F/%E8%A1%8C%E4%B8%BA%E5%9E%8B%EF%BC%9A%E7%A9%BA%E5%AF%B9%E8%B1%A1%E6%A8%A1%E5%BC%8F.resources/A7E08E37-D0E9-47A9-8C02-6289DAD72C76.png" data-sub-html="<h2>空对象模式</h2><p>8c0402ce528d83f07ece90a9f83bcaad</p>">
+<p>策略模式，制定多种策略，主体对象根据需要使用不同的策略。
+<figure><a class="lightgallery" href="/%E8%A1%8C%E4%B8%BA%E5%9E%8B%E7%AD%96%E7%95%A5%E6%A8%A1%E5%BC%8F/%E8%A1%8C%E4%B8%BA%E5%9E%8B%EF%BC%9A%E7%AD%96%E7%95%A5%E6%A8%A1%E5%BC%8F.resources/8F1DF5BD-1C53-4B1B-A38A-42E2B564A1A2.png" title="4b054073d842cbcaa716881d8dfbd732" data-thumbnail="/%E8%A1%8C%E4%B8%BA%E5%9E%8B%E7%AD%96%E7%95%A5%E6%A8%A1%E5%BC%8F/%E8%A1%8C%E4%B8%BA%E5%9E%8B%EF%BC%9A%E7%AD%96%E7%95%A5%E6%A8%A1%E5%BC%8F.resources/8F1DF5BD-1C53-4B1B-A38A-42E2B564A1A2.png" data-sub-html="<h2>策略模式</h2><p>4b054073d842cbcaa716881d8dfbd732</p>">
         <img
             class="lazyload"
             src="/svg/loading.min.svg"
-            data-src="%e8%a1%8c%e4%b8%ba%e5%9e%8b%ef%bc%9a%e7%a9%ba%e5%af%b9%e8%b1%a1%e6%a8%a1%e5%bc%8f.resources/A7E08E37-D0E9-47A9-8C02-6289DAD72C76.png"
-            data-srcset="/%E8%A1%8C%E4%B8%BA%E5%9E%8B%E7%A9%BA%E5%AF%B9%E8%B1%A1%E6%A8%A1%E5%BC%8F/%E8%A1%8C%E4%B8%BA%E5%9E%8B%EF%BC%9A%E7%A9%BA%E5%AF%B9%E8%B1%A1%E6%A8%A1%E5%BC%8F.resources/A7E08E37-D0E9-47A9-8C02-6289DAD72C76.png, %e8%a1%8c%e4%b8%ba%e5%9e%8b%ef%bc%9a%e7%a9%ba%e5%af%b9%e8%b1%a1%e6%a8%a1%e5%bc%8f.resources/A7E08E37-D0E9-47A9-8C02-6289DAD72C76.png 1.5x, /%E8%A1%8C%E4%B8%BA%E5%9E%8B%E7%A9%BA%E5%AF%B9%E8%B1%A1%E6%A8%A1%E5%BC%8F/%E8%A1%8C%E4%B8%BA%E5%9E%8B%EF%BC%9A%E7%A9%BA%E5%AF%B9%E8%B1%A1%E6%A8%A1%E5%BC%8F.resources/A7E08E37-D0E9-47A9-8C02-6289DAD72C76.png 2x"
+            data-src="%e8%a1%8c%e4%b8%ba%e5%9e%8b%ef%bc%9a%e7%ad%96%e7%95%a5%e6%a8%a1%e5%bc%8f.resources/8F1DF5BD-1C53-4B1B-A38A-42E2B564A1A2.png"
+            data-srcset="/%E8%A1%8C%E4%B8%BA%E5%9E%8B%E7%AD%96%E7%95%A5%E6%A8%A1%E5%BC%8F/%E8%A1%8C%E4%B8%BA%E5%9E%8B%EF%BC%9A%E7%AD%96%E7%95%A5%E6%A8%A1%E5%BC%8F.resources/8F1DF5BD-1C53-4B1B-A38A-42E2B564A1A2.png, %e8%a1%8c%e4%b8%ba%e5%9e%8b%ef%bc%9a%e7%ad%96%e7%95%a5%e6%a8%a1%e5%bc%8f.resources/8F1DF5BD-1C53-4B1B-A38A-42E2B564A1A2.png 1.5x, /%E8%A1%8C%E4%B8%BA%E5%9E%8B%E7%AD%96%E7%95%A5%E6%A8%A1%E5%BC%8F/%E8%A1%8C%E4%B8%BA%E5%9E%8B%EF%BC%9A%E7%AD%96%E7%95%A5%E6%A8%A1%E5%BC%8F.resources/8F1DF5BD-1C53-4B1B-A38A-42E2B564A1A2.png 2x"
             data-sizes="auto"
-            alt="/%E8%A1%8C%E4%B8%BA%E5%9E%8B%E7%A9%BA%E5%AF%B9%E8%B1%A1%E6%A8%A1%E5%BC%8F/%E8%A1%8C%E4%B8%BA%E5%9E%8B%EF%BC%9A%E7%A9%BA%E5%AF%B9%E8%B1%A1%E6%A8%A1%E5%BC%8F.resources/A7E08E37-D0E9-47A9-8C02-6289DAD72C76.png" />
-    </a><figcaption class="image-caption">空对象模式</figcaption>
+            alt="/%E8%A1%8C%E4%B8%BA%E5%9E%8B%E7%AD%96%E7%95%A5%E6%A8%A1%E5%BC%8F/%E8%A1%8C%E4%B8%BA%E5%9E%8B%EF%BC%9A%E7%AD%96%E7%95%A5%E6%A8%A1%E5%BC%8F.resources/8F1DF5BD-1C53-4B1B-A38A-42E2B564A1A2.png" />
+    </a><figcaption class="image-caption">策略模式</figcaption>
     </figure>
-工厂类<code>SubjectFactory</code>能够创建<code>Subject</code>，如果要求创建的对象的<code>tag</code>在工厂类的<code>tags</code>中，则创建实际对象<code>RealSubject</code>，否则创建空对象<code>NullSubject</code>。</p>
-<h2 id="抽象对象">抽象对象</h2>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-kotlin" data-lang="kotlin"><span class="k">abstract</span> <span class="k">class</span> <span class="nc">AbstractSubject</span> <span class="p">(</span>
-    <span class="k">var</span> <span class="py">tag</span><span class="p">:</span> <span class="n">String</span><span class="p">?</span>
-<span class="p">)</span> <span class="p">{</span>
-    <span class="k">abstract</span> <span class="k">fun</span> <span class="nf">isNull</span><span class="p">():</span> <span class="n">Boolean</span>
-<span class="p">}</span>
-</code></pre></td></tr></table>
-</div>
-</div><h2 id="实际对象">实际对象</h2>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span><span class="lnt">6
-</span><span class="lnt">7
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-kotlin" data-lang="kotlin"><span class="k">class</span> <span class="nc">RealSubject</span> <span class="p">(</span>
-    <span class="k">var</span> <span class="py">tag</span><span class="p">:</span> <span class="n">String</span>
-<span class="p">):</span> <span class="n">AbstractSubject</span><span class="p">(</span><span class="n">tag</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">override</span> <span class="k">fun</span> <span class="nf">isNull</span><span class="p">():</span> <span class="n">Boolean</span> <span class="p">{</span>
-        <span class="k">return</span> <span class="k">false</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-</code></pre></td></tr></table>
-</div>
-</div><h2 id="空对象">空对象</h2>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-kotlin" data-lang="kotlin"><span class="k">class</span> <span class="nc">NullSubject</span><span class="p">:</span> <span class="n">AbstractSubject</span><span class="p">(</span><span class="s">&#34;The Subject is null&#34;</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">override</span> <span class="k">fun</span> <span class="nf">isNull</span><span class="p">():</span> <span class="n">Boolean</span> <span class="p">{</span>
-        <span class="k">return</span> <span class="k">true</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-</code></pre></td></tr></table>
-</div>
-</div><h2 id="工厂类">工厂类</h2>
+主体类<code>Subject</code>中使用各种策略类<code>AddStrategy</code>、<code>SubStrategy</code>，按需执行策略类中的策略或更换策略。</p>
+<h2 id="策略类">策略类</h2>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt"> 1
@@ -228,18 +171,47 @@
 </span><span class="lnt">10
 </span><span class="lnt">11
 </span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-kotlin" data-lang="kotlin"><span class="k">class</span> <span class="nc">SubjectFactory</span><span class="p">(</span>
-    <span class="k">val</span> <span class="py">tags</span><span class="p">:</span> <span class="n">MutableList</span><span class="p">&lt;</span><span class="n">String</span><span class="p">&gt;</span> <span class="p">=</span> <span class="n">mutableListOf</span><span class="p">()</span>
+<pre class="chroma"><code class="language-kotlin" data-lang="kotlin"><span class="k">interface</span> <span class="nc">Strategy</span> <span class="p">{</span>
+    <span class="k">fun</span> <span class="nf">operation</span><span class="p">(</span><span class="n">param1</span><span class="p">:</span> <span class="n">Int</span><span class="p">,</span> <span class="n">param2</span><span class="p">:</span> <span class="n">Int</span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="k">class</span> <span class="nc">AddStrategy</span> <span class="p">:</span> <span class="n">Strategy</span> <span class="p">{</span>
+    <span class="k">override</span> <span class="k">fun</span> <span class="nf">operation</span><span class="p">(</span><span class="n">param1</span><span class="p">:</span> <span class="n">Int</span><span class="p">,</span> <span class="n">param2</span><span class="p">:</span> <span class="n">Int</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="n">param1</span><span class="p">+</span><span class="n">param2</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="k">class</span> <span class="nc">SubStrategy</span> <span class="p">:</span> <span class="n">Strategy</span> <span class="p">{</span>
+    <span class="k">override</span> <span class="k">fun</span> <span class="nf">operation</span><span class="p">(</span><span class="n">param1</span><span class="p">:</span> <span class="n">Int</span><span class="p">,</span> <span class="n">param2</span><span class="p">:</span> <span class="n">Int</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="n">param1</span><span class="p">-</span><span class="n">param2</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="主体对象">主体对象</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-kotlin" data-lang="kotlin"><span class="k">class</span> <span class="nc">Subject</span><span class="p">(</span>
+    <span class="k">var</span> <span class="py">strategy</span><span class="p">:</span> <span class="n">Strategy</span>
 <span class="p">)</span> <span class="p">{</span>
-    <span class="k">fun</span> <span class="nf">getSubject</span><span class="p">(</span><span class="n">tag</span><span class="p">:</span> <span class="n">String</span><span class="p">)</span> <span class="p">{</span>
-        <span class="k">for</span><span class="p">(</span><span class="n">item</span> <span class="k">in</span> <span class="n">tags</span><span class="p">)</span> <span class="p">{</span>
-            <span class="k">if</span><span class="p">(</span><span class="n">tag</span> <span class="p">==</span> <span class="n">item</span><span class="p">)</span> <span class="p">{</span>
-                <span class="k">return</span> <span class="k">object</span> <span class="err">: </span><span class="nc">RealSubject</span><span class="p">(</span><span class="n">tag</span><span class="p">)</span>
-            <span class="p">}</span>
-        <span class="p">}</span>
-        <span class="k">return</span> <span class="k">object</span> <span class="err">: </span><span class="nc">NullSubject</span><span class="p">()</span>
+    <span class="c1">// 执行策略
+</span><span class="c1"></span>    <span class="k">fun</span> <span class="nf">executeStrategy</span><span class="p">(</span><span class="n">param1</span><span class="p">:</span> <span class="n">Int</span><span class="p">,</span> <span class="n">param2</span><span class="p">:</span> <span class="n">Int</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">strategy</span><span class="p">.</span><span class="n">operation</span><span class="p">(</span><span class="n">param1</span><span class="p">,</span> <span class="n">param2</span><span class="p">)</span>
     <span class="p">}</span>
 <span class="p">}</span>
 </code></pre></td></tr></table>
@@ -260,20 +232,30 @@
 </span><span class="lnt">11
 </span><span class="lnt">12
 </span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-kotlin" data-lang="kotlin"><span class="k">fun</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
-    <span class="c1">// 构造工厂类
-</span><span class="c1"></span>    <span class="k">val</span> <span class="py">tags</span> <span class="p">=</span> <span class="n">mutableListOf</span><span class="p">(</span><span class="s">&#34;tag1&#34;</span><span class="p">,</span><span class="s">&#34;tag2&#34;</span><span class="p">,</span><span class="s">&#34;tag3&#34;</span><span class="p">)</span>
-    <span class="k">val</span> <span class="py">subjectFactory</span><span class="p">:</span> <span class="n">SubjectFactory</span> <span class="p">=</span> <span class="n">SubjectFactory</span><span class="p">(</span><span class="n">tags</span><span class="p">)</span>
+    <span class="c1">// 参数
+</span><span class="c1"></span>    <span class="k">val</span> <span class="py">param1</span><span class="p">:</span> <span class="n">Int</span> <span class="p">=</span> <span class="m">1</span>
+    <span class="k">val</span> <span class="py">param2</span><span class="p">:</span> <span class="n">Int</span> <span class="p">=</span> <span class="m">2</span>
+    <span class="c1">// 策略类
+</span><span class="c1"></span>    <span class="k">val</span> <span class="py">addStrategy</span><span class="p">:</span> <span class="n">AddStrategy</span> <span class="p">=</span> <span class="n">AddStrategy</span><span class="p">()</span>
+    <span class="k">val</span> <span class="py">subStrategy</span><span class="p">:</span> <span class="n">SubStrategy</span> <span class="p">=</span> <span class="n">SubStrategy</span><span class="p">()</span>
+    <span class="c1">// 主体类
+</span><span class="c1"></span>    <span class="k">val</span> <span class="py">subject</span><span class="p">:</span> <span class="n">Subject</span> <span class="p">=</span> <span class="n">Subject</span><span class="p">(</span><span class="n">addStrategy</span><span class="p">)</span>
     
-    <span class="c1">// 从工厂类中获取对象
-</span><span class="c1"></span>    <span class="c1">// subject1、subject2、subject3拿到RealSubject
-</span><span class="c1"></span>    <span class="k">val</span> <span class="py">subject1</span> <span class="p">=</span> <span class="n">subjectFactory</span><span class="p">.</span><span class="n">getSubject</span><span class="p">(</span><span class="s">&#34;tag1&#34;</span><span class="p">)</span>
-    <span class="k">val</span> <span class="py">subject2</span> <span class="p">=</span> <span class="n">subjectFactory</span><span class="p">.</span><span class="n">getSubject</span><span class="p">(</span><span class="s">&#34;tag2&#34;</span><span class="p">)</span>
-    <span class="k">val</span> <span class="py">subject3</span> <span class="p">=</span> <span class="n">subjectFactory</span><span class="p">.</span><span class="n">getSubject</span><span class="p">(</span><span class="s">&#34;tag3&#34;</span><span class="p">)</span>
-    <span class="c1">// subject4拿到NullSubject
-</span><span class="c1"></span>    <span class="k">val</span> <span class="py">subject4</span> <span class="p">=</span> <span class="n">subjectFactory</span><span class="p">.</span><span class="n">getSubject</span><span class="p">(</span><span class="s">&#34;tag4&#34;</span><span class="p">)</span>
+    <span class="c1">// 执行策略
+</span><span class="c1"></span>    <span class="n">subject</span><span class="p">.</span><span class="n">executeStrategy</span><span class="p">(</span><span class="n">param1</span><span class="p">,</span> <span class="n">param2</span><span class="p">)</span>
+    <span class="c1">// 更换策略
+</span><span class="c1"></span>    <span class="n">subject</span><span class="p">.</span><span class="n">strategy</span> <span class="p">=</span> <span class="n">subStrategy</span>
+    <span class="c1">// 执行新策略
+</span><span class="c1"></span>    <span class="n">subject</span><span class="p">.</span><span class="n">executeStrategy</span><span class="p">(</span><span class="n">param1</span><span class="p">,</span> <span class="n">param2</span><span class="p">)</span>
+    
 <span class="p">}</span>
 </code></pre></td></tr></table>
 </div>
@@ -287,10 +269,10 @@
         </div>
         <div class="post-info-line">
             <div class="post-info-md"><span>
-                            <a class="link-to-markdown" href="/%E8%A1%8C%E4%B8%BA%E5%9E%8B%E7%A9%BA%E5%AF%B9%E8%B1%A1%E6%A8%A1%E5%BC%8F/index.md" target="_blank">阅读原始文档</a>
+                            <a class="link-to-markdown" href="/%E8%A1%8C%E4%B8%BA%E5%9E%8B%E7%AD%96%E7%95%A5%E6%A8%A1%E5%BC%8F/index.md" target="_blank">阅读原始文档</a>
                         </span></div>
             <div class="post-info-share">
-                <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="https://nevillenoah.github.io/%E8%A1%8C%E4%B8%BA%E5%9E%8B%E7%A9%BA%E5%AF%B9%E8%B1%A1%E6%A8%A1%E5%BC%8F/" data-title="行为型：空对象模式" data-hashtags="设计模式"><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="https://nevillenoah.github.io/%E8%A1%8C%E4%B8%BA%E5%9E%8B%E7%A9%BA%E5%AF%B9%E8%B1%A1%E6%A8%A1%E5%BC%8F/" data-hashtag="设计模式"><i class="fab fa-facebook-square fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Hacker News" data-sharer="hackernews" data-url="https://nevillenoah.github.io/%E8%A1%8C%E4%B8%BA%E5%9E%8B%E7%A9%BA%E5%AF%B9%E8%B1%A1%E6%A8%A1%E5%BC%8F/" data-title="行为型：空对象模式"><i class="fab fa-hacker-news fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Line" data-sharer="line" data-url="https://nevillenoah.github.io/%E8%A1%8C%E4%B8%BA%E5%9E%8B%E7%A9%BA%E5%AF%B9%E8%B1%A1%E6%A8%A1%E5%BC%8F/" data-title="行为型：空对象模式"><i data-svg-src="https://cdn.jsdelivr.net/npm/simple-icons@2.14.0/icons/line.svg"></i></a><a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="https://nevillenoah.github.io/%E8%A1%8C%E4%B8%BA%E5%9E%8B%E7%A9%BA%E5%AF%B9%E8%B1%A1%E6%A8%A1%E5%BC%8F/" data-title="行为型：空对象模式"><i class="fab fa-weibo fa-fw"></i></a></span>
+                <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="https://nevillenoah.github.io/%E8%A1%8C%E4%B8%BA%E5%9E%8B%E7%AD%96%E7%95%A5%E6%A8%A1%E5%BC%8F/" data-title="行为型：策略模式" data-hashtags="设计模式"><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="https://nevillenoah.github.io/%E8%A1%8C%E4%B8%BA%E5%9E%8B%E7%AD%96%E7%95%A5%E6%A8%A1%E5%BC%8F/" data-hashtag="设计模式"><i class="fab fa-facebook-square fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Hacker News" data-sharer="hackernews" data-url="https://nevillenoah.github.io/%E8%A1%8C%E4%B8%BA%E5%9E%8B%E7%AD%96%E7%95%A5%E6%A8%A1%E5%BC%8F/" data-title="行为型：策略模式"><i class="fab fa-hacker-news fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Line" data-sharer="line" data-url="https://nevillenoah.github.io/%E8%A1%8C%E4%B8%BA%E5%9E%8B%E7%AD%96%E7%95%A5%E6%A8%A1%E5%BC%8F/" data-title="行为型：策略模式"><i data-svg-src="https://cdn.jsdelivr.net/npm/simple-icons@2.14.0/icons/line.svg"></i></a><a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="https://nevillenoah.github.io/%E8%A1%8C%E4%B8%BA%E5%9E%8B%E7%AD%96%E7%95%A5%E6%A8%A1%E5%BC%8F/" data-title="行为型：策略模式"><i class="fab fa-weibo fa-fw"></i></a></span>
             </div>
         </div>
     </div>
@@ -302,8 +284,7 @@
         </section>
     </div>
 
-    <div class="post-nav"><a href="/%E8%A1%8C%E4%B8%BA%E5%9E%8B%E7%8A%B6%E6%80%81%E6%A8%A1%E5%BC%8F/" class="prev" rel="prev" title="行为型：状态模式"><i class="fas fa-angle-left fa-fw"></i>行为型：状态模式</a>
-            <a href="/%E8%A1%8C%E4%B8%BA%E5%9E%8B%E7%AD%96%E7%95%A5%E6%A8%A1%E5%BC%8F/" class="next" rel="next" title="行为型：策略模式">行为型：策略模式<i class="fas fa-angle-right fa-fw"></i></a></div>
+    <div class="post-nav"><a href="/%E8%A1%8C%E4%B8%BA%E5%9E%8B%E7%A9%BA%E5%AF%B9%E8%B1%A1%E6%A8%A1%E5%BC%8F/" class="prev" rel="prev" title="行为型：空对象模式"><i class="fas fa-angle-left fa-fw"></i>行为型：空对象模式</a></div>
 </div>
 <div id="comments"><div id="valine" class="comment"></div><noscript>
                 Please enable JavaScript to view the comments powered by <a href="https://valine.js.org/">Valine</a>.

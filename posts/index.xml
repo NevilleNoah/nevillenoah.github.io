@@ -3,7 +3,14 @@
         <title>所有文章 - Neville Noah | Blog</title>
         <link>https://nevillenoah.github.io/posts/</link>
         <description>所有文章 | Neville Noah | Blog</description>
-        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Sat, 15 Aug 2020 17:17:58 &#43;0800</lastBuildDate><atom:link href="https://nevillenoah.github.io/posts/" rel="self" type="application/rss+xml" /><item>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Sat, 15 Aug 2020 18:17:58 &#43;0800</lastBuildDate><atom:link href="https://nevillenoah.github.io/posts/" rel="self" type="application/rss+xml" /><item>
+    <title>行为型：策略模式</title>
+    <link>https://nevillenoah.github.io/%E8%A1%8C%E4%B8%BA%E5%9E%8B%E7%AD%96%E7%95%A5%E6%A8%A1%E5%BC%8F/</link>
+    <pubDate>Sat, 15 Aug 2020 18:17:58 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://nevillenoah.github.io/%E8%A1%8C%E4%B8%BA%E5%9E%8B%E7%AD%96%E7%95%A5%E6%A8%A1%E5%BC%8F/</guid>
+    <description><![CDATA[释义 策略模式，制定多种策略，主体对象根据需要使用不同的策略。 策略模式4b054073d842cbcaa716881d8dfbd732 " 策略模]]></description>
+</item><item>
     <title>行为型：空对象模式</title>
     <link>https://nevillenoah.github.io/%E8%A1%8C%E4%B8%BA%E5%9E%8B%E7%A9%BA%E5%AF%B9%E8%B1%A1%E6%A8%A1%E5%BC%8F/</link>
     <pubDate>Sat, 15 Aug 2020 17:17:58 &#43;0800</pubDate>
@@ -66,12 +73,5 @@
     <author>作者</author>
     <guid>https://nevillenoah.github.io/%E8%A1%8C%E4%B8%BA%E5%9E%8B%E8%B4%A3%E4%BB%BB%E9%93%BE%E6%A8%A1%E5%BC%8F/</guid>
     <description><![CDATA[释义 责任链模式，如果你无法完成这项任务，就交给下一位，直到找到能负责这项任务的人。 责任链模式c87aba7e6e835ff055787e94]]></description>
-</item><item>
-    <title>结构型：享元模式</title>
-    <link>https://nevillenoah.github.io/%E7%BB%93%E6%9E%84%E5%9E%8B%E4%BA%AB%E5%85%83%E6%A8%A1%E5%BC%8F/</link>
-    <pubDate>Thu, 13 Aug 2020 21:21:58 &#43;0800</pubDate>
-    <author>作者</author>
-    <guid>https://nevillenoah.github.io/%E7%BB%93%E6%9E%84%E5%9E%8B%E4%BA%AB%E5%85%83%E6%A8%A1%E5%BC%8F/</guid>
-    <description><![CDATA[释义 享元模式，“元”即某个属性，“享元”即共享属性。如果计划创建的对象有某个属性值与已存在的实例相同的话，则共享这个属性，即直接用这个实例而]]></description>
 </item></channel>
 </rss>
