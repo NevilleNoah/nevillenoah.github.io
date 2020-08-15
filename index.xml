@@ -3,9 +3,23 @@
         <title>Neville Noah | Blog</title>
         <link>https://nevillenoah.github.io/</link>
         <description>关于 LoveIt 主题</description>
-        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Sat, 15 Aug 2020 18:17:58 &#43;0800</lastBuildDate>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Sat, 15 Aug 2020 20:17:58 &#43;0800</lastBuildDate>
             <atom:link href="https://nevillenoah.github.io/index.xml" rel="self" type="application/rss+xml" />
         <item>
+    <title>行为型：访问者模式</title>
+    <link>https://nevillenoah.github.io/%E8%A1%8C%E4%B8%BA%E5%9E%8B%E8%AE%BF%E9%97%AE%E8%80%85%E6%A8%A1%E5%BC%8F/</link>
+    <pubDate>Sat, 15 Aug 2020 20:17:58 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://nevillenoah.github.io/%E8%A1%8C%E4%B8%BA%E5%9E%8B%E8%AE%BF%E9%97%AE%E8%80%85%E6%A8%A1%E5%BC%8F/</guid>
+    <description><![CDATA[释义 访问者模式，访问者可以改变访问目标类执行的算法。 访问者模式6e9e8a3abf669f2880278ac762e554b2 " 访问者模式 访]]></description>
+</item><item>
+    <title>行为型：模板模式</title>
+    <link>https://nevillenoah.github.io/%E8%A1%8C%E4%B8%BA%E5%9E%8B%E6%A8%A1%E6%9D%BF%E6%A8%A1%E5%BC%8F/</link>
+    <pubDate>Sat, 15 Aug 2020 19:17:58 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://nevillenoah.github.io/%E8%A1%8C%E4%B8%BA%E5%9E%8B%E6%A8%A1%E6%9D%BF%E6%A8%A1%E5%BC%8F/</guid>
+    <description><![CDATA[释义 模板模式，模板为抽象类，子类继承模板，但是调用的时候调用的是模版的方法。 模板模式2feaf82eae3f221420c979fc54df]]></description>
+</item><item>
     <title>行为型：策略模式</title>
     <link>https://nevillenoah.github.io/%E8%A1%8C%E4%B8%BA%E5%9E%8B%E7%AD%96%E7%95%A5%E6%A8%A1%E5%BC%8F/</link>
     <pubDate>Sat, 15 Aug 2020 18:17:58 &#43;0800</pubDate>
@@ -61,19 +75,5 @@
     <author>作者</author>
     <guid>https://nevillenoah.github.io/%E8%A1%8C%E4%B8%BA%E5%9E%8B%E8%A7%A3%E9%87%8A%E5%99%A8%E6%A8%A1%E5%BC%8F/</guid>
     <description><![CDATA[释义 解释器模式，通过解释器对内容进行解释。 解释器模式034aa5120a20e4969f6be05a3e9ab3fe " 解释器模式 表达式Exp]]></description>
-</item><item>
-    <title>行为型：命令模式</title>
-    <link>https://nevillenoah.github.io/%E8%A1%8C%E4%B8%BA%E5%9E%8B%E5%91%BD%E4%BB%A4%E6%A8%A1%E5%BC%8F/</link>
-    <pubDate>Fri, 14 Aug 2020 12:11:58 &#43;0800</pubDate>
-    <author>作者</author>
-    <guid>https://nevillenoah.github.io/%E8%A1%8C%E4%B8%BA%E5%9E%8B%E5%91%BD%E4%BB%A4%E6%A8%A1%E5%BC%8F/</guid>
-    <description><![CDATA[释义 命令模式，将请求封装为命令类，传给调用类，调用类寻找合适的对象执行命令。 命令模式540f04195f757b23e8f2cb4d54e2]]></description>
-</item><item>
-    <title>行为型：责任链模式</title>
-    <link>https://nevillenoah.github.io/%E8%A1%8C%E4%B8%BA%E5%9E%8B%E8%B4%A3%E4%BB%BB%E9%93%BE%E6%A8%A1%E5%BC%8F/</link>
-    <pubDate>Fri, 14 Aug 2020 11:26:58 &#43;0800</pubDate>
-    <author>作者</author>
-    <guid>https://nevillenoah.github.io/%E8%A1%8C%E4%B8%BA%E5%9E%8B%E8%B4%A3%E4%BB%BB%E9%93%BE%E6%A8%A1%E5%BC%8F/</guid>
-    <description><![CDATA[释义 责任链模式，如果你无法完成这项任务，就交给下一位，直到找到能负责这项任务的人。 责任链模式c87aba7e6e835ff055787e94]]></description>
 </item></channel>
 </rss>
