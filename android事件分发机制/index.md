@@ -46,21 +46,7 @@ public static final int ACTION_CANCEL           = 3;
 
 基本流程：
 
-```flow
-st=>start: 开始
-ad=>operation: ACTION_DOWN 按下
-cd=>condition: No problem?
-au=>operation: ACTION_UP 抬起
-ac=>operation: ACTION_CANCEL 非人为取消
-ed=>end: 结束
-
-st->ad->cd
-cd(yes)->au
-cd(no)->ac
-au->ed
-ac->ed
-
-```
+<img src="image/image-20200907192127083.png" alt="image-20200907192127083" style="zoom:60%;" />
 
 
 
@@ -1022,19 +1008,7 @@ public boolean onTouchEvent(MotionEvent event) {
 
 ## 总结
 
-事件分发顺序：
-
-```flow
-activity=>operation: Activity
-viewGroup=>operation: ViewGroup
-view=>operation: View
-
-activity->viewGroup->view
-```
-
-
-
-
+事件分发顺序：Activity=>ViewGroup=>View
 
 Activity事件传递机制：Activity通过`PhoneWindow`将事件传递给顶级布局`DecorView`，顶级布局将事件传给它内含的`ViewGroup`，调用`ViewGroup`的`ViewGroup.dispatchTouchEvent()`来分发事件。
 
@@ -1042,7 +1016,7 @@ ViewGroup事件传递机制：`ViewGroup.dispatchTouchEvent()`中先通过`ViewG
 
 View事件传递机制：`View.dispatchTouchEvent()`中通过调用`OnTouchListener.onTouch()`消费事件，若成功消费则返回true，否则调用`View.onTouchEvent()`事件并返回false，并且层层返回false，最后由`Activity.onTouchEvent()`来消费事件。
 
-![image-20200907171148737](image/image-20200907171148737.png)
+<img src="image/image-20200907171148737.png" alt="image-20200907171148737" style="zoom:100%;" />
 
 
 
