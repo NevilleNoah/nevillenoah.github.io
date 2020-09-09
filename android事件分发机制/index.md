@@ -458,7 +458,7 @@ ViewGroup会保留上一次事件的触摸目标的状态，因此开始新的�
         }
 ```
 
-`mFirstTouchTarget != null `，为什么意味着“事件曾经经过其他视图”？事件会从父视图向子视图往下传递，如果父视图没有消费掉视图，就会向子视图传递。在这个过程中，会有一个由TouchTarget作为结点组成的单链表，用于存储事件向下传递过程中经过的视图，每经过一个视图就在这个单链表末尾新增一个TouchTarget。例如视图层次从父到子是ABC，则单链表从尾到头是CBA，而`mFirstTouchTarget`就是表尾，`mFirstTouchTarget != null `意味着表不为空，意味着事件曾经经过其他视图。如何得出这个过程？答案在后续的代码中。
+`mFirstTouchTarget != null `，为什么意味着“事件曾经经过其他视图”？事件会从父视图向子视图往下传递，如果父视图没有消费掉视图，就会向子视图传递。在这个过程中，会有一个由TouchTarget作为结点组成的单链表，用于存储事件向下传递过程中经过的视图，每经过一个视图就在这个单链表末尾新增一个TouchTarget。例如视图层次从父到子是ABC，则单链表从头到尾是CBA，而`mFirstTouchTarget`就指向表头，`mFirstTouchTarget != null `意味着表不为空，意味着事件曾经经过其他视图。如何得出这个过程？答案在后续的代码中。
 
 拦截函数`onInterceptTouchEvent`
 
@@ -589,7 +589,7 @@ public boolean onInterceptTouchEvent(MotionEvent ev) {
                             }
                             mLastTouchDownX = ev.getX();
                             mLastTouchDownY = ev.getY();
-                            // 【重点】addTouchTarget，将以子视图为内容构建的新结点插入TouchTarget链表的表尾
+                            // 【重点】addTouchTarget，将以子视图为内容构建的新结点插入TouchTarget链表的表头
                             newTouchTarget = addTouchTarget(child, idBitsToAssign);
                             alreadyDispatchedToNewTouchTarget = true;
                             break;
@@ -602,7 +602,7 @@ public boolean onInterceptTouchEvent(MotionEvent ev) {
                     if (preorderedList != null) preorderedList.clear();
                 }
 								
-								// 如果没有找到符合条件的子视图，将TouchTarget单链表表尾的元素mFirstTouchTarget赋值给新触摸目标
+								// 如果没有找到符合条件的子视图，将TouchTarget单链表头的元素mFirstTouchTarget赋值给新触摸目标
                 if (newTouchTarget == null && mFirstTouchTarget != null) {
                     newTouchTarget = mFirstTouchTarget;
                     while (newTouchTarget.next != null) {
@@ -628,7 +628,7 @@ private TouchTarget addTouchTarget(@NonNull View child, int pointerIdBits) {
 
 前面提到了`mFirstTouchTarget`从而引出了`TouchTarget`单链表的原因，正是因为`addTouchTarget`方法。
 
-`TouchTarget.class`是以`View`为内容的结点。事件不断从父视图传向子视图，每传递一次，子视图收到事件时就会触发一次`addTouchTarget`，子视图就会被构造为新结点，以尾插入的方式插入子节点，并将新插入的结点赋值给`mFirstTouchTarget`。
+`TouchTarget.class`是以`View`为内容的结点。事件不断从父视图传向子视图，每传递一次，子视图收到事件时就会触发一次`addTouchTarget`，子视图就会被构造为新结点，以头插入的方式插入子节点，并将新插入的结点赋值给`mFirstTouchTarget`（因此`mFirstTouchTarget`就指向表头）。
 
 如果没有找到符合条件的子视图，`mFirstTouchTarget`就是上一次被插入`TouchTarget`单链表的视图，也就是当前视图。
 
