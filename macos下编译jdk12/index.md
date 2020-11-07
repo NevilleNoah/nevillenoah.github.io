@@ -1,4 +1,4 @@
-# MacOS编译JDK12
+# MacOS下编译JDK12
 
 
 
