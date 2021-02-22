@@ -3,7 +3,14 @@
         <title>所有文章 - Neville Noah | Blog</title>
         <link>https://nevillenoah.github.io/posts/</link>
         <description>所有文章 | Neville Noah | Blog</description>
-        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Sun, 21 Feb 2021 12:30:58 &#43;0800</lastBuildDate><atom:link href="https://nevillenoah.github.io/posts/" rel="self" type="application/rss+xml" /><item>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Mon, 22 Feb 2021 12:30:58 &#43;0800</lastBuildDate><atom:link href="https://nevillenoah.github.io/posts/" rel="self" type="application/rss+xml" /><item>
+    <title>智慧柜员机日常管理与操作</title>
+    <link>https://nevillenoah.github.io/%E6%99%BA%E6%85%A7%E6%9F%9C%E5%91%98%E6%9C%BA%E6%97%A5%E5%B8%B8%E7%AE%A1%E7%90%86%E4%B8%8E%E6%93%8D%E4%BD%9C/</link>
+    <pubDate>Mon, 22 Feb 2021 12:30:58 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://nevillenoah.github.io/%E6%99%BA%E6%85%A7%E6%9F%9C%E5%91%98%E6%9C%BA%E6%97%A5%E5%B8%B8%E7%AE%A1%E7%90%86%E4%B8%8E%E6%93%8D%E4%BD%9C/</guid>
+    <description><![CDATA[现状 一体机为主 固定资产清理：当初买太多了，设备利用率低，现在正在清理 政务服务：将部分政务加入到智慧柜员机中（以后也可多多关注这方面） 风险不可]]></description>
+</item><item>
     <title>新员工网点场景案例</title>
     <link>https://nevillenoah.github.io/%E6%96%B0%E5%91%98%E5%B7%A5%E7%BD%91%E7%82%B9%E5%9C%BA%E6%99%AF%E6%A1%88%E4%BE%8B/</link>
     <pubDate>Sun, 21 Feb 2021 12:30:58 &#43;0800</pubDate>
@@ -66,12 +73,5 @@
     <author>作者</author>
     <guid>https://nevillenoah.github.io/workmanager%E4%B9%8B%E4%BB%BB%E5%8A%A1%E8%AF%B7%E6%B1%82/</guid>
     <description><![CDATA[前言 继上一章《WorkMananger之添加任务》之后，我们再来详细学习任务请求WorkRequest。 构造器 WorkRequest有两种构]]></description>
-</item><item>
-    <title>WorkManager之添加任务</title>
-    <link>https://nevillenoah.github.io/workmanager%E4%B9%8B%E6%B7%BB%E5%8A%A0%E4%BB%BB%E5%8A%A1/</link>
-    <pubDate>Thu, 27 Aug 2020 21:46:41 &#43;0800</pubDate>
-    <author>作者</author>
-    <guid>https://nevillenoah.github.io/workmanager%E4%B9%8B%E6%B7%BB%E5%8A%A0%E4%BB%BB%E5%8A%A1/</guid>
-    <description><![CDATA[[TOC] 前言 Jetpack中的WorkManager用于管理后台运行的任务，可替代原先由Service执行的后台任务。 使用 Gradle gradle引入 1 implementation &#34;androidx.work:work-runtime-ktx:$work_version&#34;]]></description>
 </item></channel>
 </rss>
